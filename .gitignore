@@ -38,3 +38,6 @@ msbuild.wrn
 *.azurePubxml
 *.pubxml
 *.publishproj
+
+# Config files
+.config
