@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,19 +10,31 @@
     <link rel="stylesheet" href="~/CasaRM.WebApp.Web.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <div class="wrapper">
-        <partial name="~/Views/Shared/_SidebarPartial.cshtml" />
+	<main class="d-flex w-100">
+		<div class="container d-flex flex-column">
+			<div class="row vh-100">
+				<div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+					<div class="d-table-cell align-middle">
 
-        <div class="main">
-            <partial name="~/Views/Shared/_NavbarPartial.cshtml" />
+						<div class="text-center mt-4">
+							<p class="lead">
+								Sign in to your account to continue
+							</p>
+						</div>
 
-            <main class="content">
-                <div class="container-fluid p-0">
-                    @RenderBody()
-                </div>
-            </main>
-        </div>
-    </div>
+						<div class="card">
+							<div class="card-body">
+								<div class="m-sm-4">
+									@RenderBody()
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
