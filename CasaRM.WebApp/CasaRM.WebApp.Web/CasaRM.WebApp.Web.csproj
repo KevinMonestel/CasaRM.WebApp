@@ -15,4 +15,11 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CasaRM.WebApp.Persistence\CasaRM.WebApp.Persistence.csproj" />
+    <ProjectReference Include="..\CasaRM.WebApp.Repositories\CasaRM.WebApp.Repositories.csproj" />
+    <ProjectReference Include="..\CasaRM.WebApp.Services\CasaRM.WebApp.Services.csproj" />
+    <ProjectReference Include="..\CasaRM.WebApp.Shared\CasaRM.WebApp.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

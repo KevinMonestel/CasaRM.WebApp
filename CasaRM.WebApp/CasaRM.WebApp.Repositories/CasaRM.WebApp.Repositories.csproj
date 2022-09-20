@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CasaRM.WebApp.Persistence\CasaRM.WebApp.Persistence.csproj" />
+    <ProjectReference Include="..\CasaRM.WebApp.Shared\CasaRM.WebApp.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Implementations\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
 </Project>

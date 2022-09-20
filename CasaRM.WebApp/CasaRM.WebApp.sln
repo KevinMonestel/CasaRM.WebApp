@@ -5,6 +5,14 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasaRM.WebApp.Web", "CasaRM.WebApp.Web\CasaRM.WebApp.Web.csproj", "{4663192C-475F-4560-B5B3-E898E10934FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasaRM.WebApp.Repositories", "CasaRM.WebApp.Repositories\CasaRM.WebApp.Repositories.csproj", "{1B6D28DF-C9C5-48FA-9EFA-D4C1E95EE9DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasaRM.WebApp.Services", "CasaRM.WebApp.Services\CasaRM.WebApp.Services.csproj", "{A9C59278-1136-4C55-9123-64B9E3A4C945}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasaRM.WebApp.Persistence", "CasaRM.WebApp.Persistence\CasaRM.WebApp.Persistence.csproj", "{B2A3888A-6DC6-4374-8EEE-C692C6A7F1E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasaRM.WebApp.Shared", "CasaRM.WebApp.Shared\CasaRM.WebApp.Shared.csproj", "{401796B5-5324-42E3-A81A-6E92A4DD82C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{4663192C-475F-4560-B5B3-E898E10934FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4663192C-475F-4560-B5B3-E898E10934FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4663192C-475F-4560-B5B3-E898E10934FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B6D28DF-C9C5-48FA-9EFA-D4C1E95EE9DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B6D28DF-C9C5-48FA-9EFA-D4C1E95EE9DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B6D28DF-C9C5-48FA-9EFA-D4C1E95EE9DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B6D28DF-C9C5-48FA-9EFA-D4C1E95EE9DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9C59278-1136-4C55-9123-64B9E3A4C945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9C59278-1136-4C55-9123-64B9E3A4C945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9C59278-1136-4C55-9123-64B9E3A4C945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9C59278-1136-4C55-9123-64B9E3A4C945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2A3888A-6DC6-4374-8EEE-C692C6A7F1E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2A3888A-6DC6-4374-8EEE-C692C6A7F1E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2A3888A-6DC6-4374-8EEE-C692C6A7F1E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2A3888A-6DC6-4374-8EEE-C692C6A7F1E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{401796B5-5324-42E3-A81A-6E92A4DD82C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{401796B5-5324-42E3-A81A-6E92A4DD82C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{401796B5-5324-42E3-A81A-6E92A4DD82C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{401796B5-5324-42E3-A81A-6E92A4DD82C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
