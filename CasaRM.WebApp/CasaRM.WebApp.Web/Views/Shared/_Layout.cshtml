@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/app.css" />
+    <link rel="stylesheet" href="~/lib/preloadinator/dist/css/style.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     @await RenderSectionAsync("Styles", required: false)
 </head>
@@ -27,13 +28,13 @@
         </div>
     </div>
 
+    <div class="preloader js-preloader flex-center">
+    </div>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/preloadinator/dist/js/jquery.preloadinator.min.js"></script>
     <script src="~/js/app.js"></script>
-    <script>
-        $(function () {
-            $("[data-bs-toggle='tooltip']").tooltip();
-        });
-    </script>
+    <script src="~/js/utils.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
