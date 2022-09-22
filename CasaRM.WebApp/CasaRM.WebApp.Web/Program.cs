@@ -6,6 +6,9 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+// Services
+
+//Repositories
 
 // Database configuration
 var dbConnectionString = builder.Configuration.GetConnectionString("DbConnection");
@@ -30,6 +33,9 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseStatusCodePages();
+    app.UseExceptionHandler("/Home/Error");
+    app.UseStatusCodePagesWithRedirects("/Home/Error/{0}");
     app.UseMigrationsEndPoint();
 }
 else
