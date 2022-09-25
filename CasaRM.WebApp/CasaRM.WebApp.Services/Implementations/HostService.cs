@@ -13,9 +13,9 @@ namespace CasaRM.WebApp.Services.Implementations
             _hostRepository = hostRepository;
         }
 
-        public async Task<CreateHost> CreateHost(string UserId)
+        public async Task<CreateHost> CreateHost(string userId)
         {
-            CreateHost result = await _hostRepository.CreateHost(UserId);
+            CreateHost result = await _hostRepository.CreateHost(userId);
 
             return result;
         }

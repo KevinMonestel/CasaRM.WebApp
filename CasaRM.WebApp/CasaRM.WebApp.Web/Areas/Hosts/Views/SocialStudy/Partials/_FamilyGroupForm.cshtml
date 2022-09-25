@@ -1,0 +1,69 @@
+﻿@model FamilyGroupFormViewModel
+
+@{
+}
+
+<form>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-floating mb-3">
+                <input asp-for="FullName" class="form-control" aria-required="true" />
+                <label asp-for="FullName" class="form-label">Nombre Completo</label>
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <input asp-for="Age" class="form-control" aria-required="true" />
+                <label asp-for="Age" class="form-label">Edad</label>
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <input asp-for="Relationship" class="form-control" aria-required="true" />
+                <label asp-for="Relationship" class="form-label">Parentesco</label>
+                <span asp-validation-for="Relationship" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <input asp-for="MaritalStatus" class="form-control" aria-required="true" />
+                <label asp-for="MaritalStatus" class="form-label">Estado Civil</label>
+                <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <input asp-for="Scholarship" class="form-control" aria-required="true" />
+                <label asp-for="Scholarship" class="form-label">Escolaridad</label>
+                <span asp-validation-for="Scholarship" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <input asp-for="Ocupation" class="form-control" aria-required="true" />
+                <label asp-for="Ocupation" class="form-label">Ocupación</label>
+                <span asp-validation-for="Ocupation" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <input asp-for="MonthlyGrossIncome" class="form-control" aria-required="true" />
+                <label asp-for="MonthlyGrossIncome" class="form-label">Ingreso Bruto Mensual</label>
+                <span asp-validation-for="MonthlyGrossIncome" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <input type="submit" value="Enviar información" class="btn btn-primary w-100"/>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,129 @@
+﻿@model ParentDataFormViewModel
+
+@{
+}
+
+<form>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-floating mb-3">
+                <input asp-for="FullName" class="form-control" aria-required="true" />
+                <label asp-for="FullName" class="form-label">Nombre Completo</label>
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-floating mb-3">
+                <input asp-for="Relationship" class="form-control" aria-required="true" />
+                <label asp-for="Relationship" class="form-label">Parentesco</label>
+                <span asp-validation-for="Relationship" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-floating mb-3">
+                <input asp-for="Identification" class="form-control" aria-required="true" />
+                <label asp-for="Identification" class="form-label">Identificación</label>
+                <span asp-validation-for="Identification" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="form-floating mb-3">
+                <input asp-for="DateOfBirth" class="form-control" aria-required="true" />
+                <label asp-for="DateOfBirth" class="form-label">Fecha de Nacimiento</label>
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="form-floating mb-3">
+                <input asp-for="Age" class="form-control" aria-required="true" />
+                <label asp-for="Age" class="form-label">Edad</label>
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="form-floating mb-3">
+                <input asp-for="Gender" class="form-control" aria-required="true" />
+                <label asp-for="Gender" class="form-label">Sexo</label>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="form-floating mb-3">
+                <input asp-for="MaritalStatus" class="form-control" aria-required="true" />
+                <label asp-for="MaritalStatus" class="form-label">Estado Civil</label>
+                <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <input asp-for="Nacionality" class="form-control" aria-required="true" />
+                <label asp-for="Nacionality" class="form-label">Nacionalidad</label>
+                <span asp-validation-for="Nacionality" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <input asp-for="Scholarship" class="form-control" aria-required="true" />
+                <label asp-for="Scholarship" class="form-label">Escolaridad</label>
+                <span asp-validation-for="Scholarship" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-floating mb-3">
+                <input asp-for="PhonesNumbers" class="form-control" aria-required="true" />
+                <label asp-for="PhonesNumbers" class="form-label">Números de Teléfono</label>
+                <span asp-validation-for="PhonesNumbers" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-floating mb-3">
+                <input asp-for="Ocupation" class="form-control" aria-required="true" />
+                <label asp-for="Ocupation" class="form-label">Ocupación</label>
+                <span asp-validation-for="Ocupation" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-floating mb-3">
+                <input asp-for="WorkAddress" class="form-control" aria-required="true" />
+                <label asp-for="WorkAddress" class="form-label">Lugar de Trabajo</label>
+                <span asp-validation-for="WorkAddress" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <input asp-for="Illness" class="form-control" aria-required="true" />
+                <label asp-for="Illness" class="form-label">Padece de alguna enfermedad</label>
+                <span asp-validation-for="Illness" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <input asp-for="Treatment" class="form-control" aria-required="true" />
+                <label asp-for="Treatment" class="form-label">Tratamiento</label>
+                <span asp-validation-for="Treatment" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-floating mb-3">
+                <input asp-for="Observations" class="form-control" aria-required="true" />
+                <label asp-for="Observations" class="form-label">Observaciones</label>
+                <span asp-validation-for="Observations" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+</form>

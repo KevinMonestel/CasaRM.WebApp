@@ -14,7 +14,7 @@ namespace CasaRM.WebApp.Repositories.Implementations
             _socialStudyRepository = socialStudyRepository;
         }
 
-        public async Task<CreateHost> CreateHost(string UserId)
+        public async Task<CreateHost> CreateHost(string userId)
         {
             try
             {
@@ -27,7 +27,7 @@ namespace CasaRM.WebApp.Repositories.Implementations
                 Host newHostRecord = await AddAsync(new Host
                 {
                     SocialStudyId = socialStudyIdCreated,
-                    CreatedBy = UserId,
+                    CreatedBy = userId,
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now
                 });

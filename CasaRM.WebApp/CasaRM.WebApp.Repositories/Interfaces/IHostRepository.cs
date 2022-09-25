@@ -4,6 +4,6 @@ namespace CasaRM.WebApp.Repositories.Interfaces
 {
     public interface IHostRepository
     {
-        Task<CreateHost> CreateHost(string UserId);
+        Task<CreateHost> CreateHost(string userId);
     }
 }
