@@ -4,7 +4,7 @@
     ViewData["Title"] = "Register";
 }
 
-<h1 class="h1 mb-3 text-center"><strong>Account</strong> Register</h1>
+<h1 class="h1 mb-3 text-center"><strong>Cuenta</strong> Registrarse</h1>
 
 <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
     <h2>Create a new account or <a asp-page="login">log in</a>.</h2>
@@ -12,20 +12,20 @@
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="form-floating mb-3">
         <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
-        <label asp-for="Input.Email"></label>
+        <label asp-for="Input.Email">Correo Electrónico</label>
         <span asp-validation-for="Input.Email" class="text-danger"></span>
     </div>
     <div class="form-floating mb-3">
         <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
-        <label asp-for="Input.Password"></label>
+        <label asp-for="Input.Password">Contraseña</label>
         <span asp-validation-for="Input.Password" class="text-danger"></span>
     </div>
     <div class="form-floating mb-3">
         <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
-        <label asp-for="Input.ConfirmPassword"></label>
+        <label asp-for="Input.ConfirmPassword">Confirmar Contraseña</label>
         <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
     </div>
-    <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+    <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Registrarse</button>
 </form>
 
 @*<div class="row">

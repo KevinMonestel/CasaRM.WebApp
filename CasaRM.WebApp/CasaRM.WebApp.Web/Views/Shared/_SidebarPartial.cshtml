@@ -9,20 +9,19 @@
 
         <ul class="sidebar-nav">
             <li class="sidebar-item">
-                <a class="sidebar-link" href="@Url.Action("Index","Home", new { area = "" })">
-                    <i class="align-middle" data-feather="users"></i> <span class="align-middle">Hosts</span>
+                <a data-bs-target="#huespedes" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                    <i class="align-middle" data-feather="users"></i> <span class="align-middle">Huéspedes</span>
                 </a>
-            </li>
-
-            <li class="sidebar-item">
-                <a class="sidebar-link" href="@Url.Action("Index","Home", new { area = "" })">
-                    <i class="align-middle" data-feather="book"></i> <span class="align-middle">Supply Providers</span>
-                </a>
+                <ul id="huespedes" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="/"> Nuevo Ingreso</a>
+                    </li>
+                </ul>
             </li>
 
             <li class="sidebar-item mt-5 border-top border-bottom border-secondary">
                 <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                    <button type="submit" class="border-0 sidebar-link w-100 text-danger"><i class="align-middle text-danger" data-feather="log-out"></i> Logout</button>
+                    <button type="submit" class="border-0 sidebar-link w-100 text-danger"><i class="align-middle text-danger" data-feather="log-out"></i> Cerrar Sesión</button>
                 </form>
             </li>
         </ul>
