@@ -4,6 +4,7 @@ using CasaRM.WebApp.Persistance;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CasaRM.WebApp.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220925191943_SocialStudyInitial")]
+    partial class SocialStudyInitial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -183,10 +185,10 @@ namespace CasaRM.WebApp.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DatosAcompannantes");
+                    b.ToTable("DatosAcompannante");
                 });
 
-            modelBuilder.Entity("CasaRM.WebApp.Persistence.Models.Contribution", b =>
+            modelBuilder.Entity("CasaRM.WebApp.Persistence.Models.Contributions", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -223,7 +225,7 @@ namespace CasaRM.WebApp.Persistence.Migrations
 
                     b.HasIndex("SocialStudyId");
 
-                    b.ToTable("Aportes");
+                    b.ToTable("Contributions");
                 });
 
             modelBuilder.Entity("CasaRM.WebApp.Persistence.Models.FamilyGroup", b =>
@@ -279,7 +281,7 @@ namespace CasaRM.WebApp.Persistence.Migrations
 
                     b.HasIndex("SocialStudyId");
 
-                    b.ToTable("GruposFamiliares");
+                    b.ToTable("FamilyGroup");
                 });
 
             modelBuilder.Entity("CasaRM.WebApp.Persistence.Models.Host", b =>
@@ -288,22 +290,15 @@ namespace CasaRM.WebApp.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("CreadoEn");
-
                     b.Property<string>("CreatedBy")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)")
                         .HasColumnName("CreadoPor");
 
-                    b.Property<int>("SocialStudyId")
+                    b.Property<int?>("SocialStudyId")
+                        .IsRequired()
                         .HasColumnType("int")
                         .HasColumnName("EstudioSocialId");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("ActualizadoEn");
 
                     b.HasKey("Id");
 
@@ -422,7 +417,7 @@ namespace CasaRM.WebApp.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DatosPersonasMenores");
+                    b.ToTable("DatosPersonaMenor");
                 });
 
             modelBuilder.Entity("CasaRM.WebApp.Persistence.Models.ParentData", b =>
@@ -521,7 +516,7 @@ namespace CasaRM.WebApp.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DatosEncargados");
+                    b.ToTable("DatosEncargado");
                 });
 
             modelBuilder.Entity("CasaRM.WebApp.Persistence.Models.SocialStudy", b =>
@@ -533,14 +528,17 @@ namespace CasaRM.WebApp.Persistence.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int?>("CompanionDataId")
+                        .IsRequired()
                         .HasColumnType("int")
                         .HasColumnName("DatosAcompannanteId");
 
                     b.Property<int?>("MinorPersonDataId")
+                        .IsRequired()
                         .HasColumnType("int")
                         .HasColumnName("DatosPersonaMenorId");
 
                     b.Property<int?>("ParentDataId")
+                        .IsRequired()
                         .HasColumnType("int")
                         .HasColumnName("DatosEncargadoId");
 
@@ -552,7 +550,7 @@ namespace CasaRM.WebApp.Persistence.Migrations
 
                     b.HasIndex("ParentDataId");
 
-                    b.ToTable("EstudiosSociales");
+                    b.ToTable("EstudioSocial");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -692,10 +690,10 @@ namespace CasaRM.WebApp.Persistence.Migrations
                     b.ToTable("TokensUsuario", (string)null);
                 });
 
-            modelBuilder.Entity("CasaRM.WebApp.Persistence.Models.Contribution", b =>
+            modelBuilder.Entity("CasaRM.WebApp.Persistence.Models.Contributions", b =>
                 {
                     b.HasOne("CasaRM.WebApp.Persistence.Models.SocialStudy", "SocialStudy")
-                        .WithMany("Contribution")
+                        .WithMany("Contributions")
                         .HasForeignKey("SocialStudyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -737,15 +735,21 @@ namespace CasaRM.WebApp.Persistence.Migrations
                 {
                     b.HasOne("CasaRM.WebApp.Persistence.Models.CompanionData", "CompanionData")
                         .WithMany()
-                        .HasForeignKey("CompanionDataId");
+                        .HasForeignKey("CompanionDataId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("CasaRM.WebApp.Persistence.Models.MinorPersonData", "MinorPersonData")
                         .WithMany()
-                        .HasForeignKey("MinorPersonDataId");
+                        .HasForeignKey("MinorPersonDataId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("CasaRM.WebApp.Persistence.Models.ParentData", "ParentData")
                         .WithMany()
-                        .HasForeignKey("ParentDataId");
+                        .HasForeignKey("ParentDataId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("CompanionData");
 
@@ -807,7 +811,7 @@ namespace CasaRM.WebApp.Persistence.Migrations
 
             modelBuilder.Entity("CasaRM.WebApp.Persistence.Models.SocialStudy", b =>
                 {
-                    b.Navigation("Contribution");
+                    b.Navigation("Contributions");
 
                     b.Navigation("FamilyGroup");
                 });
