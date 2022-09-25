@@ -3,7 +3,7 @@
 
 <nav id="sidebar" class="sidebar js-sidebar">
     <div class="sidebar-content js-simplebar">
-        <a class="sidebar-brand" asp-controller="Home" asp-action="Index">
+        <a class="sidebar-brand" href="@Url.Action("Index", "Home", new { area = string.Empty })">
             <span class="align-middle">CasaRM.WebApp</span>
         </a>
 
@@ -14,7 +14,7 @@
                 </a>
                 <ul id="huespedes" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="/"> Nuevo Ingreso</a>
+                        <a class="sidebar-link" href="@Url.Action("Index", "Home", new { area = "Hosts" })"> Nuevo Ingreso</a>
                     </li>
                 </ul>
             </li>
