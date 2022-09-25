@@ -1,5 +1,9 @@
 using CasaRM.WebApp.Persistance;
 using CasaRM.WebApp.Persistence.Models;
+using CasaRM.WebApp.Repositories.Implementations;
+using CasaRM.WebApp.Repositories.Interfaces;
+using CasaRM.WebApp.Services.Implementations;
+using CasaRM.WebApp.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,8 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Services
+builder.Services.AddScoped<IHostService, HostService>();
 
 //Repositories
+builder.Services.AddScoped<IHostRepository, HostRepository>();
+builder.Services.AddScoped<ISocialStudyRepository, SocialStudyRepository>();
 
 // Database configuration
 var dbConnectionString = builder.Configuration.GetConnectionString("DbConnection");
