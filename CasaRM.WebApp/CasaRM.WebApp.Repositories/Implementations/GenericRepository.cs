@@ -99,5 +99,29 @@ namespace CasaRM.WebApp.Repositories.Implementations
             await _context.SaveChangesAsync();
             return entities;
         }
+
+        /// <summary>
+        /// This method is to remove a record.
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<T> RemoveAsync(T entity)
+        {
+            _context.Set<T>().Remove(entity);
+            await _context.SaveChangesAsync();
+            return entity;
+        }
+
+        /// <summary>
+        /// Remove a collection of records
+        /// </summary>
+        /// <param name="entities"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<T>> RemoveRangeAsync(IEnumerable<T> entities)
+        {
+            _context.Set<T>().RemoveRange(entities);
+            await _context.SaveChangesAsync();
+            return entities;
+        }
     }
 }

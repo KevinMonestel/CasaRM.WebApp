@@ -40,6 +40,8 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
                 viewModel.MinorPersonDataFormViewModel = fullSocialStudyData.MinorPersonDataDto.ToObject<MinorPersonDataFormViewModel>();
                 viewModel.ParentDataFormViewModel = fullSocialStudyData.ParentDataDto.ToObject<ParentDataFormViewModel>();
                 viewModel.CompanionDataFormViewModel = fullSocialStudyData.CompanionDataDto.ToObject<CompanionDataFormViewModel>();
+                viewModel.FamilyGroupListViewModel = fullSocialStudyData.FamilyGroupDto.ToObjectList<FamilyGroupListViewModel>();
+                viewModel.ContributionListViewModel = fullSocialStudyData.ContributionDto.ToObjectList<ContributionListViewModel>();
             }
 
             return View(viewModel);
@@ -49,17 +51,20 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
         public async Task<JsonResult> Save(CreateOrUpdateSocialStudyViewModel viewModel)
         {
             string redirectUrl = string.Empty;
-            CreateOrUpdateSocialStudyDto ceateOrUpdateSocialStudyDto = new();
+            CreateOrUpdateSocialStudyDto createOrUpdateSocialStudyDto = new();
 
-            ceateOrUpdateSocialStudyDto.HostId = viewModel.HostId;
-            ceateOrUpdateSocialStudyDto.SocialStudyId = viewModel.SocialStudyId;
-            ceateOrUpdateSocialStudyDto.ExecutedBy = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            createOrUpdateSocialStudyDto.HostId = viewModel.HostId;
+            createOrUpdateSocialStudyDto.SocialStudyId = viewModel.SocialStudyId;
+            createOrUpdateSocialStudyDto.ExecutedBy = User.FindFirst(ClaimTypes.NameIdentifier).Value;
 
-            ceateOrUpdateSocialStudyDto.MinorPersonDataDto = viewModel.MinorPersonDataFormViewModel.ToObject<MinorPersonDataDto>();
-            ceateOrUpdateSocialStudyDto.ParentDataDto = viewModel.ParentDataFormViewModel.ToObject<ParentDataDto>();
-            ceateOrUpdateSocialStudyDto.CompanionDataDto = viewModel.CompanionDataFormViewModel.ToObject<CompanionDataDto>();
+            createOrUpdateSocialStudyDto.MinorPersonDataDto = viewModel.MinorPersonDataFormViewModel.ToObject<MinorPersonDataDto>();
+            createOrUpdateSocialStudyDto.ParentDataDto = viewModel.ParentDataFormViewModel.ToObject<ParentDataDto>();
+            createOrUpdateSocialStudyDto.CompanionDataDto = viewModel.CompanionDataFormViewModel.ToObject<CompanionDataDto>();
 
-            string result = await _socialStudyService.CreateOrUpdateSocialStudyAsync(ceateOrUpdateSocialStudyDto);
+            createOrUpdateSocialStudyDto.FamilyGroupDto = viewModel.FamilyGroupListViewModel.ToObjectList<FamilyGroupDto>();
+            createOrUpdateSocialStudyDto.ContributionDto = viewModel.ContributionListViewModel.ToObjectList<ContributionDto>();
+
+            string result = await _socialStudyService.CreateOrUpdateSocialStudyAsync(createOrUpdateSocialStudyDto);
 
             if (!string.IsNullOrEmpty(result))
                 redirectUrl = Url.Action("Index", "Home", new { host = result, area = "Hosts" });

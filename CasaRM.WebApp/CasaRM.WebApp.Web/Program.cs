@@ -20,6 +20,8 @@ builder.Services.AddScoped<ISocialStudyRepository, SocialStudyRepository>();
 builder.Services.AddScoped<IMinorPersonDataRepository, MinorPersonDataRepository>();
 builder.Services.AddScoped<IParentDataRepository, ParentDataRepository>();
 builder.Services.AddScoped<ICompanionDataRepository, CompanionDataRepository>();
+builder.Services.AddScoped<IFamilyGroupRepository, FamilyGroupRepository>();
+builder.Services.AddScoped<IContributionRepository, ContributionRepository>();
 
 // Database configuration
 var dbConnectionString = builder.Configuration.GetConnectionString("DbConnection");

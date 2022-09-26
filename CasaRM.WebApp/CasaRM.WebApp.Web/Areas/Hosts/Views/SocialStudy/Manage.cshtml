@@ -277,7 +277,7 @@
             let ocupation = $(this).find('input[name=Ocupation]').val();
             let monthlyGrossIncome = $(this).find('input[name=MonthlyGrossIncome]').val();
 
-            familyGroupListTable.append(`
+            familyGroupListTable.find("tbody").append(`
             <tr>
                 <td>${fullName}</td>
                 <td>${relationship}</td>
@@ -286,6 +286,7 @@
                 <td>${scholarship}</td>
                 <td>${ocupation}</td>
                 <td>${monthlyGrossIncome}</td>
+                <td><button class="btn btn-danger" name="delete-row">X</button></td>
             </tr>`);
 
             familyGroupFormModal.modal("hide");
@@ -305,16 +306,21 @@
             let ocupation = $(this).find('input[name=Ocupation]').val();
             let monthlyContribution = $(this).find('input[name=MonthlyContribution]').val();
 
-            contributionListTable.append(`
+            contributionListTable.find("tbody").append(`
             <tr>
                 <td>${fullName}</td>
                 <td>${relationship}</td>
                 <td>${ocupation}</td>
                 <td>${monthlyContribution}</td>
+                <td><button class="btn btn-danger" name="delete-row">X</button></td>
             </tr>`);
 
             contributionFormModal.modal("hide");
             contributionForm[0].reset();
         });
+
+        $("body").on("click", "button[name='delete-row']", function (e) {
+            $(this).closest('tr').remove();
+        })
     </script>
 }

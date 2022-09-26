@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace CasaRM.WebApp.Repositories.Interfaces
 {
@@ -56,5 +57,19 @@ namespace CasaRM.WebApp.Repositories.Interfaces
         /// <param name="entities"></param>
         /// <returns></returns>
         Task<IEnumerable<T>> UpdateRangeAsync(IEnumerable<T> entities);
+
+        /// <summary>
+        /// This method is to remove a record.
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        Task<T> RemoveAsync(T entity);
+
+        /// <summary>
+        /// Remove a collection of records
+        /// </summary>
+        /// <param name="entities"></param>
+        /// <returns></returns>
+        Task<IEnumerable<T>> RemoveRangeAsync(IEnumerable<T> entities);
     }
 }

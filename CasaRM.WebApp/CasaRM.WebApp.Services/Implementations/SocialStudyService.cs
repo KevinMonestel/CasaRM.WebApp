@@ -16,20 +16,25 @@ namespace CasaRM.WebApp.Services.Implementations
         private readonly IMinorPersonDataRepository _minorPersonDataRepository;
         private readonly IParentDataRepository _parentDataRepository;
         private readonly ICompanionDataRepository _companionDataRepository;
+        private readonly IFamilyGroupRepository _familyGroupRepository;
+        private readonly IContributionRepository _contributionRepository;
 
         public SocialStudyService(
             IMinorPersonDataRepository minorPersonDataRepository,
             IHostRepository hostRepository,
             ISocialStudyRepository socialStudyRepository,
             IParentDataRepository parentDataRepository,
-            ICompanionDataRepository companionDataRepository
-            )
+            ICompanionDataRepository companionDataRepository,
+            IFamilyGroupRepository familyGroupRepository,
+            IContributionRepository contributionRepository)
         {
             _minorPersonDataRepository = minorPersonDataRepository;
             _hostRepository = hostRepository;
             _socialStudyRepository = socialStudyRepository;
             _parentDataRepository = parentDataRepository;
             _companionDataRepository = companionDataRepository;
+            _familyGroupRepository = familyGroupRepository;
+            _contributionRepository = contributionRepository;
         }
 
         public async Task<CreateOrUpdateSocialStudyDto> GetFullSocialStudyAsync(int socialStudyId)
@@ -40,6 +45,8 @@ namespace CasaRM.WebApp.Services.Implementations
             result.MinorPersonDataDto = await _minorPersonDataRepository.GetMinorPersonDataByIdAsync(socialStudyDto.MinorPersonDataId);
             result.ParentDataDto = await _parentDataRepository.GetParentDataByIdAsync(socialStudyDto.ParentDataId);
             result.CompanionDataDto = await _companionDataRepository.GetCompanionDataByIdAsync(socialStudyDto.CompanionDataId);
+            result.FamilyGroupDto = await _familyGroupRepository.GetFamilyGroupBySocialStudyId(socialStudyId);
+            result.ContributionDto = await _contributionRepository.GetContributionBySocialStudyId(socialStudyId);
 
             return result;
         }
@@ -63,9 +70,11 @@ namespace CasaRM.WebApp.Services.Implementations
 
                 if (socialStudioModel is null) throw new Exception();
 
+                createOrUpdateSocialStudyDto.SocialStudyId = socialStudioModel.Id;
+
                 HostDto hostModel = await _hostRepository.CreateHostAsync(new HostDto
                 {
-                    SocialStudyId = socialStudioModel.Id,
+                    SocialStudyId = createOrUpdateSocialStudyDto.SocialStudyId,
                     CreatedBy = createOrUpdateSocialStudyDto.ExecutedBy,
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now
@@ -73,8 +82,11 @@ namespace CasaRM.WebApp.Services.Implementations
 
                 if(hostModel is null) throw new Exception();
 
-                result = hostModel.Id;
+                createOrUpdateSocialStudyDto.HostId = hostModel.Id;
             }
+
+            createOrUpdateSocialStudyDto.FamilyGroupDto = await _familyGroupRepository.RefreshFamilyGroupAsync(createOrUpdateSocialStudyDto.SocialStudyId, createOrUpdateSocialStudyDto.FamilyGroupDto);
+            createOrUpdateSocialStudyDto.ContributionDto = await _contributionRepository.RefreshContributionAsync(createOrUpdateSocialStudyDto.SocialStudyId, createOrUpdateSocialStudyDto.ContributionDto);
 
             result = createOrUpdateSocialStudyDto.HostId;
 
