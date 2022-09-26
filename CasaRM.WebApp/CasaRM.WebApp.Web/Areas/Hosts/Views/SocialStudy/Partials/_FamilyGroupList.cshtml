@@ -3,6 +3,30 @@
 @{
 }
 
-@if(Model.Count().Equals(0)){
-    <p class="text-center text-sm">No hay registros</p>
-}
+<table class="table table-striped" id="familyGroupListTable">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Parentesco</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Estado civil</th>
+            <th scope="col">Escolaridad</th>
+            <th scope="col">Ocupación</th>
+            <th scope="col">Ingreso bruto mensual</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (FamilyGroupListViewModel familyGroup in Model)
+        {
+            <tr>
+                <td>@familyGroup.FullName</td>
+                <td>@familyGroup.Relationship</td>
+                <td>@familyGroup.Age</td>
+                <td>@familyGroup.MaritalStatus</td>
+                <td>@familyGroup.Scholarship</td>
+                <td>@familyGroup.Ocupation</td>
+                <td>@familyGroup.MonthlyGrossIncome</td>
+            </tr>
+        }
+    </tbody>
+</table>

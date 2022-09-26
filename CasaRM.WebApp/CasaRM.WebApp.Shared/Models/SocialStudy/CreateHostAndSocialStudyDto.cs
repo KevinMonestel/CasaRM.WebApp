@@ -1,6 +1,6 @@
-﻿namespace CasaRM.WebApp.Shared.Models
+﻿namespace CasaRM.WebApp.Shared.Models.SocialStudy
 {
-    public class CreateHost
+    public class CreateHostAndSocialStudyDto
     {
         public string HostId { get; set; }
 

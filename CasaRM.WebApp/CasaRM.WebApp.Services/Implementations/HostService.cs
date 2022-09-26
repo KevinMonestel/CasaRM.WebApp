@@ -17,12 +17,5 @@ namespace CasaRM.WebApp.Services.Implementations
         {
             return await _hostRepository.GetSocialStudyIdByHostIdAsync(hostId);
         }
-
-        public async Task<CreateHost> CreateHostAsync(string userId)
-        {
-            CreateHost result = await _hostRepository.CreateHostAsync(userId);
-
-            return result;
-        }
     }
 }

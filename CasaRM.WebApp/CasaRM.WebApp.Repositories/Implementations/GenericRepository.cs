@@ -33,10 +33,11 @@ namespace CasaRM.WebApp.Repositories.Implementations
         /// This method is to add a range of records.
         /// </summary>
         /// <param name="entities"></param>
-        public async Task AddRangeAsync(IEnumerable<T> entities)
+        public async Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities)
         {
             await _context.Set<T>().AddRangeAsync(entities);
             await _context.SaveChangesAsync();
+            return entities;
         }
 
         /// <summary>
@@ -80,10 +81,11 @@ namespace CasaRM.WebApp.Repositories.Implementations
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task UpdateAsync(T entity)
+        public async Task<T> UpdateAsync(T entity)
         {
             _context.Set<T>().Update(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
 
         /// <summary>
@@ -91,10 +93,11 @@ namespace CasaRM.WebApp.Repositories.Implementations
         /// </summary>
         /// <param name="entities"></param>
         /// <returns></returns>
-        public async Task UpdateRangeAsync(IEnumerable<T> entities)
+        public async Task<IEnumerable<T>> UpdateRangeAsync(IEnumerable<T> entities)
         {
             _context.Set<T>().UpdateRange(entities);
             await _context.SaveChangesAsync();
+            return entities;
         }
     }
 }

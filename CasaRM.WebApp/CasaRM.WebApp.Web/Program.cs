@@ -12,10 +12,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Services
 builder.Services.AddScoped<IHostService, HostService>();
+builder.Services.AddScoped<ISocialStudyService, SocialStudyService>();
 
 //Repositories
 builder.Services.AddScoped<IHostRepository, HostRepository>();
 builder.Services.AddScoped<ISocialStudyRepository, SocialStudyRepository>();
+builder.Services.AddScoped<IMinorPersonDataRepository, MinorPersonDataRepository>();
 
 // Database configuration
 var dbConnectionString = builder.Configuration.GetConnectionString("DbConnection");

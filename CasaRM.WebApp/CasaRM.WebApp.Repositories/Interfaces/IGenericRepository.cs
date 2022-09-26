@@ -34,14 +34,14 @@ namespace CasaRM.WebApp.Repositories.Interfaces
         /// This method is to add a range of records.
         /// </summary>
         /// <param name="entities"></param>
-        Task AddRangeAsync(IEnumerable<T> entities);
+        Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities);
 
         /// <summary>
         /// Modify a record
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        Task UpdateAsync(T entity);
+        Task<T> UpdateAsync(T entity);
 
         /// <summary>
         /// Validates if there's any element with a given Id
@@ -55,6 +55,6 @@ namespace CasaRM.WebApp.Repositories.Interfaces
         /// </summary>
         /// <param name="entities"></param>
         /// <returns></returns>
-        Task UpdateRangeAsync(IEnumerable<T> entities);
+        Task<IEnumerable<T>> UpdateRangeAsync(IEnumerable<T> entities);
     }
 }

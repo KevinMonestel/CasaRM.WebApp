@@ -5,6 +5,8 @@
 
 <form id="minorPersonDataForm">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input asp-for="Id" class="form-control" aria-required="true" />
+
     <div class="row">
         <div class="col-md-6">
             <div class="form-floating mb-3">
@@ -64,6 +66,14 @@
 
         <div class="col-md-6">
             <div class="form-floating mb-3">
+                <input asp-for="Diagnosis" class="form-control" aria-required="true" />
+                <label asp-for="Diagnosis" class="form-label">Diagnóstico</label>
+                <span asp-validation-for="Diagnosis" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
                 <input asp-for="Treatment" class="form-control" aria-required="true" />
                 <label asp-for="Treatment" class="form-label">Tratamiento</label>
                 <span asp-validation-for="Treatment" class="text-danger"></span>
@@ -75,6 +85,14 @@
                 <input asp-for="TreatingPhysician" class="form-control" aria-required="true" />
                 <label asp-for="TreatingPhysician" class="form-label">Médico Tratante</label>
                 <span asp-validation-for="TreatingPhysician" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <input asp-for="AttentionService" class="form-control" aria-required="true" />
+                <label asp-for="AttentionService" class="form-label">Servicio Atención del Paciente</label>
+                <span asp-validation-for="AttentionService" class="text-danger"></span>
             </div>
         </div>
 
@@ -107,6 +125,14 @@
                 <input asp-for="ExactDirection" class="form-control" aria-required="true" />
                 <label asp-for="ExactDirection" class="form-label">Dirección Exacta</label>
                 <span asp-validation-for="ExactDirection" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-floating mb-3">
+                <input asp-for="SocialSecurityType" class="form-control" aria-required="true" />
+                <label asp-for="SocialSecurityType" class="form-label">Tipo Seguro social</label>
+                <span asp-validation-for="SocialSecurityType" class="text-danger"></span>
             </div>
         </div>
 

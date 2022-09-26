@@ -11,9 +11,4 @@
     <ProjectReference Include="..\CasaRM.WebApp.Shared\CasaRM.WebApp.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Implementations\" />
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-
 </Project>

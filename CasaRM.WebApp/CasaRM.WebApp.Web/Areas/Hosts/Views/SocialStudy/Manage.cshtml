@@ -1,4 +1,4 @@
-﻿@model CreateUpdateHostViewModel
+﻿@model CreateOrUpdateSocialStudyViewModel
 
 @{
     ViewData["Title"] = "Administrar estudio social";
@@ -62,13 +62,13 @@
             </div>
 
             <div class="mb-3">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#familyGroupForm">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#familyGroupFormModal">
                     Añadir registro
                 </button>
             </div>
 
             <!-- Modal -->
-            <div class="modal fade" id="familyGroupForm" tabindex="-1" aria-labelledby="familyGroupForm" aria-hidden="true">
+            <div class="modal fade" id="familyGroupFormModal" tabindex="-1" aria-labelledby="familyGroupForm" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -101,13 +101,13 @@
             </div>
 
             <div class="mb-3">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ContributionForm">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contributionFormModal">
                     Añadir registro
                 </button>
             </div>
 
             <!-- Modal -->
-            <div class="modal fade" id="ContributionForm" tabindex="-1" aria-labelledby="ContributionForm" aria-hidden="true">
+            <div class="modal fade" id="contributionFormModal" tabindex="-1" aria-labelledby="ContributionForm" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -190,6 +190,8 @@
     <script type="text/javascript">
         var saveSocialStudyBtn = $("#saveSocialStudyBtn");
         var confirmationModal = $("#confirmationModal");
+        var familyGroupForm = $("#familyGroupForm");
+        var contributionForm = $("#contributionForm");
 
         saveSocialStudyBtn.on("click", function () {
             let mainDataForm = $("#mainDataForm");
@@ -200,36 +202,119 @@
 
             confirmationModal.modal("hide");
 
+            // FamilyGroupRecords
+            let familyGroupData = $('#familyGroupListTable tr:has(td)').map(function (i, v) {
+                var $td = $('td', this);
+                return {
+                    fullName: $td.eq(0).text(),
+                    relationship: $td.eq(1).text(),
+                    age: $td.eq(2).text(),
+                    maritalStatus: $td.eq(3).text(),
+                    scholarship: $td.eq(4).text(),
+                    ocupation: $td.eq(5).text(),
+                    monthlyGrossIncome: $td.eq(6).text()
+                }
+            }).get();
+
+            // ContributionRecords
+            let contributionData = $('#contributionListTable tr:has(td)').map(function (i, v) {
+                var $td = $('td', this);
+                return {
+                    fullName: $td.eq(0).text(),
+                    relationship: $td.eq(1).text(),
+                    ocupation: $td.eq(2).text(),
+                    monthlyContribution: $td.eq(3).text()
+                }
+            }).get();
+
+            console.log(contributionData)
+
             if (!minorPersonDataForm.valid() ||
                 !parentDataForm.valid() ||
                 !companionDataForm.valid()) {
-                toastr.error('Campos requeridos se encuentran actualmente con errores de validación. Por favor, revisa el formulario', '¡Atención!')
+                toastr.error('Campos requeridos se encuentran actualmente con errores de validación. Por favor, revisa el formulario', '¡Atención!');
 
                 return;
             }
 
-            let obj = {
+            let socialStudyFullObj = {
                 hostId: mainDataForm.find('input[name=HostId]').val(),
                 socialStudyId: mainDataForm.find('input[name=SocialStudyId]').val(),
                 MinorPersonDataFormViewModel: minorPersonDataForm.serializeArray().reduce(function (a, x) { a[x.name] = x.value; return a; }, {}),
                 ParentDataFormViewModel: parentDataForm.serializeArray().reduce(function(a, x) { a[x.name] = x.value; return a; }, {}),
-                CompanionDataFormViewModel: companionDataForm.serializeArray().reduce(function (a, x) { a[x.name] = x.value; return a; }, {})
+                CompanionDataFormViewModel: companionDataForm.serializeArray().reduce(function (a, x) { a[x.name] = x.value; return a; }, {}),
+                FamilyGroupListViewModel: familyGroupData,
+                ContributionListViewModel: contributionData
             }
 
-            $.post(saveSocialStudyUrl, obj, function () {
-                alert("success");
+            $.post(saveSocialStudyUrl, socialStudyFullObj, function ( data ) {
+                location.href = data.redirectUrl
             })
                 .done(function () {
-                    alert("second success");
+                    
                 })
                 .fail(function () {
                     alert("error");
                 })
                 .always(function () {
-                    alert("finished");
+                    
                 });
+        });
 
-            console.log(obj);
-        })
+        familyGroupForm.submit(function (e) {
+            e.preventDefault();
+
+            if(!familyGroupForm.valid()) return;
+
+            let familyGroupListTable = $("#familyGroupListTable");
+            let familyGroupFormModal = $("#familyGroupFormModal");
+
+            let fullName = $(this).find('input[name=FullName]').val();
+            let relationship = $(this).find('input[name=Relationship]').val();
+            let age = $(this).find('input[name=Age]').val();
+            let maritalStatus = $(this).find('input[name=MaritalStatus]').val();
+            let scholarship = $(this).find('input[name=Scholarship]').val();
+            let ocupation = $(this).find('input[name=Ocupation]').val();
+            let monthlyGrossIncome = $(this).find('input[name=MonthlyGrossIncome]').val();
+
+            familyGroupListTable.append(`
+            <tr>
+                <td>${fullName}</td>
+                <td>${relationship}</td>
+                <td>${age}</td>
+                <td>${maritalStatus}</td>
+                <td>${scholarship}</td>
+                <td>${ocupation}</td>
+                <td>${monthlyGrossIncome}</td>
+            </tr>`);
+
+            familyGroupFormModal.modal("hide");
+            familyGroupForm[0].reset();
+        });
+
+        contributionForm.submit(function (e) {
+            e.preventDefault();
+
+            if (!contributionForm.valid()) return;
+
+            let contributionListTable = $("#contributionListTable");
+            let contributionFormModal = $("#contributionFormModal");
+
+            let fullName = $(this).find('input[name=FullName]').val();
+            let relationship = $(this).find('input[name=Relationship]').val();
+            let ocupation = $(this).find('input[name=Ocupation]').val();
+            let monthlyContribution = $(this).find('input[name=MonthlyContribution]').val();
+
+            contributionListTable.append(`
+            <tr>
+                <td>${fullName}</td>
+                <td>${relationship}</td>
+                <td>${ocupation}</td>
+                <td>${monthlyContribution}</td>
+            </tr>`);
+
+            contributionFormModal.modal("hide");
+            contributionForm[0].reset();
+        });
     </script>
 }

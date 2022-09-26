@@ -3,6 +3,24 @@
 @{
 }
 
-@if(Model.Count().Equals(0)){
-    <p class="text-center text-sm">No hay registros</p>
-}
+<table class="table table-striped" id="contributionListTable">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Parentesco</th>
+            <th scope="col">Ocupación</th>
+            <th scope="col">Aporte mensual</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ContributionListViewModel constribution in Model)
+        {
+            <tr>
+                <td>@constribution.FullName</td>
+                <td>@constribution.Relationship</td>
+                <td>@constribution.Ocupation</td>
+                <td>@constribution.MonthlyContribution</td>
+            </tr>
+        }
+    </tbody>
+</table>

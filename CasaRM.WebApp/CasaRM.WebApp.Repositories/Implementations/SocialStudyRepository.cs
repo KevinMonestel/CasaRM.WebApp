@@ -1,6 +1,7 @@
 ﻿using CasaRM.WebApp.Persistance;
 using CasaRM.WebApp.Persistence.Models;
 using CasaRM.WebApp.Repositories.Interfaces;
+using CasaRM.WebApp.Shared.Models.SocialStudy;
 
 namespace CasaRM.WebApp.Repositories.Implementations
 {
@@ -10,22 +11,22 @@ namespace CasaRM.WebApp.Repositories.Implementations
         {
         }
 
-        public async Task<int> CreateSocialStudyAsync()
+        public async Task<SocialStudyDto> CreateSocialStudyAsync(SocialStudyDto socialStudyDto)
         {
             try
             {
-                int result = 0;
-
-                SocialStudy socialStudy = await AddAsync(new SocialStudy
+                SocialStudy dbModel = await AddAsync(new SocialStudy
                 {
-                    MinorPersonDataId = null,
-                    CompanionDataId = null,
-                    ParentDataId = null
+                    MinorPersonDataId = socialStudyDto.MinorPersonDataId,
+                    CompanionDataId = socialStudyDto.CompanionDataId,
+                    ParentDataId = socialStudyDto.ParentDataId
                 });
 
-                result = socialStudy is not null ? socialStudy.Id : result;
+                if (dbModel is null) throw new Exception();
 
-                return result;
+                socialStudyDto.Id = dbModel.Id;
+
+                return socialStudyDto;
             }
             catch (Exception)
             {

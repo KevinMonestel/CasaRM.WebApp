@@ -1,7 +1,7 @@
 ﻿using CasaRM.WebApp.Persistance;
 using CasaRM.WebApp.Persistence.Models;
 using CasaRM.WebApp.Repositories.Interfaces;
-using CasaRM.WebApp.Shared.Models;
+using CasaRM.WebApp.Shared.Models.SocialStudy;
 
 namespace CasaRM.WebApp.Repositories.Implementations
 {
@@ -33,30 +33,23 @@ namespace CasaRM.WebApp.Repositories.Implementations
             }
         }
 
-        public async Task<CreateHost> CreateHostAsync(string userId)
+        public async Task<HostDto> CreateHostAsync(HostDto hostDto)
         {
             try
             {
-                CreateHost result = new();
-
-                int socialStudyIdCreated = await _socialStudyRepository.CreateSocialStudyAsync();
-
-                if (socialStudyIdCreated.Equals(0)) throw new Exception();
-
-                Host newHostRecord = await AddAsync(new Host
+                Host dbModel = await AddAsync(new Host
                 {
-                    SocialStudyId = socialStudyIdCreated,
-                    CreatedBy = userId,
+                    SocialStudyId = hostDto.SocialStudyId,
+                    CreatedBy = hostDto.CreatedBy,
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now
                 });
 
-                if (newHostRecord is null) throw new Exception();
+                if (dbModel is null) throw new Exception();
 
-                result.HostId = newHostRecord.Id.ToString();
-                result.SocialStudyId = socialStudyIdCreated;
+                hostDto.Id = dbModel.Id.ToString();
 
-                return result;
+                return hostDto;
             }
             catch (Exception)
             {

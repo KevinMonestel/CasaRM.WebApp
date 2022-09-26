@@ -1,8 +1,8 @@
 ﻿namespace CasaRM.WebApp.Web.Areas.Hosts.Models.SocialStudy
 {
-    public class CreateUpdateHostViewModel
+    public class CreateOrUpdateSocialStudyViewModel
     {
-        public CreateUpdateHostViewModel()
+        public CreateOrUpdateSocialStudyViewModel()
         {
             MinorPersonDataFormViewModel = new();
             ParentDataFormViewModel = new();
