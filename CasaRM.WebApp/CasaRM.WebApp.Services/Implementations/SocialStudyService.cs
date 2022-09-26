@@ -14,15 +14,22 @@ namespace CasaRM.WebApp.Services.Implementations
         private readonly IHostRepository _hostRepository;
         private readonly ISocialStudyRepository _socialStudyRepository;
         private readonly IMinorPersonDataRepository _minorPersonDataRepository;
+        private readonly IParentDataRepository _parentDataRepository;
+        private readonly ICompanionDataRepository _companionDataRepository;
 
         public SocialStudyService(
             IMinorPersonDataRepository minorPersonDataRepository,
             IHostRepository hostRepository,
-            ISocialStudyRepository socialStudyRepository)
+            ISocialStudyRepository socialStudyRepository,
+            IParentDataRepository parentDataRepository,
+            ICompanionDataRepository companionDataRepository
+            )
         {
             _minorPersonDataRepository = minorPersonDataRepository;
             _hostRepository = hostRepository;
             _socialStudyRepository = socialStudyRepository;
+            _parentDataRepository = parentDataRepository;
+            _companionDataRepository = companionDataRepository;
         }
 
         public async Task<string> CreateOrUpdateSocialStudyAsync(CreateOrUpdateSocialStudyDto createOrUpdateSocialStudyDto)
@@ -30,14 +37,16 @@ namespace CasaRM.WebApp.Services.Implementations
             string result = string.Empty;
 
             createOrUpdateSocialStudyDto.MinorPersonDataDto = await _minorPersonDataRepository.CreateOrUpdateAsync(createOrUpdateSocialStudyDto.MinorPersonDataDto);
+            createOrUpdateSocialStudyDto.ParentDataDto = await _parentDataRepository.CreateOrUpdateAsync(createOrUpdateSocialStudyDto.ParentDataDto);
+            createOrUpdateSocialStudyDto.CompanionDataDto = await _companionDataRepository.CreateOrUpdateAsync(createOrUpdateSocialStudyDto.CompanionDataDto);
 
             if (string.IsNullOrEmpty(createOrUpdateSocialStudyDto.HostId) && createOrUpdateSocialStudyDto.SocialStudyId.Equals(0))
             {
                 SocialStudyDto socialStudioModel = await _socialStudyRepository.CreateSocialStudyAsync(new SocialStudyDto
                 {
                     MinorPersonDataId = createOrUpdateSocialStudyDto.MinorPersonDataDto.Id,
-                    CompanionDataId = null,
-                    ParentDataId = null
+                    CompanionDataId = createOrUpdateSocialStudyDto.CompanionDataDto.Id,
+                    ParentDataId = createOrUpdateSocialStudyDto.ParentDataDto.Id
                 });
 
                 if (socialStudioModel is null) throw new Exception();
