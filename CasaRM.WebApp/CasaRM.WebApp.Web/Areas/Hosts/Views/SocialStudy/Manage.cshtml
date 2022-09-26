@@ -4,6 +4,10 @@
     ViewData["Title"] = "Administrar estudio social";
 }
 
+@section Styles{
+    <link rel="stylesheet" href="~/lib/snackbar/css/toastr.min.css" />
+}
+
 <h1 class="h1 mb-3"><strong>Huéspedes</strong> Nuevo Ingreso</h1>
 
 <div class="card">
@@ -152,12 +156,11 @@
 
 <div class="text-center">
      <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#confirmation">
+    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#confirmationModal">
       Guardar información
     </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="confirmation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="confirmation" aria-hidden="true">
+  <!-- Modal -->
+    <div class="modal fade" id="confirmationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="confirmation" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -169,7 +172,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary" id="SaveSocialStudy">Guardar</button>
+            <button type="button" class="btn btn-primary" id="saveSocialStudyBtn">Guardar</button>
           </div>
         </div>
       </div>
@@ -177,14 +180,31 @@
 </div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-    <script type="text/javascript">
-        let btnSaveSocialStudy = $("#SaveSocialStudy");
+        <partial name="_ValidationScriptsPartial" />
+        <script src="~/lib/snackbar/js/toastr.min.js"></script>
+        <script type="text/javascript">
+            var saveSocialStudyBtn = $("#saveSocialStudyBtn");
+            var confirmationModal = $("#confirmationModal");
 
-        btnSaveSocialStudy.on("click", function(){
-            let minorPersonForm = $("#minorPersonForm");
+            saveSocialStudyBtn.on("click", function(){
+                let minorPersonDataForm = $("#minorPersonDataForm");
+                let parentDataForm = $("#parentDataForm");
+                let companionDataForm = $("#companionDataForm");
 
-            console.log(minorPersonForm.serialize());
-        })
-    </script>
+                confirmationModal.modal("hide");
+
+                if(!minorPersonDataForm.valid() &&
+                        !parentDataForm.valid() &&
+                        !companionDataForm.valid())
+                {
+                    toastr.error('Campos requeridos se encuentran actualmente vacíos. Por favor, revisa el formulario','¡Atención!')
+
+                    return;
+                }
+
+                console.log(minorPersonDataForm.serialize());
+                console.log(parentDataForm.serialize());
+                console.log(companionDataForm.serialize());
+            })
+        </script>
 }
