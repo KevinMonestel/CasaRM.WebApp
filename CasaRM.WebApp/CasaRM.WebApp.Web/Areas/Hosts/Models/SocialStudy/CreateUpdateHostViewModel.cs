@@ -13,6 +13,10 @@
             ContributionListViewModel = new();
         }
 
+        public string HostId { get; set; }
+
+        public int SocialStudyId { get; set; }
+
         public MinorPersonDataFormViewModel MinorPersonDataFormViewModel { get; set; }
 
         public ParentDataFormViewModel ParentDataFormViewModel { get; set; }

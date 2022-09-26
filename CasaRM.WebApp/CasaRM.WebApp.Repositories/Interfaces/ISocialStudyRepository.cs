@@ -2,6 +2,6 @@
 {
     public interface ISocialStudyRepository
     {
-        Task<int> CreateSocialStudy();
+        Task<int> CreateSocialStudyAsync();
     }
 }

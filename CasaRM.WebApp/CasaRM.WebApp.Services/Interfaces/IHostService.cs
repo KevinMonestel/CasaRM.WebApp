@@ -4,6 +4,8 @@ namespace CasaRM.WebApp.Services.Interfaces
 {
     public interface IHostService
     {
-        Task<CreateHost> CreateHost(string userId);
+        Task<int> GetSocialStudyIdByHostIdAsync(string hostId);
+
+        Task<CreateHost> CreateHostAsync(string userId);
     }
 }

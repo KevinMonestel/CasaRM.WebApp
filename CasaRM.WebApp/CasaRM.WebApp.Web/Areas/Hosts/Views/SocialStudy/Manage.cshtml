@@ -8,203 +8,228 @@
     <link rel="stylesheet" href="~/lib/snackbar/css/toastr.min.css" />
 }
 
-<h1 class="h1 mb-3"><strong>Huéspedes</strong> Nuevo Ingreso</h1>
+    <h1 class="h1 mb-3"><strong>Huéspedes</strong> Nuevo Ingreso</h1>
 
-<div class="card">
-    <div class="card-header">
-        <h5 class="card-title mb-0">1. Datos de la Persona Menor de Edad</h5>
-    </div>
+    <form id="mainDataForm">
+        @Html.HiddenFor(model => model.HostId)
+        @Html.HiddenFor(model => model.SocialStudyId)
+    </form>
 
-    <div class="card-body">
-        <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_MinorPersonDataForm.cshtml" model="Model.MinorPersonDataFormViewModel" />
-    </div>
-</div>
-
-<div class="card">
-    <div class="card-header">
-        <h5 class="card-title mb-0">2. Datos de la madre, padre o encargado/a</h5>
-    </div>
-
-    <div class="card-body">
-        <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_ParentDataForm.cshtml" model="Model.ParentDataFormViewModel" />
-    </div>
-</div>
-
-<div class="card">
-    <div class="card-header">
-        <h5 class="card-title mb-0">3. Datos del Acompañante del Menor de Edad</h5>
-    </div>
-
-    <div class="card-body">
-        <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_CompanionDataForm.cshtml" model="Model.CompanionDataFormViewModel" />
-    </div>
-</div>
-
-<div class="card">
-    <div class="card-header">
-        <h5 class="card-title mb-0">4. Composición del grupo familiar</h5>
-    </div>
-
-    <div class="card-body">
-        <div class="alert alert-warning alert-outline alert-dismissible" role="alert">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            <div class="alert-icon">
-                <i data-feather="info"></i>
-            </div>
-            <div class="alert-message">
-                Deberá incluir la información concerniente a todas las personas que residen bajo el mismo techo
-            </div>
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title mb-0">1. Datos de la Persona Menor de Edad</h5>
         </div>
 
-        <div class="mb-3">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#familyGroupForm">
-                Añadir registro
-            </button>
+        <div class="card-body">
+            <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_MinorPersonDataForm.cshtml" model="Model.MinorPersonDataFormViewModel" />
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title mb-0">2. Datos de la madre, padre o encargado/a</h5>
         </div>
 
+        <div class="card-body">
+            <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_ParentDataForm.cshtml" model="Model.ParentDataFormViewModel" />
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title mb-0">3. Datos del Acompañante del Menor de Edad</h5>
+        </div>
+
+        <div class="card-body">
+            <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_CompanionDataForm.cshtml" model="Model.CompanionDataFormViewModel" />
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title mb-0">4. Composición del grupo familiar</h5>
+        </div>
+
+        <div class="card-body">
+            <div class="alert alert-warning alert-outline alert-dismissible" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="alert-icon">
+                    <i data-feather="info"></i>
+                </div>
+                <div class="alert-message">
+                    Deberá incluir la información concerniente a todas las personas que residen bajo el mismo techo
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#familyGroupForm">
+                    Añadir registro
+                </button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="familyGroupForm" tabindex="-1" aria-labelledby="familyGroupForm" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Añadir registro - Grupo de familia</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_FamilyGroupForm.cshtml" model="Model.FamilyGroupFormViewModel" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_FamilyGroupList.cshtml" model="Model.FamilyGroupListViewModel" />
+        </div>
+
+        <div class="card-header">
+            <h5 class="card-title mb-0">4.1. Aportes de personas que no viven en la misma casa</h5>
+        </div>
+
+        <div class="card-body">
+            <div class="alert alert-warning alert-outline alert-dismissible" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="alert-icon">
+                    <i data-feather="info"></i>
+                </div>
+                <div class="alert-message">
+                    Deberá incluir la información concerniente a los aportes de las personas que no residen bajo el mismo techo
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ContributionForm">
+                    Añadir registro
+                </button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="ContributionForm" tabindex="-1" aria-labelledby="ContributionForm" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Añadir registro - Aportes</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_ContributionForm.cshtml" model="Model.ContributionFormViewModel" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_ContributionList.cshtml" model="Model.ContributionListViewModel" />
+        </div>
+
+        <div class="card-header">
+            <h5 class="card-title mb-0">4.2. Calculo ingreso según línea de pobreza</h5>
+        </div>
+
+        <div class="card-body">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title mb-0">5. Situación Habitacional</h5>
+        </div>
+
+        <div class="card-body">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title mb-0">6. Redes de Apoyo</h5>
+        </div>
+
+        <div class="card-body">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title mb-0">7. Recomendaciones</h5>
+        </div>
+
+        <div class="card-body">
+        </div>
+    </div>
+
+    <div class="text-center">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#confirmationModal">
+            Guardar información
+        </button>
         <!-- Modal -->
-        <div class="modal fade" id="familyGroupForm" tabindex="-1" aria-labelledby="familyGroupForm" aria-hidden="true">
+        <div class="modal fade" id="confirmationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="confirmation" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Añadir registro - Grupo de familia</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">¿Estás seguro/a?</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_FamilyGroupForm.cshtml" model="Model.FamilyGroupFormViewModel" />
+                        <p>La información será guardada</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" id="saveSocialStudyBtn">Guardar</button>
                     </div>
                 </div>
             </div>
         </div>
-
-        <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_FamilyGroupList.cshtml" model="Model.FamilyGroupListViewModel" />
     </div>
 
-    <div class="card-header">
-        <h5 class="card-title mb-0">4.1. Aportes de personas que no viven en la misma casa</h5>
-    </div>
+    @section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/lib/snackbar/js/toastr.min.js"></script>
+    <script type="text/javascript">
+        var saveSocialStudyBtn = $("#saveSocialStudyBtn");
+        var confirmationModal = $("#confirmationModal");
 
-    <div class="card-body">
-        <div class="alert alert-warning alert-outline alert-dismissible" role="alert">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            <div class="alert-icon">
-                <i data-feather="info"></i>
-            </div>
-            <div class="alert-message">
-                Deberá incluir la información concerniente a los aportes de las personas que no residen bajo el mismo techo
-            </div>
-        </div>
+        saveSocialStudyBtn.on("click", function () {
+            let mainDataForm = $("#mainDataForm");
+            let minorPersonDataForm = $("#minorPersonDataForm");
+            let parentDataForm = $("#parentDataForm");
+            let companionDataForm = $("#companionDataForm");
+            let saveSocialStudyUrl = "@Url.Action("Save", "SocialStudy", new { area = "Hosts" })";
 
-        <div class="mb-3">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ContributionForm">
-                Añadir registro
-            </button>
-        </div>
+            confirmationModal.modal("hide");
 
-        <!-- Modal -->
-        <div class="modal fade" id="ContributionForm" tabindex="-1" aria-labelledby="ContributionForm" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Añadir registro - Aportes</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_ContributionForm.cshtml" model="Model.ContributionFormViewModel" />
-                    </div>
-                </div>
-            </div>
-        </div>
+            if (!minorPersonDataForm.valid() ||
+                !parentDataForm.valid() ||
+                !companionDataForm.valid()) {
+                toastr.error('Campos requeridos se encuentran actualmente con errores de validación. Por favor, revisa el formulario', '¡Atención!')
 
-        <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_ContributionList.cshtml" model="Model.ContributionListViewModel" />
-    </div>
+                return;
+            }
 
-    <div class="card-header">
-        <h5 class="card-title mb-0">4.2. Calculo ingreso según línea de pobreza</h5>
-    </div>
+            let obj = {
+                hostId: mainDataForm.find('input[name=HostId]').val(),
+                socialStudyId: mainDataForm.find('input[name=SocialStudyId]').val(),
+                MinorPersonDataFormViewModel: minorPersonDataForm.serializeArray().reduce(function (a, x) { a[x.name] = x.value; return a; }, {}),
+                ParentDataFormViewModel: parentDataForm.serializeArray().reduce(function(a, x) { a[x.name] = x.value; return a; }, {}),
+                CompanionDataFormViewModel: companionDataForm.serializeArray().reduce(function (a, x) { a[x.name] = x.value; return a; }, {})
+            }
 
-    <div class="card-body">
-    </div>
-</div>
-
-<div class="card">
-    <div class="card-header">
-        <h5 class="card-title mb-0">5. Situación Habitacional</h5>
-    </div>
-
-    <div class="card-body">
-    </div>
-</div>
-
-<div class="card">
-    <div class="card-header">
-        <h5 class="card-title mb-0">6. Redes de Apoyo</h5>
-    </div>
-
-    <div class="card-body">
-    </div>
-</div>
-
-<div class="card">
-    <div class="card-header">
-        <h5 class="card-title mb-0">7. Recomendaciones</h5>
-    </div>
-
-    <div class="card-body">
-    </div>
-</div>
-
-<div class="text-center">
-     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#confirmationModal">
-      Guardar información
-    </button>
-  <!-- Modal -->
-    <div class="modal fade" id="confirmationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="confirmation" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">¿Estás seguro/a?</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>La información será guardada</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary" id="saveSocialStudyBtn">Guardar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-@section Scripts {
-        <partial name="_ValidationScriptsPartial" />
-        <script src="~/lib/snackbar/js/toastr.min.js"></script>
-        <script type="text/javascript">
-            var saveSocialStudyBtn = $("#saveSocialStudyBtn");
-            var confirmationModal = $("#confirmationModal");
-
-            saveSocialStudyBtn.on("click", function(){
-                let minorPersonDataForm = $("#minorPersonDataForm");
-                let parentDataForm = $("#parentDataForm");
-                let companionDataForm = $("#companionDataForm");
-
-                confirmationModal.modal("hide");
-
-                if(!minorPersonDataForm.valid() &&
-                        !parentDataForm.valid() &&
-                        !companionDataForm.valid())
-                {
-                    toastr.error('Campos requeridos se encuentran actualmente vacíos. Por favor, revisa el formulario','¡Atención!')
-
-                    return;
-                }
-
-                console.log(minorPersonDataForm.serialize());
-                console.log(parentDataForm.serialize());
-                console.log(companionDataForm.serialize());
+            $.post(saveSocialStudyUrl, obj, function () {
+                alert("success");
             })
-        </script>
+                .done(function () {
+                    alert("second success");
+                })
+                .fail(function () {
+                    alert("error");
+                })
+                .always(function () {
+                    alert("finished");
+                });
+
+            console.log(obj);
+        })
+    </script>
 }

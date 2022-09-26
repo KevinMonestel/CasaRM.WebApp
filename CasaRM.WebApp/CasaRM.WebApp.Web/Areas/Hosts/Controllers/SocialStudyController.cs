@@ -1,6 +1,7 @@
 ﻿using CasaRM.WebApp.Services.Interfaces;
 using CasaRM.WebApp.Web.Areas.Hosts.Models.SocialStudy;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json.Serialization;
 
 namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
 {
@@ -14,16 +15,27 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
             _hostService = hostService;
         }
 
-        public IActionResult Manage(string hostId)
+        public async Task<IActionResult> Manage(string hostId)
         {
             CreateUpdateHostViewModel viewModel = new();
 
-            if (string.IsNullOrEmpty(hostId))
-            {
+            int socialStudyId = await _hostService.GetSocialStudyIdByHostIdAsync(hostId);
 
+            if (!string.IsNullOrEmpty(hostId) && socialStudyId > 0)
+            {
+                viewModel.SocialStudyId = socialStudyId;
+                viewModel.HostId = hostId;
             }
 
             return View(viewModel);
+        }
+
+        public async Task<JsonResult> Save(CreateUpdateHostViewModel viewModel)
+        {
+            return new JsonResult(new 
+            {
+                RedirectUrl = ""
+            });
         }
     }
 }

@@ -10,7 +10,7 @@ namespace CasaRM.WebApp.Repositories.Implementations
         {
         }
 
-        public async Task<int> CreateSocialStudy()
+        public async Task<int> CreateSocialStudyAsync()
         {
             try
             {

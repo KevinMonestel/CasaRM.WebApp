@@ -14,13 +14,32 @@ namespace CasaRM.WebApp.Repositories.Implementations
             _socialStudyRepository = socialStudyRepository;
         }
 
-        public async Task<CreateHost> CreateHost(string userId)
+        public async Task<int> GetSocialStudyIdByHostIdAsync(string hostId)
+        {
+            try
+            {
+                int result = 0;
+
+                Host hostFinded = (await FindAsync(x => x.Id.ToString() == hostId)).FirstOrDefault();
+
+                result = hostFinded is not null ? hostFinded.SocialStudyId : result;
+
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<CreateHost> CreateHostAsync(string userId)
         {
             try
             {
                 CreateHost result = new();
 
-                int socialStudyIdCreated = await _socialStudyRepository.CreateSocialStudy();
+                int socialStudyIdCreated = await _socialStudyRepository.CreateSocialStudyAsync();
 
                 if (socialStudyIdCreated.Equals(0)) throw new Exception();
 
