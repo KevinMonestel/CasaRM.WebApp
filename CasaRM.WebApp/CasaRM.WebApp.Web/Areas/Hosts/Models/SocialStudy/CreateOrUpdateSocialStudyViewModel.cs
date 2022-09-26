@@ -11,6 +11,10 @@
             FamilyGroupListViewModel = new();
             ContributionFormViewModel = new();
             ContributionListViewModel = new();
+
+            MinorPersonDataFormViewModel.DateOfBirth = DateTime.Now.Date;
+            ParentDataFormViewModel.DateOfBirth = DateTime.Now.Date;
+            CompanionDataFormViewModel.DateOfBirth = DateTime.Now.Date;
         }
 
         public string HostId { get; set; }

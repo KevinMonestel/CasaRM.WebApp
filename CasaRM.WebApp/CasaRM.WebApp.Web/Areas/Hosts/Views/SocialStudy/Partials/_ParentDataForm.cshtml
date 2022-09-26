@@ -34,7 +34,7 @@
 
         <div class="col-md-3">
             <div class="form-floating mb-3">
-                <input asp-for="DateOfBirth" class="form-control" aria-required="true" />
+                <input asp-for="DateOfBirth" class="form-control" aria-required="true" max="@DateTime.Now.ToString("yyyy-MM-dd")" min="@DateTime.Now.AddYears(-100).ToString("yyyy-MM-dd")" />
                 <label asp-for="DateOfBirth" class="form-label">Fecha de Nacimiento</label>
                 <span asp-validation-for="DateOfBirth" class="text-danger"></span>
             </div>
@@ -42,7 +42,7 @@
 
         <div class="col-md-3">
             <div class="form-floating mb-3">
-                <input asp-for="Age" class="form-control" aria-required="true" />
+                <input asp-for="Age" class="form-control" aria-required="true" readonly />
                 <label asp-for="Age" class="form-label">Edad</label>
                 <span asp-validation-for="Age" class="text-danger"></span>
             </div>

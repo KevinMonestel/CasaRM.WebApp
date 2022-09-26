@@ -12,11 +12,12 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        public async Task<IActionResult> Index(string host)
+        public async Task<IActionResult> Index(string host, bool? wasManaged)
         {
             HostManagmentViewModel viewModel = new();
 
             viewModel.HostId = host;
+            viewModel.WasManaged = wasManaged.GetValueOrDefault();
 
             return View(viewModel);
         }

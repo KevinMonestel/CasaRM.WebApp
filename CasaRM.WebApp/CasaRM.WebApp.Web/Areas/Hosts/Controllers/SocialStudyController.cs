@@ -67,7 +67,7 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
             string result = await _socialStudyService.CreateOrUpdateSocialStudyAsync(createOrUpdateSocialStudyDto);
 
             if (!string.IsNullOrEmpty(result))
-                redirectUrl = Url.Action("Index", "Home", new { host = result, area = "Hosts" });
+                redirectUrl = Url.Action("Index", "Home", new { host = result, wasManaged = true, area = "Hosts" });
 
             return new JsonResult(new
             {

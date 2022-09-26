@@ -4,6 +4,17 @@
     ViewData["Title"] = "Administración";
 }
 
+<h1 class="h1 mb-3"><strong>Huéspedes</strong> Administración</h1>
+
+@if(Model.WasManaged){
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <div class="alert-message">
+            ¡El formulario ha sido guardado con éxito!
+        </div>
+    </div>
+}
+
 <div class="row">
     <div class="col-md-4">
         <div class="card">
@@ -19,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-                <h1 class="mt-1 mb-3">Formulario de estudio social</h1>
+                <h1 class="mt-1 mb-3">Formulario de Estudio Social</h1>
                 <div class="mb-0">
                     <span class="text-muted"><a href="@Url.Action("Manage", "SocialStudy", new { host = Model.HostId, area = "Hosts" })">Ir al formulario</a></span>
                 </div>
@@ -40,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-                <h1 class="mt-1 mb-3">Registro de hospedaje</h1>
+                <h1 class="mt-1 mb-3">Formulario de Registro de Hospedaje</h1>
                 <div class="mb-0">
                     <span class="text-muted"><a href="#">Ir al registro</a></span>
                 </div>

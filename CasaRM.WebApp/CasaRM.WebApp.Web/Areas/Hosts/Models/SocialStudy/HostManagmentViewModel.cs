@@ -3,5 +3,7 @@
     public class HostManagmentViewModel
     {
         public string HostId { get; set; }
+
+        public bool WasManaged { get; set; }
     }
 }

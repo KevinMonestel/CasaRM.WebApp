@@ -18,6 +18,8 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Models.SocialStudy
         public string Identification { get; set; }
 
         [Required]
+        [DisplayFormat(ApplyFormatInEditMode = false, DataFormatString = "{0:dd/MM/yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; }
 
         [Required]
