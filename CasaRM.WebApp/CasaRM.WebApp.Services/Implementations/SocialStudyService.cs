@@ -32,6 +32,18 @@ namespace CasaRM.WebApp.Services.Implementations
             _companionDataRepository = companionDataRepository;
         }
 
+        public async Task<CreateOrUpdateSocialStudyDto> GetFullSocialStudyAsync(int socialStudyId)
+        {
+            CreateOrUpdateSocialStudyDto result = new();
+            SocialStudyDto socialStudyDto = await _socialStudyRepository.GetSocialStudyById(socialStudyId);
+
+            result.MinorPersonDataDto = await _minorPersonDataRepository.GetMinorPersonDataByIdAsync(socialStudyDto.MinorPersonDataId);
+            result.ParentDataDto = await _parentDataRepository.GetParentDataByIdAsync(socialStudyDto.ParentDataId);
+            result.CompanionDataDto = await _companionDataRepository.GetCompanionDataByIdAsync(socialStudyDto.CompanionDataId);
+
+            return result;
+        }
+
         public async Task<string> CreateOrUpdateSocialStudyAsync(CreateOrUpdateSocialStudyDto createOrUpdateSocialStudyDto)
         {
             string result = string.Empty;
@@ -63,6 +75,8 @@ namespace CasaRM.WebApp.Services.Implementations
 
                 result = hostModel.Id;
             }
+
+            result = createOrUpdateSocialStudyDto.HostId;
 
             return result;
         }

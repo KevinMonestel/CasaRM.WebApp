@@ -9,7 +9,7 @@ namespace CasaRM.WebApp.Repositories.Interfaces
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<T> GetByIdAsync(long id);
+        Task<T> GetByIdAsync(int id);
 
         /// <summary>
         /// This method is to get all the records.

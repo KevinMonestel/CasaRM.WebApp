@@ -4,6 +4,8 @@ namespace CasaRM.WebApp.Repositories.Interfaces
 {
     public interface ISocialStudyRepository
     {
+        Task<SocialStudyDto> GetSocialStudyById(int id);
+
         Task<SocialStudyDto> CreateSocialStudyAsync(SocialStudyDto socialStudyDto);
     }
 }

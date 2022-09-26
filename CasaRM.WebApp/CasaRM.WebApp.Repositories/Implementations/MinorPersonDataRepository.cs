@@ -17,23 +17,34 @@ namespace CasaRM.WebApp.Repositories.Implementations
         {
         }
 
+        public async Task<MinorPersonDataDto> GetMinorPersonDataByIdAsync(int id)
+        {
+            try
+            {
+                MinorPersonDataDto result = new();
+                MinorPersonData dbModel = await GetByIdAsync(id);
+
+                result = dbModel.ToObject<MinorPersonDataDto>();
+
+                return result;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public async Task<MinorPersonDataDto> CreateOrUpdateAsync(MinorPersonDataDto minorPersonDataDto)
         {
             try
             {
                 MinorPersonDataDto result = new();
-                MinorPersonData dbModel = new();
+                MinorPersonData dbModel = minorPersonDataDto.ToObject<MinorPersonData>();
 
                 if (minorPersonDataDto.Id > 0)
-                {
-                    dbModel = await GetByIdAsync(minorPersonDataDto.Id);
                     dbModel = await UpdateAsync(dbModel);
-                }
                 else
-                {
-                    dbModel = minorPersonDataDto.ToObject<MinorPersonData>();
                     dbModel = await AddAsync(dbModel);
-                }
 
                 result = dbModel.ToObject<MinorPersonDataDto>();
 

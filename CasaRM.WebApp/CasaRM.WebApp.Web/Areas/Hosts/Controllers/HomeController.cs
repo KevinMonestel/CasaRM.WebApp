@@ -1,6 +1,7 @@
 ﻿using CasaRM.WebApp.Services.Interfaces;
 using CasaRM.WebApp.Shared.Models;
 using CasaRM.WebApp.Web.Areas.Hosts.Models;
+using CasaRM.WebApp.Web.Areas.Hosts.Models.SocialStudy;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -11,9 +12,13 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        public async Task<IActionResult> Index(string hostId)
+        public async Task<IActionResult> Index(string host)
         {
-            return View();
+            HostManagmentViewModel viewModel = new();
+
+            viewModel.HostId = host;
+
+            return View(viewModel);
         }
     }
 }

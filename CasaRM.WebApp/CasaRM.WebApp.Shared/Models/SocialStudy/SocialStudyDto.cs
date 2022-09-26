@@ -4,10 +4,10 @@
     {
         public int Id { get; set; }
 
-        public int? MinorPersonDataId { get; set; }
+        public int MinorPersonDataId { get; set; }
 
-        public int? ParentDataId { get; set; }
+        public int ParentDataId { get; set; }
 
-        public int? CompanionDataId { get; set; }
+        public int CompanionDataId { get; set; }
     }
 }

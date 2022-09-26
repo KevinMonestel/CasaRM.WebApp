@@ -17,23 +17,34 @@ namespace CasaRM.WebApp.Repositories.Implementations
         {
         }
 
+        public async Task<CompanionDataDto> GetCompanionDataByIdAsync(int id)
+        {
+            try
+            {
+                CompanionDataDto result = new();
+                CompanionData dbModel = await GetByIdAsync(id);
+
+                result = dbModel.ToObject<CompanionDataDto>();
+
+                return result;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public async Task<CompanionDataDto> CreateOrUpdateAsync(CompanionDataDto companionDataDto)
         {
             try
             {
                 CompanionDataDto result = new();
-                CompanionData dbModel = new();
+                CompanionData dbModel = companionDataDto.ToObject<CompanionData>();
 
                 if (companionDataDto.Id > 0)
-                {
-                    dbModel = await GetByIdAsync(companionDataDto.Id);
                     dbModel = await UpdateAsync(dbModel);
-                }
                 else
-                {
-                    dbModel = companionDataDto.ToObject<CompanionData>();
                     dbModel = await AddAsync(dbModel);
-                }
 
                 result = dbModel.ToObject<CompanionDataDto>();
 

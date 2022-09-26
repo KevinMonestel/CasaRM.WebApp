@@ -12,23 +12,34 @@ namespace CasaRM.WebApp.Repositories.Implementations
         {
         }
 
+        public async Task<ParentDataDto> GetParentDataByIdAsync(int id)
+        {
+            try
+            {
+                ParentDataDto result = new();
+                ParentData dbModel = await GetByIdAsync(id);
+
+                result = dbModel.ToObject<ParentDataDto>();
+
+                return result;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public async Task<ParentDataDto> CreateOrUpdateAsync(ParentDataDto parentDataDto)
         {
             try
             {
                 ParentDataDto result = new();
-                ParentData dbModel = new();
+                ParentData dbModel = parentDataDto.ToObject<ParentData>();
 
                 if (parentDataDto.Id > 0)
-                {
-                    dbModel = await GetByIdAsync(parentDataDto.Id);
                     dbModel = await UpdateAsync(dbModel);
-                }
                 else
-                {
-                    dbModel = parentDataDto.ToObject<ParentData>();
                     dbModel = await AddAsync(dbModel);
-                }
 
                 result = dbModel.ToObject<ParentDataDto>();
 

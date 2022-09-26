@@ -24,16 +24,22 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
             _socialStudyService = socialStudyService;
         }
 
-        public async Task<IActionResult> Manage(string hostId)
+        public async Task<IActionResult> Manage(string host)
         {
             CreateOrUpdateSocialStudyViewModel viewModel = new();
 
-            int socialStudyId = await _hostService.GetSocialStudyIdByHostIdAsync(hostId);
+            int socialStudyId = await _hostService.GetSocialStudyIdByHostIdAsync(host);
 
-            if (!string.IsNullOrEmpty(hostId) && socialStudyId > 0)
+            if (!string.IsNullOrEmpty(host) && socialStudyId > 0)
             {
                 viewModel.SocialStudyId = socialStudyId;
-                viewModel.HostId = hostId;
+                viewModel.HostId = host;
+
+                CreateOrUpdateSocialStudyDto fullSocialStudyData = await _socialStudyService.GetFullSocialStudyAsync(socialStudyId);
+
+                viewModel.MinorPersonDataFormViewModel = fullSocialStudyData.MinorPersonDataDto.ToObject<MinorPersonDataFormViewModel>();
+                viewModel.ParentDataFormViewModel = fullSocialStudyData.ParentDataDto.ToObject<ParentDataFormViewModel>();
+                viewModel.CompanionDataFormViewModel = fullSocialStudyData.CompanionDataDto.ToObject<CompanionDataFormViewModel>();
             }
 
             return View(viewModel);
@@ -56,7 +62,7 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
             string result = await _socialStudyService.CreateOrUpdateSocialStudyAsync(ceateOrUpdateSocialStudyDto);
 
             if (!string.IsNullOrEmpty(result))
-                redirectUrl = Url.Action("Index", "Home", new { hostId = result, area = "Hosts" });
+                redirectUrl = Url.Action("Index", "Home", new { host = result, area = "Hosts" });
 
             return new JsonResult(new
             {
