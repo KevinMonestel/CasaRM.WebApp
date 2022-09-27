@@ -4,10 +4,24 @@ using CasaRM.WebApp.Repositories.Implementations;
 using CasaRM.WebApp.Repositories.Interfaces;
 using CasaRM.WebApp.Services.Implementations;
 using CasaRM.WebApp.Services.Interfaces;
+using CasaRM.WebApp.Shared.Models.Catalog;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Application Catalogs
+builder.Configuration.AddJsonFile("appCatalogs.json", optional: false, reloadOnChange: false);
+
+ApplicationCatalog applicationCatalog = new();
+
+applicationCatalog.HousingTenureConditions = builder.Configuration.GetSection("HousingTenureConditions").Get<IEnumerable<CatalogDto>>();
+applicationCatalog.HousingConstructionMaterialsWalls = builder.Configuration.GetSection("HousingConstructionMaterialsWalls").Get<IEnumerable<CatalogDto>>();
+applicationCatalog.HousingConstructionMaterialsFloors = builder.Configuration.GetSection("HousingConstructionMaterialsFloors").Get<IEnumerable<CatalogDto>>();
+applicationCatalog.HousingConservationStatuses = builder.Configuration.GetSection("HousingConservationStatuses").Get<IEnumerable<CatalogDto>>();
+applicationCatalog.BasicServices = builder.Configuration.GetSection("BasicServices").Get<IEnumerable<CatalogDto>>();
+applicationCatalog.HostHealthQuestions = builder.Configuration.GetSection("HostHealthQuestions").Get<IEnumerable<CatalogDto>>();
+applicationCatalog.HostHealthAnswers = builder.Configuration.GetSection("HostHealthAnswers").Get<IEnumerable<CatalogDto>>();
 
 // Add services to the container.
 // Services
@@ -22,6 +36,9 @@ builder.Services.AddScoped<IParentDataRepository, ParentDataRepository>();
 builder.Services.AddScoped<ICompanionDataRepository, CompanionDataRepository>();
 builder.Services.AddScoped<IFamilyGroupRepository, FamilyGroupRepository>();
 builder.Services.AddScoped<IContributionRepository, ContributionRepository>();
+
+// Singletons
+builder.Services.AddSingleton(applicationCatalog);
 
 // Database configuration
 var dbConnectionString = builder.Configuration.GetConnectionString("DbConnection");

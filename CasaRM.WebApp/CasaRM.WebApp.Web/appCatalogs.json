@@ -1,0 +1,190 @@
+{
+  "HousingTenureConditions": [
+    {
+      "Id": 1,
+      "Description": "Alquilada"
+    },
+    {
+      "Id": 2,
+      "Description": "Propia con hipoteca"
+    },
+    {
+      "Id": 3,
+      "Description": "Propia sin hipoteca"
+    },
+    {
+      "Id": 4,
+      "Description": "Prestada"
+    },
+    {
+      "Id": 5,
+      "Description": "Precario"
+    }
+  ],
+
+  "HousingConstructionMaterialsWalls": [
+    {
+      "Id": 1,
+      "Description": "Madera"
+    },
+    {
+      "Id": 2,
+      "Description": "Cemento-Baldosa"
+    },
+    {
+      "Id": 3,
+      "Description": "Zinc"
+    },
+    {
+      "Id": 4,
+      "Description": "Materiales de desecho"
+    }
+  ],
+
+  "HousingConstructionMaterialsFloors": [
+    {
+      "Id": 1,
+      "Description": "Tierra"
+    },
+    {
+      "Id": 2,
+      "Description": "Cemento"
+    },
+    {
+      "Id": 3,
+      "Description": "Madera"
+    },
+    {
+      "Id": 4,
+      "Description": "Mosaico-cerámica"
+    }
+  ],
+
+  "HousingConservationStatuses": [
+    {
+      "Id": 1,
+      "Description": "Adecuado"
+    },
+    {
+      "Id": 2,
+      "Description": "Deteriorado"
+    }
+  ],
+
+  "BasicServices": [
+    {
+      "Id": 1,
+      "Description": "Electricidad"
+    },
+    {
+      "Id": 2,
+      "Description": "Agua Potable"
+    },
+    {
+      "Id": 3,
+      "Description": "Recolección de Basura"
+    },
+    {
+      "Id": 4,
+      "Description": "Cable"
+    },
+    {
+      "Id": 5,
+      "Description": "Internet"
+    }
+  ],
+
+  "HostHealthQuestions": [
+    {
+      "Id": 1,
+      "Description": "¿Fiebre de más de 100.4ªF (38.0 ºC) en los últimos 2 días?"
+    },
+    {
+      "Id": 2,
+      "Description": "¿Vómitos en los últimos 2 días?"
+    },
+    {
+      "Id": 3,
+      "Description": "¿Cuello rígido o dolor de cabeza con fiebre en los últimos 2 días?"
+    },
+    {
+      "Id": 4,
+      "Description": "¿Diarrea en los últimos 2 días?"
+    },
+    {
+      "Id": 5,
+      "Description": "¿En este momento tiene lesiones en la piel que “supuran” llenas de líquido o pus?"
+    },
+    {
+      "Id": 6,
+      "Description": "¿Algún tipo de rash / sarpullido en la piel en este momento?"
+    },
+    {
+      "Id": 7,
+      "Description": "¿En este momento tiene lesiones en la piel que “supuran” llenas de líquido o pus?"
+    },
+    {
+      "Id": 8,
+      "Description": "¿Exposición a tuberculosis (TB) en los últimos 2 meses?"
+    },
+    {
+      "Id": 9,
+      "Description": "¿Exposición a alguno de los siguientes en las últimas 3 semanas?"
+    },
+    {
+      "Id": 10,
+      "Description": "Varicela"
+    },
+    {
+      "Id": 11,
+      "Description": "Miembro del hogar con piojos"
+    },
+    {
+      "Id": 12,
+      "Description": "Sarampión"
+    },
+    {
+      "Id": 13,
+      "Description": "Paperas"
+    },
+    {
+      "Id": 14,
+      "Description": "Tos convulsa"
+    },
+    {
+      "Id": 15,
+      "Description": "¿Ha tenido varicela antes? (Paciente)"
+    },
+    {
+      "Id": 16,
+      "Description": "¿Se ha vacunado contra la varicela? (Paciente)"
+    },
+    {
+      "Id": 17,
+      "Description": "¿Ha tenido varicela antes? (Madre/Padre/Encargado)"
+    },
+    {
+      "Id": 18,
+      "Description": "¿Se ha vacunado contra la varicela? (Madre/Padre/Encargado)"
+    },
+    {
+      "Id": 19,
+      "Description": "¿Ha tenido varicela antes? (Acompañante)"
+    },
+    {
+      "Id": 20,
+      "Description": "¿Se ha vacunado contra la varicela? (Acompañante)"
+    }
+  ],
+
+  "HostHealthAnswers": [
+    {
+      "Id": 1,
+      "Description": "Sí"
+    },
+    {
+      "Id": 2,
+      "Description": "No"
+    }
+  ]
+}
