@@ -4,6 +4,8 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Models.SocialStudy
 {
     public class HousingSituationFormViewModel
     {
+        public int Id { get; set; }
+
         [Required]
         public string HousingTenureCondition { get; set; }
 

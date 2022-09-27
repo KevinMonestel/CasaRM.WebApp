@@ -1,0 +1,12 @@
+﻿@model RecomendationFormViewModel
+
+@{
+}
+
+<form id="recomendationForm">
+    <div class="form-floating mb-3">
+        <input asp-for="Recomendation" class="form-control" aria-required="true" />
+        <label asp-for="Recomendation" class="form-label">Recomendaciones</label>
+        <span asp-validation-for="Recomendation" class="text-danger"></span>
+    </div>
+</form>

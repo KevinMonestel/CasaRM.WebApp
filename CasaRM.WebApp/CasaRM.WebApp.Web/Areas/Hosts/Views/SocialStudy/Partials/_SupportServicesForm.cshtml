@@ -1,0 +1,12 @@
+﻿@model SupportServicesFormViewModel
+
+@{
+}
+
+<form id="supportServicesForm">
+    <div class="form-floating mb-3">
+        <input asp-for="SupportServices" class="form-control" aria-required="true" />
+        <label asp-for="SupportServices" class="form-label">Redes de Apoyo</label>
+        <span asp-validation-for="SupportServices" class="text-danger"></span>
+    </div>
+</form>

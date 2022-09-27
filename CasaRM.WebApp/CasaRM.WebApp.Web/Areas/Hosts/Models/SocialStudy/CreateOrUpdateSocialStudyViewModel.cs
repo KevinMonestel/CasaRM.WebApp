@@ -11,6 +11,11 @@
             FamilyGroupListViewModel = new();
             ContributionFormViewModel = new();
             ContributionListViewModel = new();
+            IncomeCalculationFormViewModel = new();
+            HousingSituationFormViewModel = new();
+            SupportServicesFormViewModel = new();
+            RecomendationFormViewModel = new();
+            GuestHealthQuestionaireFormViewModel = new();
 
             MinorPersonDataFormViewModel.DateOfBirth = DateTime.Now.Date;
             ParentDataFormViewModel.DateOfBirth = DateTime.Now.Date;
@@ -38,5 +43,11 @@
         public IncomeCalculationFormViewModel IncomeCalculationFormViewModel { get; set; }
 
         public HousingSituationFormViewModel HousingSituationFormViewModel { get; set; }
+
+        public SupportServicesFormViewModel SupportServicesFormViewModel { get; set; }
+
+        public RecomendationFormViewModel RecomendationFormViewModel { get; set; }
+
+        public GuestHealthQuestionaireFormViewModel GuestHealthQuestionaireFormViewModel { get; set; }
     }
 }
