@@ -60,27 +60,27 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Models.SocialStudy
         public bool Question13 { get; set; }
 
         [Required]
-        [DisplayName("¿Ha tenido varicela antes? (Paciente)")]
+        [DisplayName("¿Ha tenido varicela antes?")]
         public bool Question14 { get; set; }
 
         [Required]
-        [DisplayName("¿Se ha vacunado contra la varicela? (Paciente)")]
+        [DisplayName("¿Se ha vacunado contra la varicela?")]
         public bool Question15 { get; set; }
 
         [Required]
-        [DisplayName("¿Ha tenido varicela antes? (Madre/Padre/Encargado)")]
+        [DisplayName("¿Ha tenido varicela antes?")]
         public bool Question16 { get; set; }
 
         [Required]
-        [DisplayName("¿Se ha vacunado contra la varicela? (Madre/Padre/Encargado)")]
+        [DisplayName("¿Se ha vacunado contra la varicela?")]
         public bool Question17 { get; set; }
 
         [Required]
-        [DisplayName("¿Ha tenido varicela antes? (Acompañante)")]
+        [DisplayName("¿Ha tenido varicela antes?")]
         public bool Question18 { get; set; }
 
         [Required]
-        [DisplayName("¿Se ha vacunado contra la varicela? (Acompañante)")]
+        [DisplayName("¿Se ha vacunado contra la varicela?")]
         public bool Question19 { get; set; }
     }
 }

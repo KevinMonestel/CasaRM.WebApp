@@ -40,15 +40,7 @@ namespace CasaRM.WebApp.Repositories.Implementations
                 if (dbModel.Id > 0)
                     dbModel = await UpdateAsync(dbModel);
                 else
-                    dbModel = await AddAsync(new SocialStudy
-                    {
-                        MinorPersonDataId = socialStudyDto.MinorPersonDataId,
-                        CompanionDataId = socialStudyDto.CompanionDataId,
-                        ParentDataId = socialStudyDto.ParentDataId,
-                        TotalRevenue = socialStudyDto.TotalRevenue,
-                        PerCapitaIncome = socialStudyDto.PerCapitaIncome,
-                        PovertyCategory = socialStudyDto.PovertyCategory 
-                    });
+                    dbModel = await AddAsync(dbModel);
 
                 if (dbModel is null) throw new Exception();
 

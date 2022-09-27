@@ -37,6 +37,7 @@ builder.Services.AddScoped<IParentDataRepository, ParentDataRepository>();
 builder.Services.AddScoped<ICompanionDataRepository, CompanionDataRepository>();
 builder.Services.AddScoped<IFamilyGroupRepository, FamilyGroupRepository>();
 builder.Services.AddScoped<IContributionRepository, ContributionRepository>();
+builder.Services.AddScoped<IHousingSituationRepository, HousingSituationRepository>();
 
 // Singletons
 builder.Services.AddSingleton(applicationCatalog);

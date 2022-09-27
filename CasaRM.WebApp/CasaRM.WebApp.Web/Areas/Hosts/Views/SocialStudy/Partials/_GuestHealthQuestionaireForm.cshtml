@@ -60,12 +60,12 @@
         </span>
     </label>
 
-    <p class="border-bottom">
+    <p class="mt-3 mb-1">
         ¿Exposición a alguno de los siguientes en las últimas 3
         semanas?
     </p>
 
-    <div class="border-start ps-2">
+    <div class="border-start ps-3 mb-3">
         <label class="form-check">
             <input class="form-check-input" type="checkbox" asp-for="Question9">
             <span class="form-check-label">
@@ -102,45 +102,56 @@
         </label>
     </div>
 
-    <label class="form-check">
-        <input class="form-check-input" type="checkbox" asp-for="Question14">
-        <span class="form-check-label">
-            @Html.DisplayNameFor(x => x.Question14)
-        </span>
-    </label>
+    <div class="row">
+        <div class="col-md-4 border p-2">
+            <strong>Paciente</strong>
+            <label class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="Question14">
+                <span class="form-check-label">
+                    @Html.DisplayNameFor(x => x.Question14)
+                </span>
+            </label>
 
-    <label class="form-check">
-        <input class="form-check-input" type="checkbox" asp-for="Question15">
-        <span class="form-check-label">
-            @Html.DisplayNameFor(x => x.Question15)
-        </span>
-    </label>
+            <label class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="Question15">
+                <span class="form-check-label">
+                    @Html.DisplayNameFor(x => x.Question15)
+                </span>
+            </label>
+        </div>
 
-    <label class="form-check">
-        <input class="form-check-input" type="checkbox" asp-for="Question16">
-        <span class="form-check-label">
-            @Html.DisplayNameFor(x => x.Question16)
-        </span>
-    </label>
+        <div class="col-md-4 border p-2">
+            <strong>Madre/Padre/Encargado</strong>
+            <label class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="Question16">
+                <span class="form-check-label">
+                    @Html.DisplayNameFor(x => x.Question16)
+                </span>
+            </label>
 
-    <label class="form-check">
-        <input class="form-check-input" type="checkbox" asp-for="Question17">
-        <span class="form-check-label">
-            @Html.DisplayNameFor(x => x.Question17)
-        </span>
-    </label>
+            <label class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="Question17">
+                <span class="form-check-label">
+                    @Html.DisplayNameFor(x => x.Question17)
+                </span>
+            </label>
+        </div>
 
-    <label class="form-check">
-        <input class="form-check-input" type="checkbox" asp-for="Question18">
-        <span class="form-check-label">
-            @Html.DisplayNameFor(x => x.Question18)
-        </span>
-    </label>
+        <div class="col-md-4 border p-2">
+            <strong>Acompañante</strong>
+            <label class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="Question18">
+                <span class="form-check-label">
+                    @Html.DisplayNameFor(x => x.Question18)
+                </span>
+            </label>
 
-    <label class="form-check">
-        <input class="form-check-input" type="checkbox" asp-for="Question19">
-        <span class="form-check-label">
-            @Html.DisplayNameFor(x => x.Question19)
-        </span>
-    </label>
+            <label class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="Question19">
+                <span class="form-check-label">
+                    @Html.DisplayNameFor(x => x.Question19)
+                </span>
+            </label>
+        </div>
+    </div>
 </form>

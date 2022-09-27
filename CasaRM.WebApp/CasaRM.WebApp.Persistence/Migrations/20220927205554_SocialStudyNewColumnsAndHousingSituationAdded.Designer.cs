@@ -4,6 +4,7 @@ using CasaRM.WebApp.Persistance;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CasaRM.WebApp.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220927205554_SocialStudyNewColumnsAndHousingSituationAdded")]
+    partial class SocialStudyNewColumnsAndHousingSituationAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -599,6 +601,12 @@ namespace CasaRM.WebApp.Persistence.Migrations
                         .HasColumnType("int")
                         .HasColumnName("DatosPersonaMenorId");
 
+                    b.Property<string>("Observations")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)")
+                        .HasColumnName("Observaciones");
+
                     b.Property<int>("ParentDataId")
                         .HasColumnType("int")
                         .HasColumnName("DatosEncargadoId");
@@ -612,12 +620,6 @@ namespace CasaRM.WebApp.Persistence.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("CategoriaPobreza");
-
-                    b.Property<string>("Recomendation")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)")
-                        .HasColumnName("Recomendaciones");
 
                     b.Property<string>("SupportServices")
                         .IsRequired()

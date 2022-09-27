@@ -29,6 +29,8 @@ namespace CasaRM.WebApp.Persistance
 
         public virtual DbSet<Contribution> Contribution { get; set; }
 
+        public virtual DbSet<HousingSituation> HousingSituation { get; set; }
+
         /* End Tables Registration*/
 
         protected override void OnModelCreating(ModelBuilder builder)

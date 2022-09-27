@@ -21,5 +21,10 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
 
             return View(viewModel);
         }
+
+        public async Task<IActionResult> Search()
+        {
+            return View();
+        }
     }
 }

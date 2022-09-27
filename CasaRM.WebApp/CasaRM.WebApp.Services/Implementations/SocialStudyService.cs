@@ -18,6 +18,7 @@ namespace CasaRM.WebApp.Services.Implementations
         private readonly ICompanionDataRepository _companionDataRepository;
         private readonly IFamilyGroupRepository _familyGroupRepository;
         private readonly IContributionRepository _contributionRepository;
+        private readonly IHousingSituationRepository _housingSituationRepository;
 
         public SocialStudyService(
             IMinorPersonDataRepository minorPersonDataRepository,
@@ -26,7 +27,8 @@ namespace CasaRM.WebApp.Services.Implementations
             IParentDataRepository parentDataRepository,
             ICompanionDataRepository companionDataRepository,
             IFamilyGroupRepository familyGroupRepository,
-            IContributionRepository contributionRepository)
+            IContributionRepository contributionRepository,
+            IHousingSituationRepository housingSituationRepository)
         {
             _minorPersonDataRepository = minorPersonDataRepository;
             _hostRepository = hostRepository;
@@ -35,6 +37,7 @@ namespace CasaRM.WebApp.Services.Implementations
             _companionDataRepository = companionDataRepository;
             _familyGroupRepository = familyGroupRepository;
             _contributionRepository = contributionRepository;
+            _housingSituationRepository = housingSituationRepository;
         }
 
         public async Task<CreateOrUpdateSocialStudyDto> GetFullSocialStudyAsync(int socialStudyId)
@@ -48,6 +51,9 @@ namespace CasaRM.WebApp.Services.Implementations
             result.FamilyGroupDto = await _familyGroupRepository.GetFamilyGroupBySocialStudyId(socialStudyId);
             result.ContributionDto = await _contributionRepository.GetContributionBySocialStudyId(socialStudyId);
             result.IncomeCalculationDto = new() { TotalRevenue = socialStudyDto.TotalRevenue, PerCapitaIncome = socialStudyDto.PerCapitaIncome, PovertyCategory = socialStudyDto.PovertyCategory };
+            result.HousingSituationDto = await _housingSituationRepository.GetHousingSituationByIdAsync(socialStudyDto.HousingSituationId);
+            result.RecomendationDto = new() { Recomendation = socialStudyDto.Recomendation };
+            result.SupportServicesDto = new() { SupportServices = socialStudyDto.SupportServices };
 
             return result;
         }
@@ -59,6 +65,7 @@ namespace CasaRM.WebApp.Services.Implementations
             createOrUpdateSocialStudyDto.MinorPersonDataDto = await _minorPersonDataRepository.CreateOrUpdateAsync(createOrUpdateSocialStudyDto.MinorPersonDataDto);
             createOrUpdateSocialStudyDto.ParentDataDto = await _parentDataRepository.CreateOrUpdateAsync(createOrUpdateSocialStudyDto.ParentDataDto);
             createOrUpdateSocialStudyDto.CompanionDataDto = await _companionDataRepository.CreateOrUpdateAsync(createOrUpdateSocialStudyDto.CompanionDataDto);
+            createOrUpdateSocialStudyDto.HousingSituationDto = await _housingSituationRepository.CreateOrUpdateAsync(createOrUpdateSocialStudyDto.HousingSituationDto);
 
             SocialStudyDto socialStudioModel = await _socialStudyRepository.CreateOrUpdateAsync(new SocialStudyDto
             {
@@ -68,7 +75,10 @@ namespace CasaRM.WebApp.Services.Implementations
                 ParentDataId = createOrUpdateSocialStudyDto.ParentDataDto.Id,
                 TotalRevenue = createOrUpdateSocialStudyDto.IncomeCalculationDto.TotalRevenue,
                 PerCapitaIncome = createOrUpdateSocialStudyDto.IncomeCalculationDto.PerCapitaIncome,
-                PovertyCategory = createOrUpdateSocialStudyDto.IncomeCalculationDto.PovertyCategory
+                PovertyCategory = createOrUpdateSocialStudyDto.IncomeCalculationDto.PovertyCategory,
+                SupportServices = createOrUpdateSocialStudyDto.SupportServicesDto.SupportServices,
+                Recomendation = createOrUpdateSocialStudyDto.RecomendationDto.Recomendation,
+                HousingSituationId = createOrUpdateSocialStudyDto.HousingSituationDto.Id
             });
 
             if (string.IsNullOrEmpty(createOrUpdateSocialStudyDto.HostId) && createOrUpdateSocialStudyDto.SocialStudyId.Equals(0))

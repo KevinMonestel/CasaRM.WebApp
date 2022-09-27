@@ -22,6 +22,10 @@ namespace CasaRM.WebApp.Persistence.Models
         [Column("DatosAcompannanteId")]
         public int CompanionDataId { get; set; }
 
+        [ForeignKey("HousingSituation")]
+        [Column("SituacionHabitacionalId")]
+        public int HousingSituationId { get; set; }
+
         [Column("TotalIngresos")]
         public decimal TotalRevenue { get; set; }
 
@@ -32,6 +36,14 @@ namespace CasaRM.WebApp.Persistence.Models
         [Column("CategoriaPobreza")]
         public string PovertyCategory { get; set; }
 
+        [StringLength(250)]
+        [Column("RedesApoyo")]
+        public string SupportServices { get; set; }
+
+        [StringLength(500)]
+        [Column("Recomendaciones")]
+        public string Recomendation { get; set; }
+
         public MinorPersonData MinorPersonData { get; set; }
 
         public ParentData ParentData { get; set; }
@@ -41,5 +53,7 @@ namespace CasaRM.WebApp.Persistence.Models
         public ICollection<FamilyGroup> FamilyGroup { get; set; }
 
         public ICollection<Contribution> Contribution { get; set; }
+
+        public HousingSituation HousingSituation { get; set; }
     }
 }

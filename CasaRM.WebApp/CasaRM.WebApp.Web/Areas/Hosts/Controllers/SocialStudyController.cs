@@ -5,6 +5,7 @@ using CasaRM.WebApp.Shared.Models.SocialStudy;
 using CasaRM.WebApp.Web.Areas.Hosts.Models.SocialStudy;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using NuGet.Protocol;
 using System.Security.Claims;
 
 namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
@@ -46,7 +47,9 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
                 viewModel.FamilyGroupListViewModel = fullSocialStudyData.FamilyGroupDto.ToObjectList<FamilyGroupListViewModel>();
                 viewModel.ContributionListViewModel = fullSocialStudyData.ContributionDto.ToObjectList<ContributionListViewModel>();
                 viewModel.IncomeCalculationFormViewModel = fullSocialStudyData.IncomeCalculationDto.ToObject<IncomeCalculationFormViewModel>();
-
+                viewModel.HousingSituationFormViewModel = fullSocialStudyData.HousingSituationDto.ToObject<HousingSituationFormViewModel>();
+                viewModel.SupportServicesFormViewModel = fullSocialStudyData.SupportServicesDto.ToObject<SupportServicesFormViewModel>();
+                viewModel.RecomendationFormViewModel = fullSocialStudyData.RecomendationDto.ToObject<RecomendationFormViewModel>();
             }
 
             return View(viewModel);
@@ -67,6 +70,9 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
             createOrUpdateSocialStudyDto.FamilyGroupDto = viewModel.FamilyGroupListViewModel.ToObjectList<FamilyGroupDto>();
             createOrUpdateSocialStudyDto.ContributionDto = viewModel.ContributionListViewModel.ToObjectList<ContributionDto>();
             createOrUpdateSocialStudyDto.IncomeCalculationDto = viewModel.IncomeCalculationFormViewModel.ToObject<IncomeCalculationDto>();
+            createOrUpdateSocialStudyDto.HousingSituationDto = viewModel.HousingSituationFormViewModel.ToObject<HousingSituationDto>();
+            createOrUpdateSocialStudyDto.SupportServicesDto = viewModel.SupportServicesFormViewModel.ToObject<SupportServicesDto>();
+            createOrUpdateSocialStudyDto.RecomendationDto = viewModel.RecomendationFormViewModel.ToObject<RecomendationDto>();
 
             string result = await _socialStudyService.CreateOrUpdateSocialStudyAsync(createOrUpdateSocialStudyDto);
 

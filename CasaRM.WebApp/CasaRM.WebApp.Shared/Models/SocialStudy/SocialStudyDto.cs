@@ -10,10 +10,16 @@
 
         public int CompanionDataId { get; set; }
 
+        public int HousingSituationId { get; set; }
+
         public decimal TotalRevenue { get; set; }
 
         public decimal PerCapitaIncome { get; set; }
 
         public string PovertyCategory { get; set; }
+
+        public string SupportServices { get; set; }
+
+        public string Recomendation { get; set; }
     }
 }
