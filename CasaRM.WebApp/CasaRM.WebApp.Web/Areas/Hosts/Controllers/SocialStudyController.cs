@@ -15,16 +15,16 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
     {
         private readonly IHostService _hostService;
         private readonly ISocialStudyService _socialStudyService;
-        private readonly ApplicationCatalog _applicationCatalog;
+        private readonly ApplicationCatalog _applicationCatalogs;
 
         public SocialStudyController(
             IHostService hostService,
             ISocialStudyService socialStudyService,
-            ApplicationCatalog applicationCatalog)
+            ApplicationCatalog applicationCatalogs)
         {
             _hostService = hostService;
             _socialStudyService = socialStudyService;
-            _applicationCatalog = applicationCatalog;
+            _applicationCatalogs = applicationCatalogs;
         }
 
         public async Task<IActionResult> Manage(string host)
@@ -46,6 +46,8 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
                 viewModel.FamilyGroupListViewModel = fullSocialStudyData.FamilyGroupDto.ToObjectList<FamilyGroupListViewModel>();
                 viewModel.ContributionListViewModel = fullSocialStudyData.ContributionDto.ToObjectList<ContributionListViewModel>();
             }
+
+            ViewBag.ApplicationCatalogs = _applicationCatalogs;
 
             return View(viewModel);
         }
