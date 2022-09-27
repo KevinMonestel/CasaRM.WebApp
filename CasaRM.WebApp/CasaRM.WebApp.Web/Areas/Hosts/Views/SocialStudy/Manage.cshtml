@@ -253,6 +253,7 @@
 
             confirmationModal.modal("hide");
 
+            // Validations
             if (!minorPersonDataForm.valid() ||
                 !parentDataForm.valid() ||
                 !companionDataForm.valid() ||
@@ -263,6 +264,7 @@
                 return;
             }
 
+            // Super obj
             let socialStudyFullObj = {
                 hostId: mainDataForm.find('input[name=HostId]').val(),
                 socialStudyId: mainDataForm.find('input[name=SocialStudyId]').val(),
@@ -275,8 +277,11 @@
                 HousingSituationFormViewModel: housingSituationForm.serializeArray().reduce(function (a, x) { a[x.name] = x.value; return a; }, {}),
             }
 
+            socialStudyFullObj.HousingSituationFormViewModel.BasicServices = housingSituationForm.find("select[name=BasicServices]").val()
+
             sendingInfoModal.modal("show");
 
+            // Call to Save Social Study action
             $.post(saveSocialStudyUrl, socialStudyFullObj, function (data) {
                 location.href = data.redirectUrl
             })
