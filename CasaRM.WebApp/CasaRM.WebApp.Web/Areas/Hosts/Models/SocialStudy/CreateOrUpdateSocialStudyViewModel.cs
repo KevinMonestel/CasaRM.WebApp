@@ -34,5 +34,9 @@
         public ContributionFormViewModel ContributionFormViewModel { get; set; }
 
         public List<ContributionListViewModel> ContributionListViewModel { get; set; }
+
+        public IncomeCalculationFormViewModel IncomeCalculationFormViewModel { get; set; }
+
+        public HousingSituationFormViewModel HousingSituationFormViewModel { get; set; }
     }
 }

@@ -18,6 +18,7 @@ ApplicationCatalog applicationCatalog = new();
 applicationCatalog.HousingTenureConditions = builder.Configuration.GetSection("HousingTenureConditions").Get<IEnumerable<CatalogDto>>();
 applicationCatalog.HousingConstructionMaterialsWalls = builder.Configuration.GetSection("HousingConstructionMaterialsWalls").Get<IEnumerable<CatalogDto>>();
 applicationCatalog.HousingConstructionMaterialsFloors = builder.Configuration.GetSection("HousingConstructionMaterialsFloors").Get<IEnumerable<CatalogDto>>();
+applicationCatalog.RoomTypes = builder.Configuration.GetSection("RoomTypes").Get<IEnumerable<CatalogDto>>();
 applicationCatalog.HousingConservationStatuses = builder.Configuration.GetSection("HousingConservationStatuses").Get<IEnumerable<CatalogDto>>();
 applicationCatalog.BasicServices = builder.Configuration.GetSection("BasicServices").Get<IEnumerable<CatalogDto>>();
 applicationCatalog.HostHealthQuestions = builder.Configuration.GetSection("HostHealthQuestions").Get<IEnumerable<CatalogDto>>();

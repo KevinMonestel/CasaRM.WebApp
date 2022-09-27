@@ -7,8 +7,8 @@
 <h1 class="h1 mb-3"><strong>Huéspedes</strong> Nuevo Ingreso</h1>
 
 <form id="mainDataForm">
-    @Html.HiddenFor(model => model.HostId)
-    @Html.HiddenFor(model => model.SocialStudyId)
+    <input asp-for="HostId" hidden />
+    <input asp-for="SocialStudyId" hidden />
 </form>
 
 <div class="card">
@@ -125,6 +125,7 @@
     </div>
 
     <div class="card-body">
+        <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_IncomeCalculationForm.cshtml" model="Model.IncomeCalculationFormViewModel" />
     </div>
 </div>
 
@@ -134,6 +135,7 @@
     </div>
 
     <div class="card-body">
+        <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_HousingSituationForm.cshtml" model="Model.HousingSituationFormViewModel" />
     </div>
 </div>
 
@@ -161,9 +163,7 @@
     </div>
 
     <div class="card-body">
-        @foreach(var hostHealthQuestion in ViewBag.ApplicationCatalogs.HostHealthQuestions){
-            <p>@hostHealthQuestion.Description</p>
-        }
+
     </div>
 </div>
 
@@ -207,7 +207,7 @@
     <link rel="stylesheet" href="~/lib/snackbar/css/toastr.min.css" />
 }
 
-@section Scripts {
+    @section Scripts {
     <partial name="_ValidationScriptsPartial" />
     <script src="~/lib/snackbar/js/toastr.min.js"></script>
     <script type="text/javascript">
@@ -222,6 +222,8 @@
             let minorPersonDataForm = $("#minorPersonDataForm");
             let parentDataForm = $("#parentDataForm");
             let companionDataForm = $("#companionDataForm");
+            let incomeCalculationForm = $("#incomeCalculationForm");
+            let housingSituationForm = $("#housingSituationForm");
             let saveSocialStudyUrl = "@Url.Action("Save", "SocialStudy", new { area = "Hosts" })";
 
             // FamilyGroupRecords
@@ -253,7 +255,9 @@
 
             if (!minorPersonDataForm.valid() ||
                 !parentDataForm.valid() ||
-                !companionDataForm.valid()) {
+                !companionDataForm.valid() ||
+                !incomeCalculationForm.valid() ||
+                !housingSituationForm.valid()) {
                 toastr.error('Campos requeridos se encuentran actualmente con errores de validación. Por favor, revisa el formulario', '¡Atención!');
 
                 return;
@@ -266,7 +270,9 @@
                 ParentDataFormViewModel: parentDataForm.serializeArray().reduce(function (a, x) { a[x.name] = x.value; return a; }, {}),
                 CompanionDataFormViewModel: companionDataForm.serializeArray().reduce(function (a, x) { a[x.name] = x.value; return a; }, {}),
                 FamilyGroupListViewModel: familyGroupData,
-                ContributionListViewModel: contributionData
+                ContributionListViewModel: contributionData,
+                IncomeCalculationFormViewModel: incomeCalculationForm.serializeArray().reduce(function (a, x) { a[x.name] = x.value; return a; }, {}),
+                HousingSituationFormViewModel: housingSituationForm.serializeArray().reduce(function (a, x) { a[x.name] = x.value; return a; }, {}),
             }
 
             sendingInfoModal.modal("show");
@@ -303,16 +309,16 @@
             let monthlyGrossIncome = $(this).find('input[name=MonthlyGrossIncome]').val();
 
             familyGroupListTable.find("tbody").append(`
-                                    <tr>
-                                        <td>${fullName}</td>
-                                        <td>${relationship}</td>
-                                        <td>${age}</td>
-                                        <td>${maritalStatus}</td>
-                                        <td>${scholarship}</td>
-                                        <td>${ocupation}</td>
-                                        <td>${monthlyGrossIncome}</td>
-                                        <td class="text-end"><button class="btn btn-danger" name="delete-row">X</button></td>
-                                    </tr>`);
+                                            <tr>
+                                                <td>${fullName}</td>
+                                                <td>${relationship}</td>
+                                                <td>${age}</td>
+                                                <td>${maritalStatus}</td>
+                                                <td>${scholarship}</td>
+                                                <td>${ocupation}</td>
+                                                <td>${monthlyGrossIncome}</td>
+                                                <td class="text-end"><button class="btn btn-danger" name="delete-row">X</button></td>
+                                            </tr>`);
 
             familyGroupFormModal.modal("hide");
             familyGroupForm[0].reset();
@@ -332,13 +338,13 @@
             let monthlyContribution = $(this).find('input[name=MonthlyContribution]').val();
 
             contributionListTable.find("tbody").append(`
-                                    <tr>
-                                        <td>${fullName}</td>
-                                        <td>${relationship}</td>
-                                        <td>${ocupation}</td>
-                                        <td>${monthlyContribution}</td>
-                                        <td class="text-end"><button class="btn btn-danger" name="delete-row">X</button></td>
-                                    </tr>`);
+                                            <tr>
+                                                <td>${fullName}</td>
+                                                <td>${relationship}</td>
+                                                <td>${ocupation}</td>
+                                                <td>${monthlyContribution}</td>
+                                                <td class="text-end"><button class="btn btn-danger" name="delete-row">X</button></td>
+                                            </tr>`);
 
             contributionFormModal.modal("hide");
             contributionForm[0].reset();

@@ -47,8 +47,6 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
                 viewModel.ContributionListViewModel = fullSocialStudyData.ContributionDto.ToObjectList<ContributionListViewModel>();
             }
 
-            ViewBag.ApplicationCatalogs = _applicationCatalogs;
-
             return View(viewModel);
         }
 

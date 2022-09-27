@@ -1,0 +1,34 @@
+﻿@model IncomeCalculationFormViewModel
+
+@{
+}
+
+<form id="incomeCalculationForm">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-floating mb-3">
+                <input asp-for="TotalRevenue" class="form-control" aria-required="true" />
+                <label asp-for="TotalRevenue" class="form-label">Total de Ingresos</label>
+                <span asp-validation-for="TotalRevenue" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-floating mb-3">
+                <input asp-for="PerCapitaIncome" class="form-control" aria-required="true" />
+                <label asp-for="PerCapitaIncome" class="form-label">Ingreso Per Cápita</label>
+                <span asp-validation-for="PerCapitaIncome" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-floating mb-3">
+                <input asp-for="PovertyCategory" class="form-control" aria-required="true" />
+                <label asp-for="PovertyCategory" class="form-label">Categoría de pobreza</label>
+                <span asp-validation-for="PovertyCategory" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+</form>

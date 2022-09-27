@@ -1,0 +1,108 @@
+﻿@using CasaRM.WebApp.Shared.Models.Catalog
+@model HousingSituationFormViewModel
+@inject ApplicationCatalog _appCatalogs
+
+@{
+}
+
+<form id="housingSituationForm">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <p>5.1 Condición de tenencia de la vivienda</p>
+            @foreach (CatalogDto catalog in _appCatalogs.HousingTenureConditions)
+            {
+                <label class="form-check">
+                    <input class="form-check-input" asp-for="HousingTenureCondition" type="radio" value="@catalog.Description" />
+                    <span class="form-check-label">
+                        @catalog.Description
+                    </span>
+                </label>
+            }
+            <span asp-validation-for="HousingTenureCondition" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <p>5.2. Materiales de construcción de la vivienda</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Paredes</p>
+                    @foreach (CatalogDto catalog in _appCatalogs.HousingConstructionMaterialsWalls)
+                    {
+                        <label class="form-check">
+                            <input class="form-check-input" asp-for="HousingConstructionMaterialsWall" type="radio" value="@catalog.Description" />
+                            <span class="form-check-label">
+                                @catalog.Description
+                            </span>
+                        </label>
+                    }
+                    <span asp-validation-for="HousingConstructionMaterialsWall" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <p>Piso</p>
+                    @foreach (CatalogDto catalog in _appCatalogs.HousingConstructionMaterialsFloors)
+                    {
+                        <label class="form-check">
+                            <input class="form-check-input" asp-for="HousingConstructionMaterialsFloor" type="radio" value="@catalog.Description" />
+                            <span class="form-check-label">
+                                @catalog.Description
+                            </span>
+                        </label>
+                    }
+                    <span asp-validation-for="HousingConstructionMaterialsFloor" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <p>5.3. Tipo y número de aposentos de la vivienda</p>
+            <div class="form-floating mb-3">
+                <input asp-for="RoomsQuantity" class="form-control" aria-required="true" />
+                <label asp-for="RoomsQuantity" class="form-label">Número de Aposentos</label>
+                <span asp-validation-for="RoomsQuantity" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="BedroomsQuantity" class="form-control" aria-required="true" />
+                <label asp-for="BedroomsQuantity" class="form-label">Número de Dormitorios</label>
+                <span asp-validation-for="BedroomsQuantity" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="BathroomsQuantity" class="form-control" aria-required="true" />
+                <label asp-for="BathroomsQuantity" class="form-label">Número de Baños</label>
+                <span asp-validation-for="BathroomsQuantity" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <p>5.4. Estado de conservación de la vivienda</p>
+            @foreach (CatalogDto catalog in _appCatalogs.HousingConservationStatuses)
+            {
+                <label class="form-check">
+                    <input class="form-check-input" asp-for="HousingConservationStatus" type="radio" value="@catalog.Description" />
+                    <span class="form-check-label">
+                        @catalog.Description
+                    </span>
+                </label>
+            }
+            <span asp-validation-for="HousingConservationStatus" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <p>5.5. Servicios Básicos</p>
+            @foreach (CatalogDto catalog in _appCatalogs.BasicServices)
+            {
+                <label class="form-check">
+                    <input class="form-check-input" asp-for="BasicServices" type="radio" value="@catalog.Description" />
+                    <span class="form-check-label">
+                        @catalog.Description
+                    </span>
+                </label>
+            }
+            <span asp-validation-for="BasicServices" class="text-danger"></span>
+        </div>
+    </div>
+</form>

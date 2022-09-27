@@ -71,6 +71,21 @@
     }
   ],
 
+  "RoomTypes": [
+    {
+      "Id": 1,
+      "Description": "Aposentos (cocina, comedor, sala)"
+    },
+    {
+      "Id": 2,
+      "Description": "Dormitorios"
+    },
+    {
+      "Id": 3,
+      "Description": "Baños"
+    }
+  ],
+
   "BasicServices": [
     {
       "Id": 1,

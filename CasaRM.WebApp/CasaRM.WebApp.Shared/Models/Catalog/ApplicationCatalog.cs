@@ -8,6 +8,8 @@
 
         public IEnumerable<CatalogDto> HousingConstructionMaterialsFloors { get; set; }
 
+        public IEnumerable<CatalogDto> RoomTypes { get; set; }
+
         public IEnumerable<CatalogDto> HousingConservationStatuses { get; set; }
 
         public IEnumerable<CatalogDto> BasicServices { get; set; }
