@@ -22,6 +22,16 @@ namespace CasaRM.WebApp.Persistence.Models
         [Column("DatosAcompannanteId")]
         public int CompanionDataId { get; set; }
 
+        [Column("TotalIngresos")]
+        public decimal TotalRevenue { get; set; }
+
+        [Column("IngresoPerCapita")]
+        public decimal PerCapitaIncome { get; set; }
+
+        [StringLength(100)]
+        [Column("CategoriaPobreza")]
+        public string PovertyCategory { get; set; }
+
         public MinorPersonData MinorPersonData { get; set; }
 
         public ParentData ParentData { get; set; }

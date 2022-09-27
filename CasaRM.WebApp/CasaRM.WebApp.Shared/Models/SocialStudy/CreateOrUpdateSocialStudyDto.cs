@@ -23,5 +23,7 @@ namespace CasaRM.WebApp.Shared.Models.SocialStudy
         public IEnumerable<FamilyGroupDto> FamilyGroupDto { get; set; }
 
         public IEnumerable<ContributionDto> ContributionDto { get; set; }
+
+        public IncomeCalculationDto IncomeCalculationDto { get; set; }
     }
 }

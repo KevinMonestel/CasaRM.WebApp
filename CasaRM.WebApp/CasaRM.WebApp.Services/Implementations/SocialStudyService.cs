@@ -47,6 +47,7 @@ namespace CasaRM.WebApp.Services.Implementations
             result.CompanionDataDto = await _companionDataRepository.GetCompanionDataByIdAsync(socialStudyDto.CompanionDataId);
             result.FamilyGroupDto = await _familyGroupRepository.GetFamilyGroupBySocialStudyId(socialStudyId);
             result.ContributionDto = await _contributionRepository.GetContributionBySocialStudyId(socialStudyId);
+            result.IncomeCalculationDto = new() { TotalRevenue = socialStudyDto.TotalRevenue, PerCapitaIncome = socialStudyDto.PerCapitaIncome, PovertyCategory = socialStudyDto.PovertyCategory };
 
             return result;
         }
@@ -59,15 +60,19 @@ namespace CasaRM.WebApp.Services.Implementations
             createOrUpdateSocialStudyDto.ParentDataDto = await _parentDataRepository.CreateOrUpdateAsync(createOrUpdateSocialStudyDto.ParentDataDto);
             createOrUpdateSocialStudyDto.CompanionDataDto = await _companionDataRepository.CreateOrUpdateAsync(createOrUpdateSocialStudyDto.CompanionDataDto);
 
+            SocialStudyDto socialStudioModel = await _socialStudyRepository.CreateOrUpdateAsync(new SocialStudyDto
+            {
+                Id = createOrUpdateSocialStudyDto.SocialStudyId,
+                MinorPersonDataId = createOrUpdateSocialStudyDto.MinorPersonDataDto.Id,
+                CompanionDataId = createOrUpdateSocialStudyDto.CompanionDataDto.Id,
+                ParentDataId = createOrUpdateSocialStudyDto.ParentDataDto.Id,
+                TotalRevenue = createOrUpdateSocialStudyDto.IncomeCalculationDto.TotalRevenue,
+                PerCapitaIncome = createOrUpdateSocialStudyDto.IncomeCalculationDto.PerCapitaIncome,
+                PovertyCategory = createOrUpdateSocialStudyDto.IncomeCalculationDto.PovertyCategory
+            });
+
             if (string.IsNullOrEmpty(createOrUpdateSocialStudyDto.HostId) && createOrUpdateSocialStudyDto.SocialStudyId.Equals(0))
             {
-                SocialStudyDto socialStudioModel = await _socialStudyRepository.CreateSocialStudyAsync(new SocialStudyDto
-                {
-                    MinorPersonDataId = createOrUpdateSocialStudyDto.MinorPersonDataDto.Id,
-                    CompanionDataId = createOrUpdateSocialStudyDto.CompanionDataDto.Id,
-                    ParentDataId = createOrUpdateSocialStudyDto.ParentDataDto.Id
-                });
-
                 if (socialStudioModel is null) throw new Exception();
 
                 createOrUpdateSocialStudyDto.SocialStudyId = socialStudioModel.Id;

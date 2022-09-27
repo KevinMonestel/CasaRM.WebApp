@@ -30,22 +30,31 @@ namespace CasaRM.WebApp.Repositories.Implementations
             }
         }
 
-        public async Task<SocialStudyDto> CreateSocialStudyAsync(SocialStudyDto socialStudyDto)
+        public async Task<SocialStudyDto> CreateOrUpdateAsync(SocialStudyDto socialStudyDto)
         {
             try
             {
-                SocialStudy dbModel = await AddAsync(new SocialStudy
-                {
-                    MinorPersonDataId = socialStudyDto.MinorPersonDataId,
-                    CompanionDataId = socialStudyDto.CompanionDataId,
-                    ParentDataId = socialStudyDto.ParentDataId
-                });
+                SocialStudyDto result = new();
+                SocialStudy dbModel = socialStudyDto.ToObject<SocialStudy>();
+
+                if (dbModel.Id > 0)
+                    dbModel = await UpdateAsync(dbModel);
+                else
+                    dbModel = await AddAsync(new SocialStudy
+                    {
+                        MinorPersonDataId = socialStudyDto.MinorPersonDataId,
+                        CompanionDataId = socialStudyDto.CompanionDataId,
+                        ParentDataId = socialStudyDto.ParentDataId,
+                        TotalRevenue = socialStudyDto.TotalRevenue,
+                        PerCapitaIncome = socialStudyDto.PerCapitaIncome,
+                        PovertyCategory = socialStudyDto.PovertyCategory 
+                    });
 
                 if (dbModel is null) throw new Exception();
 
-                socialStudyDto.Id = dbModel.Id;
+                result = dbModel.ToObject<SocialStudyDto>();
 
-                return socialStudyDto;
+                return result;
             }
             catch (Exception)
             {
