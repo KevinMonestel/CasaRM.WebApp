@@ -68,7 +68,7 @@ namespace CasaRM.WebApp.Persistence.Models
         [StringLength(250)]
         public string Treatment { get; set; }
 
-        [Column("Onservaciones")]
+        [Column("Observaciones")]
         [StringLength(500)]
         public string Observations { get; set; }
     }

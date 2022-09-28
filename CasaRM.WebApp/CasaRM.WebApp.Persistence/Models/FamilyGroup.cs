@@ -15,6 +15,7 @@ namespace CasaRM.WebApp.Persistence.Models
         [Key]
         public int Id { get; set; }
 
+        [Column("EstudioSocialId")]
         [ForeignKey("SocialStudy")]
         public int SocialStudyId { get; set; }
 

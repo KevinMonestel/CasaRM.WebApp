@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CasaRM.WebApp.Persistence.Models
 {
-    [Table("SituacionHabitacional")]
+    [Table("SituacionesHabitacionales")]
     public class HousingSituation
     {
         [Key]
