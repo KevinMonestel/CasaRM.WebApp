@@ -20,7 +20,7 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Models.SocialStudy
         public bool Question3 { get; set; }
 
         [Required]
-        [DisplayName("¿Diarrea en los últimos 2 días?\r\n")]
+        [DisplayName("¿Diarrea en los últimos 2 días?")]
         public bool Question4 { get; set; }
 
         [Required]

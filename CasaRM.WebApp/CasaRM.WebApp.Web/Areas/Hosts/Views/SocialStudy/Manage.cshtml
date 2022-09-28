@@ -236,6 +236,7 @@
         var sendingInfoModal = $("#sendingInfoModal");
         var familyGroupForm = $("#familyGroupForm");
         var contributionForm = $("#contributionForm");
+        var guestHealthQuestionaireFormData = $('#guestHealthQuestionaireForm').serializeObject();
 
         saveSocialStudyBtn.on("click", function () {
             let mainDataForm = $("#mainDataForm");
@@ -304,7 +305,7 @@
                 HousingSituationFormViewModel: housingSituationForm.serializeObject(),
                 SupportServicesFormViewModel: supportServicesForm.serializeObject(),
                 RecomendationFormViewModel: recomendationForm.serializeObject(),
-                GuestHealthQuestionaireFormViewModel: guestHealthQuestionaireForm.serializeObject(),
+                GuestHealthQuestionaireFormViewModel: guestHealthQuestionaireFormData,
             }
 
             socialStudyFullObj.HousingSituationFormViewModel.BasicServices = housingSituationForm.find("select[name=BasicServices]").val()
@@ -418,9 +419,16 @@
 
         $("#housingSituationForm").find("select[name=BasicServices] option").mousedown(function (e) {
             e.preventDefault();
-            console.log(this.selected)
             this.selected = !this.selected;
             return false;
+        });
+
+        $('#guestHealthQuestionaireForm').find("input[type=checkbox]").on('change', function (e) {
+            e.preventDefault();
+
+            let name = $(this).attr('name');
+
+            guestHealthQuestionaireFormData[name] = this.checked
         });
     </script>
 }
