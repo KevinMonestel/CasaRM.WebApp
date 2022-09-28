@@ -19,6 +19,7 @@ namespace CasaRM.WebApp.Services.Implementations
         private readonly IFamilyGroupRepository _familyGroupRepository;
         private readonly IContributionRepository _contributionRepository;
         private readonly IHousingSituationRepository _housingSituationRepository;
+        private readonly IGuestHealthQuestionnaireRepository _guestHealthQuestionnaireRepository;
 
         public SocialStudyService(
             IMinorPersonDataRepository minorPersonDataRepository,
@@ -28,7 +29,8 @@ namespace CasaRM.WebApp.Services.Implementations
             ICompanionDataRepository companionDataRepository,
             IFamilyGroupRepository familyGroupRepository,
             IContributionRepository contributionRepository,
-            IHousingSituationRepository housingSituationRepository)
+            IHousingSituationRepository housingSituationRepository,
+            IGuestHealthQuestionnaireRepository guestHealthQuestionnaireRepository)
         {
             _minorPersonDataRepository = minorPersonDataRepository;
             _hostRepository = hostRepository;
@@ -38,6 +40,7 @@ namespace CasaRM.WebApp.Services.Implementations
             _familyGroupRepository = familyGroupRepository;
             _contributionRepository = contributionRepository;
             _housingSituationRepository = housingSituationRepository;
+            _guestHealthQuestionnaireRepository = guestHealthQuestionnaireRepository;
         }
 
         public async Task<CreateOrUpdateSocialStudyDto> GetFullSocialStudyAsync(int socialStudyId)
@@ -54,7 +57,7 @@ namespace CasaRM.WebApp.Services.Implementations
             result.HousingSituationDto = await _housingSituationRepository.GetHousingSituationByIdAsync(socialStudyDto.HousingSituationId);
             result.RecomendationDto = new() { Recomendation = socialStudyDto.Recomendation };
             result.SupportServicesDto = new() { SupportServices = socialStudyDto.SupportServices };
-            result.GuestHealthQuestionnaireDto = new();
+            result.GuestHealthQuestionnaireDto = await _guestHealthQuestionnaireRepository.GetGuestHealthQuestionnaireByIdAsync(socialStudyDto.GuestHealthQuestionnaireId);
 
             return result;
         }
@@ -67,6 +70,7 @@ namespace CasaRM.WebApp.Services.Implementations
             createOrUpdateSocialStudyDto.ParentDataDto = await _parentDataRepository.CreateOrUpdateAsync(createOrUpdateSocialStudyDto.ParentDataDto);
             createOrUpdateSocialStudyDto.CompanionDataDto = await _companionDataRepository.CreateOrUpdateAsync(createOrUpdateSocialStudyDto.CompanionDataDto);
             createOrUpdateSocialStudyDto.HousingSituationDto = await _housingSituationRepository.CreateOrUpdateAsync(createOrUpdateSocialStudyDto.HousingSituationDto);
+            createOrUpdateSocialStudyDto.GuestHealthQuestionnaireDto = await _guestHealthQuestionnaireRepository.CreateOrUpdateAsync(createOrUpdateSocialStudyDto.GuestHealthQuestionnaireDto);
 
             SocialStudyDto socialStudioModel = await _socialStudyRepository.CreateOrUpdateAsync(new SocialStudyDto
             {
@@ -79,7 +83,8 @@ namespace CasaRM.WebApp.Services.Implementations
                 PovertyCategory = createOrUpdateSocialStudyDto.IncomeCalculationDto.PovertyCategory,
                 SupportServices = createOrUpdateSocialStudyDto.SupportServicesDto.SupportServices,
                 Recomendation = createOrUpdateSocialStudyDto.RecomendationDto.Recomendation,
-                HousingSituationId = createOrUpdateSocialStudyDto.HousingSituationDto.Id
+                HousingSituationId = createOrUpdateSocialStudyDto.HousingSituationDto.Id,
+                GuestHealthQuestionnaireId = createOrUpdateSocialStudyDto.GuestHealthQuestionnaireDto.Id
             });
 
             if (string.IsNullOrEmpty(createOrUpdateSocialStudyDto.HostId) && createOrUpdateSocialStudyDto.SocialStudyId.Equals(0))

@@ -38,6 +38,7 @@ builder.Services.AddScoped<ICompanionDataRepository, CompanionDataRepository>();
 builder.Services.AddScoped<IFamilyGroupRepository, FamilyGroupRepository>();
 builder.Services.AddScoped<IContributionRepository, ContributionRepository>();
 builder.Services.AddScoped<IHousingSituationRepository, HousingSituationRepository>();
+builder.Services.AddScoped<IGuestHealthQuestionnaireRepository, GuestHealthQuestionnaireRepository>();
 
 // Singletons
 builder.Services.AddSingleton(applicationCatalog);

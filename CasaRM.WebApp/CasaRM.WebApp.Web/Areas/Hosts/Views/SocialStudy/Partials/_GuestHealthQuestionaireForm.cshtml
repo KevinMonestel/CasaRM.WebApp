@@ -4,6 +4,9 @@
 }
 
 <form id="guestHealthQuestionaireForm">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input asp-for="Id" class="form-control" aria-required="true" type="hidden" />
+
     <label class="form-check">
         <input class="form-check-input" type="checkbox" asp-for="Question1" value="true" checked="@Model.Question1" />
         <span class="form-check-label">

@@ -236,7 +236,7 @@
         var sendingInfoModal = $("#sendingInfoModal");
         var familyGroupForm = $("#familyGroupForm");
         var contributionForm = $("#contributionForm");
-        var guestHealthQuestionaireFormData = $('#guestHealthQuestionaireForm').serializeObject();
+        var guestHealthQuestionaireFormData = @Html.Raw(Json.Serialize(Model.GuestHealthQuestionaireFormViewModel));
 
         saveSocialStudyBtn.on("click", function () {
             let mainDataForm = $("#mainDataForm");
@@ -428,7 +428,9 @@
 
             let name = $(this).attr('name');
 
-            guestHealthQuestionaireFormData[name] = this.checked
+            guestHealthQuestionaireFormData[name.toLowerCase()] = this.checked;
+
+            console.log(guestHealthQuestionaireFormData)
         });
     </script>
 }
