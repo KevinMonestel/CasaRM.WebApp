@@ -15,46 +15,31 @@
     </div>
 }
 
+<div class="my-3">
+    <strong>Código de registro del huésped: </strong> <span>@Model.HostId</span>
+</div>
+
 <div class="row">
     <div class="col-md-4">
         <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Estudio Social</h5>
+            </div>
             <div class="card-body">
-                <div class="row">
-                    <div class="col mt-0">
-                        <h5 class="card-title">Estudio Social</h5>
-                    </div>
-
-                    <div class="col-auto">
-                        <div class="stat text-primary">
-                            
-                        </div>
-                    </div>
-                </div>
-                <h1 class="mt-1 mb-3">Formulario de Estudio Social</h1>
-                <div class="mb-0">
-                    <span class="text-muted"><a href="@Url.Action("Manage", "SocialStudy", new { host = Model.HostId, area = "Hosts" })">Ir al formulario</a></span>
-                </div>
+                <p class="card-text">Formulario de Estudio Social</p>
+                <a href="@Url.Action("Manage", "SocialStudy", new { host = Model.HostId, area = "Hosts" })" class="btn btn-primary">Ir al formulario</a>
             </div>
         </div>
     </div>
 
     <div class="col-md-4">
         <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Registro de hospedaje</h5>
+            </div>
             <div class="card-body">
-                <div class="row">
-                    <div class="col mt-0">
-                        <h5 class="card-title">Registro de hospedaje</h5>
-                    </div>
-
-                    <div class="col-auto">
-                        <div class="stat text-primary">
-                        </div>
-                    </div>
-                </div>
-                <h1 class="mt-1 mb-3">Formulario de Registro de Hospedaje</h1>
-                <div class="mb-0">
-                    <span class="text-muted"><a href="#">Ir al registro</a></span>
-                </div>
+                <p class="card-text">Formulario de Registro de Hospedaje</p>
+                <a href="#" class="btn btn-primary">Ir al registro</a>
             </div>
         </div>
     </div>

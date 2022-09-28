@@ -1,6 +1,96 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Buscar";
 }
 
 <h1 class="h1 mb-3"><strong>Huéspedes</strong> Buscar</h1>
+
+<partial name="~/Areas/Hosts/Views/Home/Partials/_SearchHostForm.cshtml" model="new SearchHostFormViewModel()" />
+
+<div class="border-bottom mb-3"></div>
+
+<p>Resultados de tu búsqueda</p>
+
+<div class="text-center d-none" id="searchHostSpinner">
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Cargando...</span>
+    </div>
+</div>
+
+<div id="searchHostResults"></div>
+
+@section Styles{
+    <link rel="stylesheet" href="~/lib/snackbar/css/toastr.min.css" />
+}
+
+    @section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/lib/jquery-serialize-object/js/jquery.serialize-object.min.js"></script>
+    <script src="~/lib/snackbar/js/toastr.min.js"></script>
+    <script type="text/javascript">
+        var searchHostForm = $("#searchHostForm");
+        var urlSearchHost = "@Url.Action("Search", "Home", new { area = "Hosts" })";
+
+        searchHostForm.submit(function (e) {
+            e.preventDefault();
+
+            let searchHostSpinner = $("#searchHostSpinner");
+            let searchHostResults = $("#searchHostResults");
+
+            searchHostSpinner.removeClass("d-none");
+
+            searchHostResults.html("");
+
+            $.post(urlSearchHost, searchHostForm.serializeObject(), function (data) {
+                if (data.length == 0) {
+                    searchHostResults.html("<small class='d-block text-center'>No se encontraron registros...</small>");
+                    return;
+                }
+
+                console.log(data)
+
+                $.each(data, function (key, value) {
+                    searchHostResults.append(`
+                                <div class='card'>
+                                    <div class='card-body'>
+                                        <strong class='d-block'>Nombre del paciente: ${value.minorPersonName}</strong>
+
+                                        <ul>
+                                            <li>
+                                                <small>Número de expediente: ${value.minorPersonFileNumber}</small>
+                                            </li>
+                                            <li>
+                                                <small>Nombre del padre/madre/encargado: ${value.parentName}</small>
+                                            </li>
+                                            <li>
+                                                <small>Identificación del padre/madre/encargado: ${value.parentIdentification}</small>
+                                            </li>
+                                            <li>
+                                                <small>Nombre del acompañante: ${value.companionName}</small>
+                                            </li>
+                                            <li>
+                                                <small>Identificación del acompañante: ${value.companionIdentification}</small>
+                                            </li>
+                                            </li>
+                                        </ul>
+
+                                        <div class='text-end'>
+                                            <a href='${value.manageUrl}' class='btn btn-secondary'>Administrar información</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            `);
+                });
+            })
+                .done(function () {
+
+                })
+                .fail(function () {
+                    sendingInfoModal.modal("hide");
+                    toastr.error('Un error ha ocurrido mientras se procesaba la información. Por favor vuelve a intentarlo. Si el problema persiste, contactar al encargado', '¡Atención!');
+                })
+                .always(function () {
+                    searchHostSpinner.addClass("d-none");
+                });
+        });
+    </script>
+}

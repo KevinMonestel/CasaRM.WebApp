@@ -1,0 +1,66 @@
+﻿@model SearchHostFormViewModel
+
+@{
+}
+
+<strong class="d-block border-bottom">Formulario para la búsqueda de huéspedes</strong>
+
+<form id="searchHostForm" class="p-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-floating mb-3">
+                <input asp-for="Code" class="form-control" aria-required="true" />
+                <label asp-for="Code" class="form-label">Código de Registro</label>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <input asp-for="MinorPersonName" class="form-control" aria-required="true" />
+                <label asp-for="MinorPersonName" class="form-label">Nombre del Paciente</label>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <input asp-for="MinorPersonFileNumber" class="form-control" aria-required="true" />
+                <label asp-for="MinorPersonFileNumber" class="form-label">Número de Expediente</label>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <input asp-for="ParentName" class="form-control" aria-required="true" max="@DateTime.Now.ToString("yyyy-MM-dd")" min="@DateTime.Now.AddYears(-100).ToString("yyyy-MM-dd")" />
+                <label asp-for="ParentName" class="form-label">Nombre del Padre/Madre/Encargado</label>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <input asp-for="ParentIdentification" class="form-control" aria-required="true" />
+                <label asp-for="ParentIdentification" class="form-label">Identificación del Padre/Madre/Encargado</label>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <input asp-for="CompanionName" class="form-control" aria-required="true" />
+                <label asp-for="CompanionName" class="form-label">Nombre del Acompañante</label>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <input asp-for="CompanionIdentification" class="form-control" aria-required="true" />
+                <label asp-for="CompanionIdentification" class="form-label">Identificación del Acompañante</label>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="mb-3 text-center">
+                <input type="reset" value="Limpiar" class="btn btn-outline-danger" />
+                <input type="submit" value="Buscar" class="btn btn-primary"/>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,4 +1,5 @@
-﻿using CasaRM.WebApp.Shared.Models.SocialStudy;
+﻿using CasaRM.WebApp.Shared.Models.Host;
+using CasaRM.WebApp.Shared.Models.SocialStudy;
 
 namespace CasaRM.WebApp.Repositories.Interfaces
 {
@@ -7,5 +8,7 @@ namespace CasaRM.WebApp.Repositories.Interfaces
         Task<int> GetSocialStudyIdByHostIdAsync(string hostId);
 
         Task<HostDto> CreateHostAsync(HostDto hostDto);
+
+        Task<IEnumerable<SearchHostResultsDto>> SearchHostByHostSearchingAsync(SearchHostDto searchHostDto);
     }
 }
