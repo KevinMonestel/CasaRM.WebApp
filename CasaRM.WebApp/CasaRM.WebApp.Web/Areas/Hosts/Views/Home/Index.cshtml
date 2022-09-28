@@ -1,7 +1,7 @@
 ﻿@model HostManagmentViewModel
 
 @{
-    ViewData["Title"] = "Administración";
+    ViewData["Title"] = "Administrar huésped";
 }
 
 <h1 class="h1 mb-3"><strong>Huéspedes</strong> Administración</h1>
@@ -26,7 +26,7 @@
                 <h5 class="card-title mb-0">Estudio Social</h5>
             </div>
             <div class="card-body">
-                <p class="card-text">Formulario de Estudio Social</p>
+                <p class="card-text">Formulario de estudio social del huésped</p>
                 <a href="@Url.Action("Manage", "SocialStudy", new { host = Model.HostId, area = "Hosts" })" class="btn btn-primary">Ir al formulario</a>
             </div>
         </div>
@@ -35,11 +35,11 @@
     <div class="col-md-4">
         <div class="card">
             <div class="card-header">
-                <h5 class="card-title mb-0">Registro de hospedaje</h5>
+                <h5 class="card-title mb-0">Historial de hospedaje</h5>
             </div>
             <div class="card-body">
-                <p class="card-text">Formulario de Registro de Hospedaje</p>
-                <a href="#" class="btn btn-primary">Ir al registro</a>
+                <p class="card-text">Historial de Hospedaje del huésped</p>
+                <a href="@Url.Action("Index", "History", new { host = Model.HostId, area = "Hosts" })" class="btn btn-primary">Ir al registro</a>
             </div>
         </div>
     </div>

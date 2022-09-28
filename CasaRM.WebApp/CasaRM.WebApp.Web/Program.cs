@@ -28,6 +28,7 @@ applicationCatalog.HostHealthAnswers = builder.Configuration.GetSection("HostHea
 // Services
 builder.Services.AddScoped<IHostService, HostService>();
 builder.Services.AddScoped<ISocialStudyService, SocialStudyService>();
+builder.Services.AddScoped<IHostingHistoryService, HostingHistoryService>();
 
 //Repositories
 builder.Services.AddScoped<IHostRepository, HostRepository>();
@@ -39,6 +40,7 @@ builder.Services.AddScoped<IFamilyGroupRepository, FamilyGroupRepository>();
 builder.Services.AddScoped<IContributionRepository, ContributionRepository>();
 builder.Services.AddScoped<IHousingSituationRepository, HousingSituationRepository>();
 builder.Services.AddScoped<IGuestHealthQuestionnaireRepository, GuestHealthQuestionnaireRepository>();
+builder.Services.AddScoped<IHostingHistoryRepository, HostingHistoryRepository>();
 
 // Singletons
 builder.Services.AddSingleton(applicationCatalog);

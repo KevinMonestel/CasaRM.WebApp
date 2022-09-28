@@ -1,0 +1,86 @@
+﻿@model HostingHistoryIndexViewModel
+
+@{
+    ViewData["Title"] = "Historial de hospedaje";
+}
+
+<h1 class="h1 mb-3"><strong>Huéspedes</strong> Historial de Ingreso</h1>
+
+<partial name="~/Areas/Hosts/Views/History/Partials/_HostingHistoryForm.cshtml" model="@Model.HostingHistoryFormViewModel" />
+
+<div class="card">
+    <div class="card-header">
+        Historial de Hospedaje
+    </div>
+
+    <div class="card-body">
+        <partial name="~/Areas/Hosts/Views/History/Partials/_HostingHistoryList.cshtml" model="@Model.HostingHistoryListViewModel" />
+    </div>
+</div>
+
+@section Styles{
+    <link rel="stylesheet" href="~/lib/snackbar/css/toastr.min.css" />
+}
+
+    @section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/lib/jquery-serialize-object/js/jquery.serialize-object.min.js"></script>
+    <script src="~/lib/snackbar/js/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script type="text/javascript">
+        var hostingHistoryForm = $("#hostingHistoryForm");
+        var urlAddHistory = "@Url.Action("AddHistory","History", new { area = "Hosts" })";
+        var urlRemoveHistory = "@Url.Action("RemoveHistory","History", new { area = "Hosts" })";
+        var historyListTable = $("#historyListTable");
+
+        hostingHistoryForm.submit(function (e) {
+            e.preventDefault();
+
+            $.post(urlAddHistory, hostingHistoryForm.serializeObject(), function (data) {
+                
+                if(!data){
+                    toastr.error('Un error ha ocurrido mientras se procesaba la información. Por favor vuelve a intentarlo. Si el problema persiste, contactar al encargado', '¡Atención!');
+                    return;
+                }
+
+                historyListTable.find("tbody").append(`
+                                                      <tr>
+                                                          <td>${dayjs(data.startDate).format("DD/MM/YYYY hh:mm A")}</td>
+                                                          <td>${dayjs(data.endDate).format("DD/MM/YYYY hh:mm A")}</td>
+                                                          <td class="text-end"><button class="btn btn-danger" name="removeHistory" data-id="${data.id}">X</button></td>
+                                                      </tr>`);
+            })
+                .done(function () {
+                })
+                .fail(function () {
+                    toastr.error('Un error ha ocurrido mientras se procesaba la información. Por favor vuelve a intentarlo. Si el problema persiste, contactar al encargado', '¡Atención!');
+                })
+                .always(function () {
+                });
+        });
+
+        $("body").on("click", "button[name=removeHistory]", function (e) {
+            e.preventDefault();
+
+            let element = $(this);
+
+            let id = element.data("id");
+
+            let removeHistoryObj = {
+                Id: id
+            };
+
+            $.post(urlRemoveHistory, removeHistoryObj, function (data) {
+                if(data)
+                    element.closest('tr').remove();
+            })
+                .done(function () {
+                })
+                .fail(function () {
+                    toastr.error('Un error ha ocurrido mientras se procesaba la información. Por favor vuelve a intentarlo. Si el problema persiste, contactar al encargado', '¡Atención!');
+                })
+                .always(function () {
+                });
+        });
+    </script>
+}

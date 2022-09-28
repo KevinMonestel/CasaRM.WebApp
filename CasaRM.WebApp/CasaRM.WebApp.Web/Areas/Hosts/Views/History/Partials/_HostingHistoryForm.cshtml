@@ -1,0 +1,35 @@
+﻿@model HostingHistoryFormViewModel
+
+@{
+}
+
+<p>Formulario para el ingreso de un nuevo historial</p>
+
+<form id="hostingHistoryForm">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input asp-for="HostId" class="form-control" aria-required="true" type="hidden" />
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-floating mb-3">
+                <input asp-for="StartDate" class="form-control" aria-required="true" />
+                <label asp-for="StartDate" class="form-label">Fecha de Ingreso</label>
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-floating mb-3">
+                <input asp-for="EndDate" class="form-control" aria-required="true" />
+                <label asp-for="EndDate" class="form-label">Fecha de Salida</label>
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-floating mb-3">
+                <input type="submit" value="Agregar registro" class="btn btn-primary"/>
+            </div>
+        </div>
+    </div>
+</form>

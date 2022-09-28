@@ -1,0 +1,24 @@
+﻿@model IEnumerable<HostingHistoryListViewModel>
+
+@{
+}
+
+<table class="table table-striped" id="historyListTable">
+    <thead>
+        <tr>
+            <th scope="col">Fecha Inicio</th>
+            <th scope="col">Fecha Final</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (HostingHistoryListViewModel history in Model)
+        {
+            <tr>
+                <td>@history.StartDate.ToString("dd/MM/yyyy hh:mm tt")</td>
+                <td>@history.EndDate.ToString("dd/MM/yyyy hh:mm tt")</td>
+                <td class="text-end"><button class="btn btn-danger" name="removeHistory" data-id="@history.Id">X</button></td>
+            </tr>
+        }
+    </tbody>
+</table>

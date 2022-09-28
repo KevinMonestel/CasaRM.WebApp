@@ -33,6 +33,8 @@ namespace CasaRM.WebApp.Persistance
 
         public virtual DbSet<GuestHealthQuestionnaire> GuestHealthQuestionnaire { get; set; }
 
+        public virtual DbSet<HostingHistory> HostingHistory { get; set; }
+
         /* End Tables Registration*/
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -79,6 +81,12 @@ namespace CasaRM.WebApp.Persistance
                 //in case you chagned the TKey type
                 // entity.HasKey(key => new { key.UserId, key.LoginProvider, key.Name });
 
+            });
+
+            builder.Entity<HostingHistory>(entity =>
+            {
+                entity.HasOne(e => e.ApplicationUser).WithOne().OnDelete(DeleteBehavior.NoAction);
+                entity.HasIndex(x => x.CreatedBy).IsUnique(false);
             });
         }
     }
