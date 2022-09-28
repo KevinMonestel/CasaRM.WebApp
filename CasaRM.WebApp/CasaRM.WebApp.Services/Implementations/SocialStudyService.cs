@@ -54,6 +54,7 @@ namespace CasaRM.WebApp.Services.Implementations
             result.HousingSituationDto = await _housingSituationRepository.GetHousingSituationByIdAsync(socialStudyDto.HousingSituationId);
             result.RecomendationDto = new() { Recomendation = socialStudyDto.Recomendation };
             result.SupportServicesDto = new() { SupportServices = socialStudyDto.SupportServices };
+            result.GuestHealthQuestionnaireDto = new();
 
             return result;
         }
