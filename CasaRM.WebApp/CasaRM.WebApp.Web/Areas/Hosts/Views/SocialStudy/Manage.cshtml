@@ -4,7 +4,14 @@
     ViewData["Title"] = "Administrar estudio social";
 }
 
-<h1 class="h1 mb-3"><strong>Huéspedes</strong> Nuevo Ingreso</h1>
+<h1 class="h1 mb-3">
+    <strong>Huéspedes</strong>
+    @if(string.IsNullOrEmpty(Model.HostId)){
+        <span>Nuevo Ingreso</span>
+    }else{
+        <span>Editar formulario</span>
+    }
+</h1>
 
 <form id="mainDataForm">
     <input asp-for="HostId" hidden />
