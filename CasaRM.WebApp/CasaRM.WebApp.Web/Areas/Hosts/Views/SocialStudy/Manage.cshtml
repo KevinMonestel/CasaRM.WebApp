@@ -415,5 +415,12 @@
 
             $("#companionDataForm").find("input[name='Age']").val(age);
         });
+
+        $("#housingSituationForm").find("select[name=BasicServices] option").mousedown(function (e) {
+            e.preventDefault();
+            console.log(this.selected)
+            this.selected = !this.selected;
+            return false;
+        });
     </script>
 }
