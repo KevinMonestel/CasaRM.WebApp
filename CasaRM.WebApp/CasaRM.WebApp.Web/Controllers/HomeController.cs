@@ -20,6 +20,13 @@ namespace CasaRM.WebApp.Web.Controllers
             return View();
         }
 
+
+        [Authorize]
+        public IActionResult Help()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [Route("/Home/Error/{errorCode}")]
         public IActionResult Error([FromRoute] int? errorCode)
