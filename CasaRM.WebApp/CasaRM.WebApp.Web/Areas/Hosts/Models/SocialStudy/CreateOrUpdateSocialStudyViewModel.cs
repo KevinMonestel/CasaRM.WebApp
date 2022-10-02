@@ -5,8 +5,8 @@
         public CreateOrUpdateSocialStudyViewModel()
         {
             MinorPersonDataFormViewModel = new();
-            ParentDataFormViewModel = new();
             CompanionDataFormViewModel = new();
+            CompanionDataListViewModel = new();
             FamilyGroupFormViewModel = new();
             FamilyGroupListViewModel = new();
             ContributionFormViewModel = new();
@@ -15,9 +15,8 @@
             HousingSituationFormViewModel = new();
             SupportServicesFormViewModel = new();
             RecomendationFormViewModel = new();
-
+            
             MinorPersonDataFormViewModel.DateOfBirth = DateTime.Now.Date;
-            ParentDataFormViewModel.DateOfBirth = DateTime.Now.Date;
             CompanionDataFormViewModel.DateOfBirth = DateTime.Now.Date;
         }
 
@@ -29,9 +28,9 @@
 
         public MinorPersonDataFormViewModel MinorPersonDataFormViewModel { get; set; }
 
-        public ParentDataFormViewModel ParentDataFormViewModel { get; set; }
-
         public CompanionDataFormViewModel CompanionDataFormViewModel { get; set; }
+
+        public List<CompanionDataListViewModel> CompanionDataListViewModel { get; set; }
 
         public FamilyGroupFormViewModel FamilyGroupFormViewModel { get; set; }
 

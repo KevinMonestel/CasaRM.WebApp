@@ -68,20 +68,12 @@ namespace CasaRM.WebApp.Repositories.Implementations
                 result = await _context.Host.
                     Where(x => x.Id.ToString().Contains(searchHostDto.Code) ||
                     x.SocialStudy.MinorPersonData.FullName.Contains(searchHostDto.MinorPersonName) ||
-                    x.SocialStudy.MinorPersonData.FileNumber.Contains(searchHostDto.MinorPersonFileNumber) ||
-                    x.SocialStudy.ParentData.FullName.Contains(searchHostDto.ParentName) ||
-                    x.SocialStudy.ParentData.Identification.Contains(searchHostDto.ParentIdentification) ||
-                    x.SocialStudy.CompanionData.FullName.Contains(searchHostDto.CompanionName) ||
-                    x.SocialStudy.CompanionData.Identification.Contains(searchHostDto.CompanionIdentification)).
+                    x.SocialStudy.MinorPersonData.FileNumber.Contains(searchHostDto.MinorPersonFileNumber)).
                     Select(x => new SearchHostResultsDto
                     {
                         Code = x.Id.ToString(),
                         MinorPersonName = x.SocialStudy.MinorPersonData.FullName,
-                        MinorPersonFileNumber = x.SocialStudy.MinorPersonData.FileNumber,
-                        ParentName = x.SocialStudy.ParentData.FullName,
-                        ParentIdentification = x.SocialStudy.ParentData.Identification,
-                        CompanionName = x.SocialStudy.CompanionData.FullName,
-                        CompanionIdentification = x.SocialStudy.CompanionData.Identification
+                        MinorPersonFileNumber = x.SocialStudy.MinorPersonData.FileNumber
                     }).ToListAsync();
 
                 return result;

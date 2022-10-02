@@ -38,8 +38,7 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
                 CreateOrUpdateSocialStudyDto fullSocialStudyData = await _socialStudyService.GetFullSocialStudyAsync(socialStudyId);
 
                 viewModel.MinorPersonDataFormViewModel = fullSocialStudyData.MinorPersonDataDto.ToObject<MinorPersonDataFormViewModel>();
-                viewModel.ParentDataFormViewModel = fullSocialStudyData.ParentDataDto.ToObject<ParentDataFormViewModel>();
-                viewModel.CompanionDataFormViewModel = fullSocialStudyData.CompanionDataDto.ToObject<CompanionDataFormViewModel>();
+                viewModel.CompanionDataListViewModel = fullSocialStudyData.CompanionDataDto.ToObjectList<CompanionDataListViewModel>();
                 viewModel.FamilyGroupListViewModel = fullSocialStudyData.FamilyGroupDto.ToObjectList<FamilyGroupListViewModel>();
                 viewModel.ContributionListViewModel = fullSocialStudyData.ContributionDto.ToObjectList<ContributionListViewModel>();
                 viewModel.IncomeCalculationFormViewModel = fullSocialStudyData.IncomeCalculationDto.ToObject<IncomeCalculationFormViewModel>();
@@ -61,8 +60,7 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
             createOrUpdateSocialStudyDto.SocialStudyId = viewModel.SocialStudyId;
             createOrUpdateSocialStudyDto.ExecutedBy = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             createOrUpdateSocialStudyDto.MinorPersonDataDto = viewModel.MinorPersonDataFormViewModel.ToObject<MinorPersonDataDto>();
-            createOrUpdateSocialStudyDto.ParentDataDto = viewModel.ParentDataFormViewModel.ToObject<ParentDataDto>();
-            createOrUpdateSocialStudyDto.CompanionDataDto = viewModel.CompanionDataFormViewModel.ToObject<CompanionDataDto>();
+            createOrUpdateSocialStudyDto.CompanionDataDto = viewModel.CompanionDataListViewModel.ToObjectList<CompanionDataDto>();
             createOrUpdateSocialStudyDto.FamilyGroupDto = viewModel.FamilyGroupListViewModel.ToObjectList<FamilyGroupDto>();
             createOrUpdateSocialStudyDto.ContributionDto = viewModel.ContributionListViewModel.ToObjectList<ContributionDto>();
             createOrUpdateSocialStudyDto.IncomeCalculationDto = viewModel.IncomeCalculationFormViewModel.ToObject<IncomeCalculationDto>();

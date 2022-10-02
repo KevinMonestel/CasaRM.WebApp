@@ -34,7 +34,6 @@ builder.Services.AddScoped<IHostingHistoryService, HostingHistoryService>();
 builder.Services.AddScoped<IHostRepository, HostRepository>();
 builder.Services.AddScoped<ISocialStudyRepository, SocialStudyRepository>();
 builder.Services.AddScoped<IMinorPersonDataRepository, MinorPersonDataRepository>();
-builder.Services.AddScoped<IParentDataRepository, ParentDataRepository>();
 builder.Services.AddScoped<ICompanionDataRepository, CompanionDataRepository>();
 builder.Services.AddScoped<IFamilyGroupRepository, FamilyGroupRepository>();
 builder.Services.AddScoped<IContributionRepository, ContributionRepository>();

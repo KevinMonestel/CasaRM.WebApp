@@ -10,6 +10,8 @@ namespace CasaRM.WebApp.Shared.Models.SocialStudy
     {
         public int Id { get; set; }
 
+        public int SocialStudyId { get; set; }
+
         public string FullName { get; set; }
 
         public string Relationship { get; set; }
@@ -39,5 +41,7 @@ namespace CasaRM.WebApp.Shared.Models.SocialStudy
         public string Treatment { get; set; }
 
         public string Observations { get; set; }
+
+        public bool IsAPersonInCharge { get; set; }
     }
 }

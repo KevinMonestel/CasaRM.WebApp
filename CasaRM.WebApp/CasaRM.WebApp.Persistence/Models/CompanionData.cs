@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace CasaRM.WebApp.Persistence.Models
 {
@@ -13,6 +9,10 @@ namespace CasaRM.WebApp.Persistence.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [Column("EstudioSocialId")]
+        [ForeignKey("SocialStudy")]
+        public int SocialStudyId { get; set; }
 
         [Column("NombreCompleto")]
         [StringLength(250)]
@@ -71,5 +71,11 @@ namespace CasaRM.WebApp.Persistence.Models
         [Column("Observaciones")]
         [StringLength(500)]
         public string Observations { get; set; }
+
+        [Column("EsPersonaACargo")]
+        public bool IsAPersonInCharge { get; set; }
+
+        [JsonIgnore]
+        public SocialStudy SocialStudy { get; set; }
     }
 }

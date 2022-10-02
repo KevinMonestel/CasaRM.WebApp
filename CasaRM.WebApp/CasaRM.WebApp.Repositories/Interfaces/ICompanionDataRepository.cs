@@ -4,8 +4,8 @@ namespace CasaRM.WebApp.Repositories.Interfaces
 {
     public interface ICompanionDataRepository
     {
-        Task<CompanionDataDto> GetCompanionDataByIdAsync(int id);
+        Task<IEnumerable<CompanionDataDto>> GetFamilyGroupBySocialStudyId(int socialStudyId);
 
-        Task<CompanionDataDto> CreateOrUpdateAsync(CompanionDataDto companionDataDto);
+        Task<IEnumerable<CompanionDataDto>> RefreshFamilyGroupAsync(int socialStudyId, IEnumerable<CompanionDataDto> familyGroupDtos);
     }
 }

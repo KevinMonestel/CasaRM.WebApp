@@ -5,7 +5,6 @@
 
 <form id="companionDataForm">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <input asp-for="Id" class="form-control" aria-required="true" type="hidden" />
 
     <div class="row">
         <div class="col-md-4">
@@ -125,6 +124,20 @@
                 <input asp-for="Observations" class="form-control" aria-required="true" />
                 <label asp-for="Observations" class="form-label">Observaciones</label>
                 <span asp-validation-for="Observations" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="mb-3">
+                <input asp-for="IsAPersonInCharge" type="checkbox" class="" aria-required="true" />
+                <label asp-for="IsAPersonInCharge" class="form-label">¿Es persona a cargo?</label>
+                <span asp-validation-for="IsAPersonInCharge" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-floating mb-3">
+                <input type="submit" class="form-control" aria-required="true" />
             </div>
         </div>
     </div>

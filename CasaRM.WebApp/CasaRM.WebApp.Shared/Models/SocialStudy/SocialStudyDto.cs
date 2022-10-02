@@ -6,10 +6,6 @@
 
         public int MinorPersonDataId { get; set; }
 
-        public int ParentDataId { get; set; }
-
-        public int CompanionDataId { get; set; }
-
         public int HousingSituationId { get; set; }
 
         public decimal TotalRevenue { get; set; }

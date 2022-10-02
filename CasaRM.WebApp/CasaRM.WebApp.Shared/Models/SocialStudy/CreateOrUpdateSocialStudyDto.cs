@@ -16,9 +16,7 @@ namespace CasaRM.WebApp.Shared.Models.SocialStudy
 
         public MinorPersonDataDto MinorPersonDataDto { get; set; }
 
-        public ParentDataDto ParentDataDto { get; set; }
-
-        public CompanionDataDto CompanionDataDto { get; set; }
+        public IEnumerable<CompanionDataDto> CompanionDataDto { get; set; }
 
         public IEnumerable<FamilyGroupDto> FamilyGroupDto { get; set; }
 

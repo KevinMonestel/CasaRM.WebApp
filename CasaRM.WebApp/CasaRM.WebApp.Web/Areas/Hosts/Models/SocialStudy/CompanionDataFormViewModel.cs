@@ -53,5 +53,8 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Models.SocialStudy
 
         [Required]
         public string Observations { get; set; }
+
+        [Required]
+        public bool IsAPersonInCharge { get; set; }
     }
 }

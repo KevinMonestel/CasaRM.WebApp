@@ -30,27 +30,39 @@
 
 <div class="card">
     <div class="card-header">
-        <h5 class="card-title mb-0">2. Datos de la madre, padre o encargado/a</h5>
+        <h5 class="card-title mb-0">2. Acompañantes</h5>
     </div>
 
     <div class="card-body">
-        <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_ParentDataForm.cshtml" model="Model.ParentDataFormViewModel" />
+
+        <div class="mb-3">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#companionDataFormModal">
+                Añadir registro
+            </button>
+        </div>
+
+        <!--Companion Data Form Modal -->
+        <div class="modal fade" id="companionDataFormModal" tabindex="-1" aria-labelledby="familyGroupForm" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Añadir registro - Grupo de familia</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_CompanionDataForm.cshtml" model="Model.CompanionDataFormViewModel" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_CompanionDataList.cshtml" model="Model.CompanionDataListViewModel" />
     </div>
 </div>
 
 <div class="card">
     <div class="card-header">
-        <h5 class="card-title mb-0">3. Datos del Acompañante del Menor de Edad</h5>
-    </div>
-
-    <div class="card-body">
-        <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_CompanionDataForm.cshtml" model="Model.CompanionDataFormViewModel" />
-    </div>
-</div>
-
-<div class="card">
-    <div class="card-header">
-        <h5 class="card-title mb-0">4. Composición del grupo familiar</h5>
+        <h5 class="card-title mb-0">3. Composición del grupo familiar</h5>
     </div>
 
     <div class="card-body">
@@ -89,7 +101,7 @@
     </div>
 
     <div class="card-header">
-        <h5 class="card-title mb-0">4.1. Aportes de personas que no viven en la misma casa</h5>
+        <h5 class="card-title mb-0">3.1. Aportes de personas que no viven en la misma casa</h5>
     </div>
 
     <div class="card-body">
@@ -128,7 +140,7 @@
     </div>
 
     <div class="card-header">
-        <h5 class="card-title mb-0">4.2. Calculo ingreso según línea de pobreza</h5>
+        <h5 class="card-title mb-0">3.2. Calculo ingreso según línea de pobreza</h5>
     </div>
 
     <div class="card-body">
@@ -138,7 +150,7 @@
 
 <div class="card">
     <div class="card-header">
-        <h5 class="card-title mb-0">5. Situación Habitacional</h5>
+        <h5 class="card-title mb-0">4. Situación Habitacional</h5>
     </div>
 
     <div class="card-body">
@@ -150,7 +162,7 @@
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
-                <h5 class="card-title mb-0">6. Redes de Apoyo</h5>
+                <h5 class="card-title mb-0">5. Redes de Apoyo</h5>
             </div>
 
             <div class="card-body">
@@ -162,7 +174,7 @@
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
-                <h5 class="card-title mb-0">7. Recomendaciones</h5>
+                <h5 class="card-title mb-0">6. Recomendaciones</h5>
             </div>
 
             <div class="card-body">
@@ -174,7 +186,7 @@
 
 <div class="card">
     <div class="card-header">
-        <h5 class="card-title mb-0">Firma</h5>
+        <h5 class="card-title mb-0">7. Firma</h5>
     </div>
 
     <div class="card-body">
@@ -252,54 +264,30 @@
         var saveSocialStudyBtn = $("#saveSocialStudyBtn");
         var confirmationModal = $("#confirmationModal");
         var sendingInfoModal = $("#sendingInfoModal");
+        var companionDataForm = $("#companionDataForm");
+        var companionData = @Html.Raw(Json.Serialize(Model.CompanionDataListViewModel));
+        var familyGroupData = @Html.Raw(Json.Serialize(Model.FamilyGroupListViewModel));
+        var contributionData = @Html.Raw(Json.Serialize(Model.ContributionListViewModel));
+
         var familyGroupForm = $("#familyGroupForm");
         var contributionForm = $("#contributionForm");
-        let signatureDataForm = $("#signatureDataForm");
+        var signatureDataForm = $("#signatureDataForm");
         var signatureCanvas = document.querySelector('#signatureCanvas');
         var signaturePad = new SignaturePad(signatureCanvas);
 
         saveSocialStudyBtn.on("click", function () {
             let mainDataForm = $("#mainDataForm");
             let minorPersonDataForm = $("#minorPersonDataForm");
-            let parentDataForm = $("#parentDataForm");
-            let companionDataForm = $("#companionDataForm");
             let incomeCalculationForm = $("#incomeCalculationForm");
             let housingSituationForm = $("#housingSituationForm");
             let supportServicesForm = $("#supportServicesForm");
             let recomendationForm = $("#recomendationForm");
             let saveSocialStudyUrl = "@Url.Action("Save", "SocialStudy", new { area = "Hosts" })";
 
-            // FamilyGroupRecords
-            let familyGroupData = $('#familyGroupListTable tr:has(td)').map(function (i, v) {
-                var $td = $('td', this);
-                return {
-                    fullName: $td.eq(0).text(),
-                    relationship: $td.eq(1).text(),
-                    age: $td.eq(2).text(),
-                    maritalStatus: $td.eq(3).text(),
-                    scholarship: $td.eq(4).text(),
-                    ocupation: $td.eq(5).text(),
-                    monthlyGrossIncome: $td.eq(6).text()
-                }
-            }).get();
-
-            // ContributionRecords
-            let contributionData = $('#contributionListTable tr:has(td)').map(function (i, v) {
-                var $td = $('td', this);
-                return {
-                    fullName: $td.eq(0).text(),
-                    relationship: $td.eq(1).text(),
-                    ocupation: $td.eq(2).text(),
-                    monthlyContribution: $td.eq(3).text()
-                }
-            }).get();
-
             confirmationModal.modal("hide");
 
             // Validations
             if (!minorPersonDataForm.valid() ||
-                !parentDataForm.valid() ||
-                !companionDataForm.valid() ||
                 !incomeCalculationForm.valid() ||
                 !housingSituationForm.valid() ||
                 !supportServicesForm.valid() ||
@@ -315,8 +303,7 @@
                 socialStudyId: mainDataForm.find('input[name=SocialStudyId]').val(),
                 SignatureDataUrl: signatureDataForm.find("input[name=SignatureDataUrl]").val(),
                 MinorPersonDataFormViewModel: minorPersonDataForm.serializeObject(),
-                ParentDataFormViewModel: parentDataForm.serializeObject(),
-                CompanionDataFormViewModel: companionDataForm.serializeObject(),
+                CompanionDataListViewModel: companionData,
                 FamilyGroupListViewModel: familyGroupData,
                 ContributionListViewModel: contributionData,
                 IncomeCalculationFormViewModel: incomeCalculationForm.serializeObject(),
@@ -328,6 +315,8 @@
             socialStudyFullObj.HousingSituationFormViewModel.BasicServices = housingSituationForm.find("select[name=BasicServices]").val()
 
             sendingInfoModal.modal("show");
+
+            console.log(socialStudyFullObj)
 
             // Call to Save Social Study action
             $.post(saveSocialStudyUrl, socialStudyFullObj, function (data) {
@@ -345,6 +334,35 @@
                 });
         });
 
+        companionDataForm.submit(function (e) {
+            e.preventDefault();
+
+            if (!companionDataForm.valid()) return;
+
+            let companionDataListTable = $("#companionDataListTable");
+            let companionDataFormModal = $("#companionDataFormModal");
+
+            const formDataObj = $(this).serializeObject();
+            companionData.IsAPersonInCharge = $(this).find("input[name=IsAPersonInCharge]").is(':checked'));
+
+            companionDataListTable.find("tbody").append(`
+                                                            <tr>
+                                                                <td>${formDataObj.FullName}</td>
+                                                                <td>${formDataObj.Relationship}</td>
+                                                                <td>${formDataObj.Age}</td>
+                                                                <td>${formDataObj.MaritalStatus}</td>
+                                                                <td>${formDataObj.Scholarship}</td>
+                                                                <td>${formDataObj.Ocupation}</td>
+                                                                <td>${formDataObj.IsAPersonInCharge}</td>
+                                                                <td class="text-end"><button class="btn btn-danger" name="delete-row">X</button></td>
+                                                            </tr>`);
+
+            companionData.push(formDataObj);
+
+            companionDataFormModal.modal("hide");
+            companionDataForm[0].reset();
+        });
+
         familyGroupForm.submit(function (e) {
             e.preventDefault();
 
@@ -353,25 +371,20 @@
             let familyGroupListTable = $("#familyGroupListTable");
             let familyGroupFormModal = $("#familyGroupFormModal");
 
-            let fullName = $(this).find('input[name=FullName]').val();
-            let relationship = $(this).find('input[name=Relationship]').val();
-            let age = $(this).find('input[name=Age]').val();
-            let maritalStatus = $(this).find('input[name=MaritalStatus]').val();
-            let scholarship = $(this).find('input[name=Scholarship]').val();
-            let ocupation = $(this).find('input[name=Ocupation]').val();
-            let monthlyGrossIncome = $(this).find('input[name=MonthlyGrossIncome]').val();
+            const formDataObj = $(this).serializeObject();
 
             familyGroupListTable.find("tbody").append(`
                                                     <tr>
-                                                        <td>${fullName}</td>
-                                                        <td>${relationship}</td>
-                                                        <td>${age}</td>
-                                                        <td>${maritalStatus}</td>
-                                                        <td>${scholarship}</td>
-                                                        <td>${ocupation}</td>
-                                                        <td>${monthlyGrossIncome}</td>
+                                                        <td>${formDataObj.FullName}</td>
+                                                        <td>${formDataObj.Relationship}</td>
+                                                        <td>${formDataObj.Age}</td>
+                                                        <td>${formDataObj.MaritalStatus}</td>
+                                                        <td>${formDataObj.Scholarship}</td>
+                                                        <td>${formDataObj.Ocupation}</td>
+                                                        <td>${formDataObj.MonthlyGrossIncome}</td>
                                                         <td class="text-end"><button class="btn btn-danger" name="delete-row">X</button></td>
                                                     </tr>`);
+            familyGroupData.push(formDataObj);
 
             familyGroupFormModal.modal("hide");
             familyGroupForm[0].reset();
@@ -385,25 +398,38 @@
             let contributionListTable = $("#contributionListTable");
             let contributionFormModal = $("#contributionFormModal");
 
-            let fullName = $(this).find('input[name=FullName]').val();
-            let relationship = $(this).find('input[name=Relationship]').val();
-            let ocupation = $(this).find('input[name=Ocupation]').val();
-            let monthlyContribution = $(this).find('input[name=MonthlyContribution]').val();
+            const formDataObj = $(this).serializeObject();
 
             contributionListTable.find("tbody").append(`
                                                     <tr>
-                                                        <td>${fullName}</td>
-                                                        <td>${relationship}</td>
-                                                        <td>${ocupation}</td>
-                                                        <td>${monthlyContribution}</td>
-                                                        <td class="text-end"><button class="btn btn-danger" name="delete-row">X</button></td>
+                                                        <td>${formDataObj.FullName}</td>
+                                                        <td>${formDataObj.Relationship}</td>
+                                                        <td>${formDataObj.Ocupation}</td>
+                                                        <td>${formDataObj.MonthlyContribution}</td>
+                                                        <td class="text-end"><button class="btn btn-danger" name="deleteRow" data-type="contribution">X</button></td>
                                                     </tr>`);
+
+            contributionData.push(formDataObj);
 
             contributionFormModal.modal("hide");
             contributionForm[0].reset();
         });
 
-        $("body").on("click", "button[name='delete-row']", function (e) {
+        $("body").on("click", "button[name='deleteRow']", function (e) {
+            e.preventDefault();
+
+            let type = $(this).data("type");
+            let index = $(this).closest('tr').index();
+
+            if(type == "contribution")
+                contributionData.splice(index, 1);
+
+            if(type == "familyGroup")
+                familyGroupData.splice(index, 1);
+
+            if (type == "companionData")
+                companionData.splice(index, 1);
+
             $(this).closest('tr').remove();
         })
 
@@ -414,15 +440,6 @@
             var age = parseInt(dayDiff);
 
             $("#minorPersonDataForm").find("input[name='Age']").val(age);
-        });
-
-        $("#parentDataForm").find("input[name='DateOfBirth']").on('change', function () {
-            var firstdate = new Date($(this).val());
-            var today = new Date();
-            var dayDiff = Math.ceil(today.getTime() - firstdate.getTime()) / (1000 * 60 * 60 * 24 * 365);
-            var age = parseInt(dayDiff);
-
-            $("#parentDataForm").find("input[name='Age']").val(age);
         });
 
         $("#companionDataForm").find("input[name='DateOfBirth']").on('change', function () {

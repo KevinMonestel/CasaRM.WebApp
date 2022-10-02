@@ -21,8 +21,6 @@ namespace CasaRM.WebApp.Persistance
 
         public virtual DbSet<MinorPersonData> MinorPersonData { get; set; }
 
-        public virtual DbSet<ParentData> ParentData { get; set; }
-
         public virtual DbSet<CompanionData> CompanionData { get; set; }
 
         public virtual DbSet<FamilyGroup> FamilyGroup { get; set; }

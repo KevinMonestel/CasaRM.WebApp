@@ -17,14 +17,14 @@ namespace CasaRM.WebApp.Repositories.Implementations
         {
         }
 
-        public async Task<CompanionDataDto> GetCompanionDataByIdAsync(int id)
+        public async Task<IEnumerable<CompanionDataDto>> GetFamilyGroupBySocialStudyId(int socialStudyId)
         {
             try
             {
-                CompanionDataDto result = new();
-                CompanionData dbModel = await GetByIdAsync(id);
+                IEnumerable<CompanionDataDto> result;
+                IEnumerable<CompanionData> dbModels = await FindAsync(x => x.SocialStudyId == socialStudyId);
 
-                result = dbModel.ToObject<CompanionDataDto>();
+                result = dbModels.ToObjectList<CompanionDataDto>();
 
                 return result;
             }
@@ -34,19 +34,21 @@ namespace CasaRM.WebApp.Repositories.Implementations
             }
         }
 
-        public async Task<CompanionDataDto> CreateOrUpdateAsync(CompanionDataDto companionDataDto)
+        public async Task<IEnumerable<CompanionDataDto>> RefreshFamilyGroupAsync(int socialStudyId, IEnumerable<CompanionDataDto> companionDataDtos)
         {
             try
             {
-                CompanionDataDto result = new();
-                CompanionData dbModel = companionDataDto.ToObject<CompanionData>();
+                IEnumerable<CompanionDataDto> result;
+                IEnumerable<CompanionData> dbModels = await FindAsync(x => x.SocialStudyId == socialStudyId);
+                await RemoveRangeAsync(dbModels);
 
-                if (companionDataDto.Id > 0)
-                    dbModel = await UpdateAsync(dbModel);
-                else
-                    dbModel = await AddAsync(dbModel);
+                foreach (CompanionDataDto companionDataDto in companionDataDtos)
+                    companionDataDto.SocialStudyId = socialStudyId;
 
-                result = dbModel.ToObject<CompanionDataDto>();
+                dbModels = companionDataDtos.ToObjectList<CompanionData>();
+                dbModels = await AddRangeAsync(dbModels);
+
+                result = dbModels.ToObjectList<CompanionDataDto>();
 
                 return result;
             }

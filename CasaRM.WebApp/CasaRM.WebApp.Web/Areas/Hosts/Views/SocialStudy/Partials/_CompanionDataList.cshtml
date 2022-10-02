@@ -1,0 +1,34 @@
+﻿@model List<CompanionDataListViewModel>
+
+@{
+}
+
+<table class="table table-striped" id="companionDataListTable">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Parentesco</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Estado civil</th>
+            <th scope="col">Escolaridad</th>
+            <th scope="col">Ocupación</th>
+            <th scope="col">Es una persona a cargo</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (CompanionDataListViewModel companion in Model)
+        {
+            <tr>
+                <td>@companion.FullName</td>
+                <td>@companion.Relationship</td>
+                <td>@companion.Age</td>
+                <td>@companion.MaritalStatus</td>
+                <td>@companion.Scholarship</td>
+                <td>@companion.Ocupation</td>
+                <td>@companion.IsAPersonInCharge</td>
+                <td class="text-end"><button class="btn btn-danger" name="deleteRow" data-type="companionData">X</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
