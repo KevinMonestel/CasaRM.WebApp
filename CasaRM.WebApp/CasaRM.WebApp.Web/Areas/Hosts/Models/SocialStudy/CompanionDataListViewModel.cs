@@ -4,8 +4,6 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Models.SocialStudy
 {
     public class CompanionDataListViewModel
     {
-        public int Id { get; set; }
-
         public string FullName { get; set; }
 
         public string Relationship { get; set; }

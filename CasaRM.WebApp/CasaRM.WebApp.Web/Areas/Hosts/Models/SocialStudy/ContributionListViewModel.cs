@@ -2,8 +2,6 @@
 {
     public class ContributionListViewModel
     {
-        public int Id { get; set; }
-
         public int SocialStudyId { get; set; }
 
         public string FullName { get; set; }

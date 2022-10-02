@@ -341,9 +341,9 @@
 
             let companionDataListTable = $("#companionDataListTable");
             let companionDataFormModal = $("#companionDataFormModal");
-
+            debugger
             const formDataObj = $(this).serializeObject();
-            companionData.IsAPersonInCharge = $(this).find("input[name=IsAPersonInCharge]").is(':checked'));
+            formDataObj.IsAPersonInCharge = $(this).find("input[name=IsAPersonInCharge]").is(":checked");
 
             companionDataListTable.find("tbody").append(`
                                                             <tr>
@@ -353,7 +353,7 @@
                                                                 <td>${formDataObj.MaritalStatus}</td>
                                                                 <td>${formDataObj.Scholarship}</td>
                                                                 <td>${formDataObj.Ocupation}</td>
-                                                                <td>${formDataObj.IsAPersonInCharge}</td>
+                                                                <td>${formDataObj.IsAPersonInCharge == true ? 'Sí' : 'No'}</td>
                                                                 <td class="text-end"><button class="btn btn-danger" name="delete-row">X</button></td>
                                                             </tr>`);
 
