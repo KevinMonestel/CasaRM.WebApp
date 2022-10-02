@@ -31,8 +31,6 @@ namespace CasaRM.WebApp.Persistance
 
         public virtual DbSet<HousingSituation> HousingSituation { get; set; }
 
-        public virtual DbSet<GuestHealthQuestionnaire> GuestHealthQuestionnaire { get; set; }
-
         public virtual DbSet<HostingHistory> HostingHistory { get; set; }
 
         /* End Tables Registration*/

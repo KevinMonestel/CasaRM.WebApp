@@ -26,10 +26,6 @@ namespace CasaRM.WebApp.Persistence.Models
         [Column("SituacionHabitacionalId")]
         public int HousingSituationId { get; set; }
 
-        [ForeignKey("GuestHealthQuestionnaire")]
-        [Column("CuestionarioSaludHuespedId")]
-        public int GuestHealthQuestionnaireId { get; set; }
-
         [Column("TotalIngresos")]
         public decimal TotalRevenue { get; set; }
 
@@ -59,7 +55,5 @@ namespace CasaRM.WebApp.Persistence.Models
         public ICollection<Contribution> Contribution { get; set; }
 
         public HousingSituation HousingSituation { get; set; }
-
-        public GuestHealthQuestionnaire GuestHealthQuestionnaire { get; set; }
     }
 }

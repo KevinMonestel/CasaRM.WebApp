@@ -12,8 +12,6 @@
 
         public int HousingSituationId { get; set; }
 
-        public int GuestHealthQuestionnaireId { get; set; }
-
         public decimal TotalRevenue { get; set; }
 
         public decimal PerCapitaIncome { get; set; }

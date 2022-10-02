@@ -31,7 +31,5 @@ namespace CasaRM.WebApp.Shared.Models.SocialStudy
         public SupportServicesDto SupportServicesDto { get; set; }
 
         public RecomendationDto RecomendationDto { get; set; }
-
-        public GuestHealthQuestionnaireDto GuestHealthQuestionnaireDto { get; set; }
     }
 }

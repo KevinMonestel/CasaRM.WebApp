@@ -46,7 +46,6 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
                 viewModel.HousingSituationFormViewModel = fullSocialStudyData.HousingSituationDto.ToObject<HousingSituationFormViewModel>();
                 viewModel.SupportServicesFormViewModel = fullSocialStudyData.SupportServicesDto.ToObject<SupportServicesFormViewModel>();
                 viewModel.RecomendationFormViewModel = fullSocialStudyData.RecomendationDto.ToObject<RecomendationFormViewModel>();
-                viewModel.GuestHealthQuestionaireFormViewModel = fullSocialStudyData.GuestHealthQuestionnaireDto.ToObject<GuestHealthQuestionaireFormViewModel>();
             }
 
             return View(viewModel);
@@ -70,7 +69,6 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
             createOrUpdateSocialStudyDto.HousingSituationDto = viewModel.HousingSituationFormViewModel.ToObject<HousingSituationDto>();
             createOrUpdateSocialStudyDto.SupportServicesDto = viewModel.SupportServicesFormViewModel.ToObject<SupportServicesDto>();
             createOrUpdateSocialStudyDto.RecomendationDto = viewModel.RecomendationFormViewModel.ToObject<RecomendationDto>();
-            createOrUpdateSocialStudyDto.GuestHealthQuestionnaireDto = viewModel.GuestHealthQuestionaireFormViewModel.ToObject<GuestHealthQuestionnaireDto>();
 
             string result = await _socialStudyService.CreateOrUpdateSocialStudyAsync(createOrUpdateSocialStudyDto);
 
