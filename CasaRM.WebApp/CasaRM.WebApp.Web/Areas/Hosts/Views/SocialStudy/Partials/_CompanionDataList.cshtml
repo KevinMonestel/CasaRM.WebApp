@@ -26,7 +26,14 @@
                 <td>@companion.MaritalStatus</td>
                 <td>@companion.Scholarship</td>
                 <td>@companion.Ocupation</td>
-                <td>@if(companion.IsAPersonInCharge) <span>Sí</span> else <span>No</span></td>
+                <td>
+                    @if(companion.IsAPersonInCharge){
+                        <span>Sí</span>
+                    }
+                    else {
+                        <span>No</span>
+                    }
+                </td>
                 <td class="text-end"><button class="btn btn-danger" name="deleteRow" data-type="companionData">X</button></td>
             </tr>
         }
