@@ -172,6 +172,37 @@
     </div>
 </div>
 
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title mb-0">Firma</h5>
+    </div>
+
+    <div class="card-body">
+       <form id="signatureDataForm">
+           <div class="row">
+               <div class="col-md-6">
+                   <div>
+                       <p>Realizar firma</p>
+                        <canvas width="500" height="200" id="signatureCanvas" class="border border-primary"></canvas>
+                   </div>
+
+                    <div class="my-3">
+                       <button type="button" id="cleanSignature" class="btn btn-outline-danger">Limpiar</button>
+                       <button type="button" id="acceptSignature" class="btn btn-primary">Confirmar firma</button>
+                   </div>
+               </div>
+
+                <div class="col-md-6">
+                    <p>Firma confirmada (Se guardará así)</p>
+                    <img width="500" height="200" id="signatureAcceptedImg" class="border">
+                </div>
+           </div>
+
+           <input type="text" asp-for="@Model.SignatureDataUrl"> 
+        </form>
+    </div>
+</div>
+
 <div class="text-center">
     <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#confirmationModal">
         Guardar información
@@ -216,12 +247,16 @@
     <partial name="_ValidationScriptsPartial" />
     <script src="~/lib/jquery-serialize-object/js/jquery.serialize-object.min.js"></script>
     <script src="~/lib/snackbar/js/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
     <script type="text/javascript">
         var saveSocialStudyBtn = $("#saveSocialStudyBtn");
         var confirmationModal = $("#confirmationModal");
         var sendingInfoModal = $("#sendingInfoModal");
         var familyGroupForm = $("#familyGroupForm");
         var contributionForm = $("#contributionForm");
+        let signatureDataForm = $("#signatureDataForm");
+        var signatureCanvas = document.querySelector('#signatureCanvas');
+        var signaturePad = new SignaturePad(signatureCanvas);
 
         saveSocialStudyBtn.on("click", function () {
             let mainDataForm = $("#mainDataForm");
@@ -278,6 +313,7 @@
             let socialStudyFullObj = {
                 hostId: mainDataForm.find('input[name=HostId]').val(),
                 socialStudyId: mainDataForm.find('input[name=SocialStudyId]').val(),
+                SignatureDataUrl: signatureDataForm.find("input[name=SignatureDataUrl]").val(),
                 MinorPersonDataFormViewModel: minorPersonDataForm.serializeObject(),
                 ParentDataFormViewModel: parentDataForm.serializeObject(),
                 CompanionDataFormViewModel: companionDataForm.serializeObject(),
@@ -402,6 +438,24 @@
             e.preventDefault();
             this.selected = !this.selected;
             return false;
+        });
+
+        $("#acceptSignature").click(function (e) {
+            e.preventDefault();
+
+            var data = signaturePad.toDataURL();
+
+            $("#signatureAcceptedImg").attr("src", data);
+            signatureDataForm.find("input[name=SignatureDataUrl]").val(data);
+        });
+
+        $("#cleanSignature").click(function (e) {
+            e.preventDefault();
+
+            $("#signatureAcceptedImg").removeAttr("src");
+            signatureDataForm.find("input[name=SignatureDataUrl]").val(null);
+
+            signaturePad.clear();
         });
     </script>
 }

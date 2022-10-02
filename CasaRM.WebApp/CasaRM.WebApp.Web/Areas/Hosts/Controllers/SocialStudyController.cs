@@ -70,6 +70,12 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
             createOrUpdateSocialStudyDto.SupportServicesDto = viewModel.SupportServicesFormViewModel.ToObject<SupportServicesDto>();
             createOrUpdateSocialStudyDto.RecomendationDto = viewModel.RecomendationFormViewModel.ToObject<RecomendationDto>();
 
+            if (!string.IsNullOrWhiteSpace(viewModel.SignatureDataUrl))
+            {
+                var base64Signature = viewModel.SignatureDataUrl.Split(",")[1];
+                var binarySignature = Convert.FromBase64String(base64Signature);
+            }
+
             string result = await _socialStudyService.CreateOrUpdateSocialStudyAsync(createOrUpdateSocialStudyDto);
 
             if (!string.IsNullOrEmpty(result))

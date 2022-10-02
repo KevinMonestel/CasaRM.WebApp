@@ -25,6 +25,8 @@
 
         public int SocialStudyId { get; set; }
 
+        public string SignatureDataUrl { get; set; }
+
         public MinorPersonDataFormViewModel MinorPersonDataFormViewModel { get; set; }
 
         public ParentDataFormViewModel ParentDataFormViewModel { get; set; }
