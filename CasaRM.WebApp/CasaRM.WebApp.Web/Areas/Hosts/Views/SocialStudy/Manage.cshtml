@@ -46,7 +46,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Añadir registro - Grupo de familia</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Acompañantes</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -87,7 +87,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Añadir registro - Grupo de familia</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Grupo de familia</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -126,7 +126,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Añadir registro - Aportes</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Aportes</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -192,17 +192,16 @@
     <div class="card-body">
         <div class="row">
             <div class="col-md-6">
-                <div class="d-flex justify-content-center align-content-center">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signatureFormModal">
-                        Añadir firma
-                    </button>
+                <div class="d-flex flex-column justify-content-center align-content-center">
+                    <div class="text-center"><button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#signatureFormModal">Añadir firma</button></div>
+                    <div class="text-center"><button type="button" name="cleanSignature" class="btn btn-outline-danger">Limpiar</button></div>
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="col-md-6">
                     <p>Firma confirmada (Se guardará así)</p>
-                    <img width="400" height="200" id="signatureAcceptedImg" class="border" src="@Model.SignatureDataUrl">
+                    <img width="200" height="100" id="signatureAcceptedImg" class="border mx-auto d-block" src="@Model.SignatureDataUrl">
                 </div>
             </div>
         </div>
@@ -224,11 +223,11 @@
                         </div>
 
                         <div class="my-3">
-                            <button type="button" id="cleanSignature" class="btn btn-outline-danger">Limpiar</button>
+                            <button type="button" name="cleanSignature" class="btn btn-outline-danger">Limpiar</button>
                             <button type="button" id="acceptSignature" class="btn btn-primary">Confirmar firma</button>
                         </div>
 
-                        <input type="text" asp-for="SignatureDataUrl" readonly class="form-control">
+                        <input type="text" asp-for="SignatureDataUrl" readonly class="form-control" hidden>
                     </form>
                 </div>
             </div>
@@ -293,7 +292,9 @@
         var contributionForm = $("#contributionForm");
         var signatureDataForm = $("#signatureDataForm");
         var signatureCanvas = document.querySelector('#signatureCanvas');
-        var signaturePad = new SignaturePad(signatureCanvas);
+        var signaturePad = new SignaturePad(signatureCanvas, {
+            minDistance: 0
+        });
 
         saveSocialStudyBtn.on("click", function () {
             let mainDataForm = $("#mainDataForm");
@@ -369,8 +370,7 @@
 
             let companionDataListTable = $("#companionDataListTable");
             let companionDataFormModal = $("#companionDataFormModal");
-            debugger
-            const formDataObj = $(this).serializeObject();
+            let formDataObj = $(this).serializeObject();
             formDataObj.IsAPersonInCharge = $(this).find("input[name=IsAPersonInCharge]").is(":checked");
 
             companionDataListTable.find("tbody").append(`
@@ -382,7 +382,7 @@
                                                                 <td>${formDataObj.Scholarship}</td>
                                                                 <td>${formDataObj.Ocupation}</td>
                                                                 <td>${formDataObj.IsAPersonInCharge == true ? 'Sí' : 'No'}</td>
-                                                                <td class="text-end"><button class="btn btn-danger" name="delete-row">X</button></td>
+                                                                <td class="text-end"><button class="btn btn-danger" name="deleteRow" data-type="companionData">X</button></td>
                                                             </tr>`);
 
             companionData.push(formDataObj);
@@ -398,8 +398,7 @@
 
             let familyGroupListTable = $("#familyGroupListTable");
             let familyGroupFormModal = $("#familyGroupFormModal");
-
-            const formDataObj = $(this).serializeObject();
+            let formDataObj = $(this).serializeObject();
 
             familyGroupListTable.find("tbody").append(`
                                                     <tr>
@@ -410,7 +409,7 @@
                                                         <td>${formDataObj.Scholarship}</td>
                                                         <td>${formDataObj.Ocupation}</td>
                                                         <td>${formDataObj.MonthlyGrossIncome}</td>
-                                                        <td class="text-end"><button class="btn btn-danger" name="delete-row">X</button></td>
+                                                        <td class="text-end"><button class="btn btn-danger" name="deleteRow" data-type="familyGroup">X</button></td>
                                                     </tr>`);
             familyGroupData.push(formDataObj);
 
@@ -425,8 +424,7 @@
 
             let contributionListTable = $("#contributionListTable");
             let contributionFormModal = $("#contributionFormModal");
-
-            const formDataObj = $(this).serializeObject();
+            let formDataObj = $(this).serializeObject();
 
             contributionListTable.find("tbody").append(`
                                                     <tr>
@@ -499,7 +497,7 @@
             signatureFormModal.modal("hide");
         });
 
-        $("#cleanSignature").click(function (e) {
+        $("button[name=cleanSignature]").click(function (e) {
             e.preventDefault();
 
             $("#signatureAcceptedImg").removeAttr("src");
