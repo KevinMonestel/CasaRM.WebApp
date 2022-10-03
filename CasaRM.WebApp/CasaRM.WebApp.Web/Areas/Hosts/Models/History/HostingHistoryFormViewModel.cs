@@ -4,6 +4,11 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Models.History
 {
     public class HostingHistoryFormViewModel
     {
+        public HostingHistoryFormViewModel()
+        {
+            EndDate = null;
+        }
+
         public int Id { get; set; }
 
         public string HostId { get; set; }
@@ -11,8 +16,7 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Models.History
         [Required]
         public DateTime StartDate { get; set; }
 
-        [Required]
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
 
         public DateTime CreatedAt { get; set; }
 

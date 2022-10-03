@@ -17,7 +17,7 @@ namespace CasaRM.WebApp.Persistence.Models
         public DateTime StartDate { get; set; }
 
         [Column("FechaSalida")]
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
 
         [Column("CreadoEn")]
         public DateTime CreatedAt { get; set; }

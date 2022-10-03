@@ -12,7 +12,7 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Models.History
         public DateTime StartDate { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy hh:mm}")]
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
 
         public DateTime CreatedAt { get; set; }
 
