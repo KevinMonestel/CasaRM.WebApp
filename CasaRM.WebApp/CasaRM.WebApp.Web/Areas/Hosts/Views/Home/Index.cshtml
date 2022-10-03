@@ -43,4 +43,44 @@
             </div>
         </div>
     </div>
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Documentos</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 border-end">
+                        <p class="card-text">
+                            <strong>
+                                Aceptación Normas y Obligaciones por parte de los Residentes
+                                Casa Ronald McDonald Costa Rica
+                            </strong>
+                        </p>
+                        <a href="@Url.Action("Index", "Documents", new { host = Model.HostId, document = 1, area = "Hosts" })" class="btn btn-outline-primary">Ver documento</a>
+                    </div>
+
+                    <div class="col-md-4 border-end">
+                        <p class="card-text">
+                            <strong>
+                                Autorización Divulgación e Intercambio de Información
+                            </strong>
+                        </p>
+                        <a href="@Url.Action("Index", "Documents", new { host = Model.HostId, document = 2, area = "Hosts" })" class="btn btn-outline-primary">Ver documento</a>
+                    </div>
+
+                    <div class="col-md-4">
+                        <p class="card-text">
+                            <strong>
+                                FUNDACIÓN INFANTIL RONALD MCDONALD DE COSTA RICA
+                                CONCESIÓN, CESIÓN, LIBERACIÓN Y RENUNCIA
+                            </strong>
+                        </p>
+                        <a href="@Url.Action("Index", "Documents", new { host = Model.HostId, document = 3, area = "Hosts" })" class="btn btn-outline-primary">Ver documento</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

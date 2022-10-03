@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - CasaRM-WebApp</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="~/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="~/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="~/favicon-16x16.png">
+	<link rel="manifest" href="~/site.webmanifest">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/app.css" />
+	<link rel="stylesheet" href="~/css/appDocuments.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+	@RenderBody()
+
+	<script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="~/js/app.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

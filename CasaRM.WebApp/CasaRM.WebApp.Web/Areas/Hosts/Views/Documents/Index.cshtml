@@ -1,0 +1,39 @@
+﻿@model DocumentIndexViewModel
+
+@{
+    ViewData["Title"] = "Documentos";
+    Layout = "_DocumentLayout";
+}
+
+<div class="d-flex justify-content-center mt-3">
+    <div>
+        <p>
+            <a href="@Url.Action("Index", "Home", new { host = Context.Request.Query["host"][0], area = "Hosts" })">Ir a administración</a>
+        </p>
+        
+        <button class="btn btn-outline-primary" name="printPdf">Imprimir Pdf</button>
+    </div>
+</div>
+
+<div class="page" id="page">
+    @Html.Raw(Model.DocumentHtml)
+</div>
+
+@section Scripts{
+    <script>
+        $("button[name=printPdf]").click(printDocument);
+
+        function printDocument() {
+            var divContents = document.querySelector("#page").innerHTML;
+            var printWindow = window.open('', 'PRINT', 'height=650,width=900,top=100,left=150');
+            printWindow.document.write(divContents);
+
+            printWindow.document.close(); // necessary for IE >= 10
+            printWindow.focus(); // necessary for IE >= 10*/
+
+            printWindow.print();
+
+            return true;
+        }
+    </script>
+}

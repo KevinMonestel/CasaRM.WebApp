@@ -28,6 +28,7 @@ applicationCatalog.HostDocuments = builder.Configuration.GetSection("HostDocumen
 builder.Services.AddScoped<IHostService, HostService>();
 builder.Services.AddScoped<ISocialStudyService, SocialStudyService>();
 builder.Services.AddScoped<IHostingHistoryService, HostingHistoryService>();
+builder.Services.AddScoped<IHostDocumentsService, HostDocumentsService>();
 
 //Repositories
 builder.Services.AddScoped<IHostRepository, HostRepository>();

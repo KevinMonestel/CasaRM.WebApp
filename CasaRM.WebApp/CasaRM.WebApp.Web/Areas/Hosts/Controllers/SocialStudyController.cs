@@ -28,13 +28,10 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
         {
             CreateOrUpdateSocialStudyViewModel viewModel = new();
 
-            int socialStudyId = await _hostService.GetSocialStudyIdByHostIdAsync(host);
+            int socialStudyId = string.IsNullOrEmpty(host) ? 0 : await _hostService.GetSocialStudyIdByHostIdAsync(host);
 
             if (!string.IsNullOrEmpty(host) && socialStudyId > 0)
             {
-                viewModel.SocialStudyId = socialStudyId;
-                viewModel.HostId = host;
-
                 CreateOrUpdateSocialStudyDto fullSocialStudyData = await _socialStudyService.GetFullSocialStudyAsync(socialStudyId);
 
                 viewModel.MinorPersonDataFormViewModel = fullSocialStudyData.MinorPersonDataDto.ToObject<MinorPersonDataFormViewModel>();
@@ -46,6 +43,8 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
                 viewModel.SupportServicesFormViewModel = fullSocialStudyData.SupportServicesDto.ToObject<SupportServicesFormViewModel>();
                 viewModel.RecomendationFormViewModel = fullSocialStudyData.RecomendationDto.ToObject<RecomendationFormViewModel>();
                 viewModel.SignatureDataUrl = fullSocialStudyData.SignatureDataUrl;
+                viewModel.SocialStudyId = socialStudyId;
+                viewModel.HostId = host;
             }
 
             return View(viewModel);
