@@ -109,97 +109,10 @@
     }
   ],
 
-  "HostHealthQuestions": [
+  "HostDocuments": [
     {
       "Id": 1,
-      "Description": "¿Fiebre de más de 100.4ªF (38.0 ºC) en los últimos 2 días?"
-    },
-    {
-      "Id": 2,
-      "Description": "¿Vómitos en los últimos 2 días?"
-    },
-    {
-      "Id": 3,
-      "Description": "¿Cuello rígido o dolor de cabeza con fiebre en los últimos 2 días?"
-    },
-    {
-      "Id": 4,
-      "Description": "¿Diarrea en los últimos 2 días?"
-    },
-    {
-      "Id": 5,
-      "Description": "¿En este momento tiene lesiones en la piel que “supuran” llenas de líquido o pus?"
-    },
-    {
-      "Id": 6,
-      "Description": "¿Algún tipo de rash / sarpullido en la piel en este momento?"
-    },
-    {
-      "Id": 7,
-      "Description": "¿En este momento tiene lesiones en la piel que “supuran” llenas de líquido o pus?"
-    },
-    {
-      "Id": 8,
-      "Description": "¿Exposición a tuberculosis (TB) en los últimos 2 meses?"
-    },
-    {
-      "Id": 9,
-      "Description": "¿Exposición a alguno de los siguientes en las últimas 3 semanas?"
-    },
-    {
-      "Id": 10,
-      "Description": "Varicela"
-    },
-    {
-      "Id": 11,
-      "Description": "Miembro del hogar con piojos"
-    },
-    {
-      "Id": 12,
-      "Description": "Sarampión"
-    },
-    {
-      "Id": 13,
-      "Description": "Paperas"
-    },
-    {
-      "Id": 14,
-      "Description": "Tos convulsa"
-    },
-    {
-      "Id": 15,
-      "Description": "¿Ha tenido varicela antes? (Paciente)"
-    },
-    {
-      "Id": 16,
-      "Description": "¿Se ha vacunado contra la varicela? (Paciente)"
-    },
-    {
-      "Id": 17,
-      "Description": "¿Ha tenido varicela antes? (Madre/Padre/Encargado)"
-    },
-    {
-      "Id": 18,
-      "Description": "¿Se ha vacunado contra la varicela? (Madre/Padre/Encargado)"
-    },
-    {
-      "Id": 19,
-      "Description": "¿Ha tenido varicela antes? (Acompañante)"
-    },
-    {
-      "Id": 20,
-      "Description": "¿Se ha vacunado contra la varicela? (Acompañante)"
-    }
-  ],
-
-  "HostHealthAnswers": [
-    {
-      "Id": 1,
-      "Description": "Sí"
-    },
-    {
-      "Id": 2,
-      "Description": "No"
+      "Description": "<p style=\"text-align:center\"><strong>Aceptaci&oacute;n Normas y Obligaciones por parte de los Residentes Casa Ronald McDonald Costa Rica</strong></p><p>La Casa Ronald McDonald Costa Rica ofrece hospedaje temporal para familias de la Zona Rural del pa&iacute;s, cuyos hijos (hasta los 18 a&ntilde;os de edad), necesitan recibir tratamiento m&eacute;dico en el Hospital Nacional de Ni&ntilde;os.</p><p>Para lograr una convivencia satisfactoria y amena entre todas las familias hu&eacute;spedes de la Casa Ronald McDonald, se deben cumplir una serie de normas y obligaciones, que ya le fueron explicadas ampliamente y adem&aacute;s brindadas por escrito por medio de un panfleto informativo.</p><p>Aunado a lo anterior, el personal de la Casa Ronald McDonald, le brind&oacute; un recorrido por las instalaciones para que conozca el funcionamiento de la misma.</p><p>Yo, {NombreEncargado}, he le&iacute;do y entiendo el contenido de las Reglamento de Hu&eacute;spedes de la Casa Ronald McDonald, y acepto cumplirlas cabalmente entendiendo y asumiendo las consecuencias de su incumplimiento. Ser&eacute; responsable por el paciente, familia y visitantes.</p><p>Sabe leer, S&iacute;_______ No________ En caso de no saber leer: Yo {NombreEncargado}, declaro que se me ha le&iacute;do el contenido del Reglamento de Residentes de la Casa Ronald McDonald, entendiendo y aceptando cada una de sus disposiciones.</p><p>Nombre del paciente:&nbsp;{NombrePaciente}</p><p>Nombre del acompa&ntilde;ante:&nbsp;{NombreEncargado}</p><p>Firma:&nbsp;{firmaEncargado} CI:&nbsp;{IdentificacionEncargado}</p><p>Nombre Completo de la Persona de la Casa Ronald McDonald que ha realizado el ingreso:</p><p>Firma: {FirmaUsuario}&nbsp; Fecha: {FechaCreacion}</p>"
     }
   ]
 }

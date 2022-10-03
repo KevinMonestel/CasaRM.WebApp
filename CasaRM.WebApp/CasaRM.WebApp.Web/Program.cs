@@ -21,8 +21,7 @@ applicationCatalog.HousingConstructionMaterialsFloors = builder.Configuration.Ge
 applicationCatalog.RoomTypes = builder.Configuration.GetSection("RoomTypes").Get<IEnumerable<CatalogDto>>();
 applicationCatalog.HousingConservationStatuses = builder.Configuration.GetSection("HousingConservationStatuses").Get<IEnumerable<CatalogDto>>();
 applicationCatalog.BasicServices = builder.Configuration.GetSection("BasicServices").Get<IEnumerable<CatalogDto>>();
-applicationCatalog.HostHealthQuestions = builder.Configuration.GetSection("HostHealthQuestions").Get<IEnumerable<CatalogDto>>();
-applicationCatalog.HostHealthAnswers = builder.Configuration.GetSection("HostHealthAnswers").Get<IEnumerable<CatalogDto>>();
+applicationCatalog.HostDocuments = builder.Configuration.GetSection("HostDocuments").Get<IEnumerable<CatalogDto>>();
 
 // Add services to the container.
 // Services
