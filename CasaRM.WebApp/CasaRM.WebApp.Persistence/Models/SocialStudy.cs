@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.VisualBasic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 
@@ -35,6 +36,9 @@ namespace CasaRM.WebApp.Persistence.Models
         [StringLength(500)]
         [Column("Recomendaciones")]
         public string Recomendation { get; set; }
+
+        [Column("DatosFirmaUrl")]
+        public string SignatureDataUrl { get; set; }
 
         public MinorPersonData MinorPersonData { get; set; }
 

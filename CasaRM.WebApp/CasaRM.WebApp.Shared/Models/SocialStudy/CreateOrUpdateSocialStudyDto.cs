@@ -14,6 +14,8 @@ namespace CasaRM.WebApp.Shared.Models.SocialStudy
 
         public string ExecutedBy { get; set; }
 
+        public string SignatureDataUrl { get; set; }
+
         public MinorPersonDataDto MinorPersonDataDto { get; set; }
 
         public IEnumerable<CompanionDataDto> CompanionDataDto { get; set; }

@@ -1,4 +1,6 @@
-﻿namespace CasaRM.WebApp.Web.Areas.Hosts.Models.SocialStudy
+﻿using Microsoft.Build.Framework;
+
+namespace CasaRM.WebApp.Web.Areas.Hosts.Models.SocialStudy
 {
     public class CreateOrUpdateSocialStudyViewModel
     {

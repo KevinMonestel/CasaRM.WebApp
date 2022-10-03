@@ -30,20 +30,6 @@
 
         <div class="col-md-6">
             <div class="form-floating mb-3">
-                <input asp-for="ParentName" class="form-control" aria-required="true" max="@DateTime.Now.ToString("yyyy-MM-dd")" min="@DateTime.Now.AddYears(-100).ToString("yyyy-MM-dd")" />
-                <label asp-for="ParentName" class="form-label">Nombre del Padre/Madre/Encargado</label>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="form-floating mb-3">
-                <input asp-for="ParentIdentification" class="form-control" aria-required="true" />
-                <label asp-for="ParentIdentification" class="form-label">Identificación del Padre/Madre/Encargado</label>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="form-floating mb-3">
                 <input asp-for="CompanionName" class="form-control" aria-required="true" />
                 <label asp-for="CompanionName" class="form-label">Nombre del Acompañante</label>
             </div>

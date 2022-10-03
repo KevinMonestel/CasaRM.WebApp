@@ -50,6 +50,7 @@ namespace CasaRM.WebApp.Services.Implementations
             result.HousingSituationDto = await _housingSituationRepository.GetHousingSituationByIdAsync(socialStudyDto.HousingSituationId);
             result.RecomendationDto = new() { Recomendation = socialStudyDto.Recomendation };
             result.SupportServicesDto = new() { SupportServices = socialStudyDto.SupportServices };
+            result.SignatureDataUrl = socialStudyDto.SignatureDataUrl;
 
             return result;
         }
@@ -70,7 +71,8 @@ namespace CasaRM.WebApp.Services.Implementations
                 PovertyCategory = createOrUpdateSocialStudyDto.IncomeCalculationDto.PovertyCategory,
                 SupportServices = createOrUpdateSocialStudyDto.SupportServicesDto.SupportServices,
                 Recomendation = createOrUpdateSocialStudyDto.RecomendationDto.Recomendation,
-                HousingSituationId = createOrUpdateSocialStudyDto.HousingSituationDto.Id
+                HousingSituationId = createOrUpdateSocialStudyDto.HousingSituationDto.Id,
+                SignatureDataUrl = createOrUpdateSocialStudyDto.SignatureDataUrl
             });
 
             if (string.IsNullOrEmpty(createOrUpdateSocialStudyDto.HostId) && createOrUpdateSocialStudyDto.SocialStudyId.Equals(0))

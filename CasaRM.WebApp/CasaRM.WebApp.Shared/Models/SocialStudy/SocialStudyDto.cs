@@ -17,5 +17,7 @@
         public string SupportServices { get; set; }
 
         public string Recomendation { get; set; }
+
+        public string SignatureDataUrl { get; set; }
     }
 }

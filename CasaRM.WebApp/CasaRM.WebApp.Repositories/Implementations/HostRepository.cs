@@ -4,6 +4,7 @@ using CasaRM.WebApp.Repositories.Interfaces;
 using CasaRM.WebApp.Shared.Models.Host;
 using CasaRM.WebApp.Shared.Models.SocialStudy;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.CompilerServices;
 
 namespace CasaRM.WebApp.Repositories.Implementations
 {
@@ -67,14 +68,17 @@ namespace CasaRM.WebApp.Repositories.Implementations
 
                 result = await _context.Host.
                     Where(x => x.Id.ToString().Contains(searchHostDto.Code) ||
-                    x.SocialStudy.MinorPersonData.FullName.Contains(searchHostDto.MinorPersonName) ||
-                    x.SocialStudy.MinorPersonData.FileNumber.Contains(searchHostDto.MinorPersonFileNumber)).
+                        x.SocialStudy.MinorPersonData.FullName.Contains(searchHostDto.MinorPersonName) ||
+                        x.SocialStudy.MinorPersonData.FileNumber.Contains(searchHostDto.MinorPersonFileNumber) ||
+                        x.SocialStudy.CompanionData.FirstOrDefault(x => x.FullName.Contains(searchHostDto.CompanionName)) != null ||
+                        x.SocialStudy.CompanionData.FirstOrDefault(x => x.Identification.Contains(searchHostDto.CompanionIdentification)) != null
+                    ).
                     Select(x => new SearchHostResultsDto
                     {
                         Code = x.Id.ToString(),
                         MinorPersonName = x.SocialStudy.MinorPersonData.FullName,
                         MinorPersonFileNumber = x.SocialStudy.MinorPersonData.FileNumber
-                    }).ToListAsync();
+                    }).Distinct().ToListAsync();
 
                 return result;
             }

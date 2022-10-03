@@ -190,28 +190,49 @@
     </div>
 
     <div class="card-body">
-       <form id="signatureDataForm">
-           <div class="row">
-               <div class="col-md-6">
-                   <div>
-                       <p>Realizar firma</p>
-                        <canvas width="500" height="200" id="signatureCanvas" class="border border-primary"></canvas>
-                   </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="d-flex justify-content-center align-content-center">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signatureFormModal">
+                        Añadir firma
+                    </button>
+                </div>
+            </div>
 
-                    <div class="my-3">
-                       <button type="button" id="cleanSignature" class="btn btn-outline-danger">Limpiar</button>
-                       <button type="button" id="acceptSignature" class="btn btn-primary">Confirmar firma</button>
-                   </div>
-               </div>
-
+            <div class="col-md-6">
                 <div class="col-md-6">
                     <p>Firma confirmada (Se guardará así)</p>
-                    <img width="500" height="200" id="signatureAcceptedImg" class="border">
+                    <img width="400" height="200" id="signatureAcceptedImg" class="border" src="@Model.SignatureDataUrl">
                 </div>
-           </div>
+            </div>
+        </div>
+    </div>
 
-           <input type="text" asp-for="@Model.SignatureDataUrl" hidden> 
-        </form>
+    <!-- Signature Form Modal -->
+    <div class="modal fade" id="signatureFormModal" tabindex="-1" aria-labelledby="familyGroupForm" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Añadir registro - Firma</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="signatureDataForm">
+                        <p>Realizar firma</p>
+                        <div class="d-flex justify-content-center align-content-center">
+                            <canvas width="400" height="200" id="signatureCanvas" class="border border-primary"></canvas>
+                        </div>
+
+                        <div class="my-3">
+                            <button type="button" id="cleanSignature" class="btn btn-outline-danger">Limpiar</button>
+                            <button type="button" id="acceptSignature" class="btn btn-primary">Confirmar firma</button>
+                        </div>
+
+                        <input type="text" asp-for="SignatureDataUrl" readonly class="form-control">
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -268,7 +289,6 @@
         var companionData = @Html.Raw(Json.Serialize(Model.CompanionDataListViewModel));
         var familyGroupData = @Html.Raw(Json.Serialize(Model.FamilyGroupListViewModel));
         var contributionData = @Html.Raw(Json.Serialize(Model.ContributionListViewModel));
-
         var familyGroupForm = $("#familyGroupForm");
         var contributionForm = $("#contributionForm");
         var signatureDataForm = $("#signatureDataForm");
@@ -291,8 +311,16 @@
                 !incomeCalculationForm.valid() ||
                 !housingSituationForm.valid() ||
                 !supportServicesForm.valid() ||
-                !recomendationForm.valid()) {
+                !recomendationForm.valid() ||
+                !signatureDataForm.valid()) {
                 toastr.error('Campos requeridos se encuentran actualmente con errores de validación. Por favor, revisa el formulario', '¡Atención!');
+
+                return;
+            }
+
+            let signatureData = signatureDataForm.find("input[name=SignatureDataUrl]").val();
+            if (signatureData == null || signatureData == ""){
+                toastr.error('La firma es obligatoria. Por favor añadir una firma', '¡Atención!');
 
                 return;
             }
@@ -460,10 +488,15 @@
         $("#acceptSignature").click(function (e) {
             e.preventDefault();
 
-            var data = signaturePad.toDataURL();
+            if (signaturePad.isEmpty()) return;
+
+            let data = signaturePad.toDataURL("image/svg+xml", 0.5);
+            let signatureFormModal = $("#signatureFormModal");
 
             $("#signatureAcceptedImg").attr("src", data);
             signatureDataForm.find("input[name=SignatureDataUrl]").val(data);
+
+            signatureFormModal.modal("hide");
         });
 
         $("#cleanSignature").click(function (e) {

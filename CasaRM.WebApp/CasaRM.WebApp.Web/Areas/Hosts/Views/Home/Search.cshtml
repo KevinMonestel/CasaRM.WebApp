@@ -62,31 +62,24 @@
                     searchHostResults.append(`
                                 <div class='card'>
                                     <div class='card-body'>
-                                        <div>
-                                            <strong>Nombre del paciente: ${value.minorPersonName}</strong> <small>${value.code}</small>
-                                        </div>
+                                        <div class='row'>
+                                            <div class='col-md-10'>
+                                                <div>
+                                                    <strong>${value.minorPersonName}</strong> (<small>${value.code})</small>
+                                                </div>
 
-                                        <ul>
-                                            <li>
-                                                <small>Número de expediente: ${value.minorPersonFileNumber}</small>
-                                            </li>
-                                            <li>
-                                                <small>Nombre del padre/madre/encargado: ${value.parentName}</small>
-                                            </li>
-                                            <li>
-                                                <small>Identificación del padre/madre/encargado: ${value.parentIdentification}</small>
-                                            </li>
-                                            <li>
-                                                <small>Nombre del acompañante: ${value.companionName}</small>
-                                            </li>
-                                            <li>
-                                                <small>Identificación del acompañante: ${value.companionIdentification}</small>
-                                            </li>
-                                            </li>
-                                        </ul>
+                                                <ul>
+                                                    <li>
+                                                        <small>Número de expediente: ${value.minorPersonFileNumber}</small>
+                                                    </li>
+                                                </ul>
+                                            </div>
 
-                                        <div class='text-end'>
-                                            <a href='${value.manageUrl}' class='btn btn-secondary'>Administrar información</a>
+                                            <div class='col-md-2'>
+                                                <div class='text-end'>
+                                                    <a href='${value.manageUrl}' class='btn btn-secondary'>Administrar</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -45,6 +45,7 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
                 viewModel.HousingSituationFormViewModel = fullSocialStudyData.HousingSituationDto.ToObject<HousingSituationFormViewModel>();
                 viewModel.SupportServicesFormViewModel = fullSocialStudyData.SupportServicesDto.ToObject<SupportServicesFormViewModel>();
                 viewModel.RecomendationFormViewModel = fullSocialStudyData.RecomendationDto.ToObject<RecomendationFormViewModel>();
+                viewModel.SignatureDataUrl = fullSocialStudyData.SignatureDataUrl;
             }
 
             return View(viewModel);
@@ -70,8 +71,7 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
 
             if (!string.IsNullOrWhiteSpace(viewModel.SignatureDataUrl))
             {
-                var base64Signature = viewModel.SignatureDataUrl.Split(",")[1];
-                var binarySignature = Convert.FromBase64String(base64Signature);
+                createOrUpdateSocialStudyDto.SignatureDataUrl = viewModel.SignatureDataUrl;
             }
 
             string result = await _socialStudyService.CreateOrUpdateSocialStudyAsync(createOrUpdateSocialStudyDto);
