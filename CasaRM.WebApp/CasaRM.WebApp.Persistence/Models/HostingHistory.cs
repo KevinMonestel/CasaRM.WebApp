@@ -29,8 +29,20 @@ namespace CasaRM.WebApp.Persistence.Models
         [Column("CreadoPor")]
         public string CreatedBy { get; set; }
 
+        [ForeignKey("HistoryTicketDelivery")]
+        [Column("BoletaHistorialEntregaId")]
+        public int? HistoryTicketDeliveryId { get; set; }
+
+        [ForeignKey("HistoryTicketReception")]
+        [Column("BoletaHistorialRecibimientoId")]
+        public int? HistoryTicketReceptionId { get; set; }
+
         public Host Host { get; set; }
 
         public ApplicationUser ApplicationUser { get; set; }
+
+        public HistoryTicket? HistoryTicketDelivery { get; set; }
+
+        public HistoryTicket? HistoryTicketReception { get; set; }
     }
 }

@@ -10,9 +10,13 @@
 
         public DateTime? EndDate { get; set; }
 
-        public DateTime CreatedAt { get; set; }
-
         public int RoomNumber { get; set; }
+
+        public int? HistoryTicketDeliveryId { get; set; }
+
+        public int? HistoryTicketReceptionId { get; set; }
+
+        public DateTime CreatedAt { get; set; }
 
         public string CreatedBy { get; set; }
     }
