@@ -7,6 +7,7 @@
     <thead>
         <tr>
             <th scope="col">Fecha Inicio</th>
+            <th scope="col">Número Habitación</th>
             <th scope="col">Fecha Final</th>
             <th scope="col"></th>
         </tr>
@@ -16,6 +17,7 @@
         {
             <tr>
                 <td>@history.StartDate.ToString("dd/MM/yyyy hh:mm tt")</td>
+                <td>@history.RoomNumber</td>
                 <td>
                     @if(history.EndDate.HasValue){
                         <span>@history.EndDate.Value.ToString("dd/MM/yyyy hh:mm tt")</span>
@@ -25,9 +27,7 @@
                     }
                 </td>
                 <td class="text-end">
-                    @if(!history.EndDate.HasValue){
-                        <button class="btn btn-outline-primary" name="defineEndDateHistory" data-id="@history.Id" title="Definir fecha de salida"><i data-feather="calendar"></i></button>
-                    }
+                    <a class="btn btn-outline-primary" href="@Url.Action("Manage", "History", new { area = "Hosts", history = history.Id })"><i data-feather="calendar"></i></a>
                     <button class="btn btn-danger" name="removeHistory" data-id="@history.Id">X</button>
                 </td>
             </tr>

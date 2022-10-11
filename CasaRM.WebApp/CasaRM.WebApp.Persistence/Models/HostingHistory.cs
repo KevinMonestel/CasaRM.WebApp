@@ -22,6 +22,9 @@ namespace CasaRM.WebApp.Persistence.Models
         [Column("CreadoEn")]
         public DateTime CreatedAt { get; set; }
 
+        [Column("NumeroHabitacion")]
+        public int RoomNumber { get; set; }
+
         [ForeignKey("ApplicationUser")]
         [Column("CreadoPor")]
         public string CreatedBy { get; set; }

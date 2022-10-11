@@ -31,8 +31,13 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
             return View(viewModel);
         }
 
+        public async Task<IActionResult> Manage(int history)
+        {
+            return View();
+        }
+
         [HttpPost]
-        public async Task<HostingHistoryListViewModel> AddHistory(HostingHistoryFormViewModel viewModel)
+        public async Task<JsonResult> AddHistory(HostingHistoryFormViewModel viewModel)
         {
             HostingHistoryListViewModel result = new();
             HostingHistoryDto hostingHistoryDto = viewModel.ToObject<HostingHistoryDto>();
@@ -43,7 +48,10 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
 
             result = hostingHistoryDto.ToObject<HostingHistoryListViewModel>();
 
-            return result;
+            return new JsonResult(new
+            {
+                RedirectUrl = Url.Action("Manage", "History", new { area = "Hosts", history = result.Id })
+            });
         }
 
         [HttpPost]

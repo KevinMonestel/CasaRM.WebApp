@@ -14,6 +14,8 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Models.History
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy hh:mm}")]
         public DateTime? EndDate { get; set; }
 
+        public int RoomNumber { get; set; }
+
         public DateTime CreatedAt { get; set; }
 
         public string CreatedBy { get; set; }

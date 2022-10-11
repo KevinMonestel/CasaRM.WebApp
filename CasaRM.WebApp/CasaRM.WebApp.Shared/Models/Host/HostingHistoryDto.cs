@@ -12,6 +12,8 @@
 
         public DateTime CreatedAt { get; set; }
 
+        public int RoomNumber { get; set; }
+
         public string CreatedBy { get; set; }
     }
 }

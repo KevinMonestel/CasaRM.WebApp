@@ -43,18 +43,7 @@
                     return;
                 }
 
-                let endDateTitle = data.endDate ? dayjs(data.endDate).format("DD/MM/YYYY hh:mm A") : "Fecha sin definir";
-
-                historyListTable.find("tbody").append(`
-                                                      <tr>
-                                                          <td>${dayjs(data.startDate).format("DD/MM/YYYY hh:mm A")}</td>
-                                                          <td>${endDateTitle}</td>
-                                                          <td class="text-end">
-                                                            <button class="btn btn-outline-primary" name="defineEndDateHistory" data-id='${data.id}' title="Definir fecha de salida"><i data-feather="calendar"></i></button>
-                                                            <button class="btn btn-danger" name="removeHistory" data-id="${data.id}">X</button>
-                                                          </td>
-                                                      </tr>`);
-                feather.replace();
+                location.href = data.redirectUrl;
             })
                 .done(function () {
                 })

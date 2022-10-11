@@ -20,6 +20,9 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Models.History
 
         public DateTime CreatedAt { get; set; }
 
+        [Required]
+        public int RoomNumber { get; set; }
+
         public string CreatedBy { get; set; }
     }
 }
