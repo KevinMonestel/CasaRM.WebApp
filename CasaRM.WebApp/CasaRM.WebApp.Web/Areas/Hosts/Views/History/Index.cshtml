@@ -6,6 +6,15 @@
 
 <h1 class="h1 mb-3"><strong>Huéspedes</strong> Historial de Ingreso</h1>
 
+@if (Model.WasManaged){
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <div class="alert-message">
+            ¡Se ha registrado la boleta de manera exitosa!
+        </div>
+    </div>
+}
+
 <partial name="~/Areas/Hosts/Views/History/Partials/_HostingHistoryForm.cshtml" model="@Model.HostingHistoryFormViewModel" />
 
 <div class="card">

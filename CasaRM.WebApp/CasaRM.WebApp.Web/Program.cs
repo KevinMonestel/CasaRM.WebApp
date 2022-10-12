@@ -39,6 +39,7 @@ builder.Services.AddScoped<IFamilyGroupRepository, FamilyGroupRepository>();
 builder.Services.AddScoped<IContributionRepository, ContributionRepository>();
 builder.Services.AddScoped<IHousingSituationRepository, HousingSituationRepository>();
 builder.Services.AddScoped<IHostingHistoryRepository, HostingHistoryRepository>();
+builder.Services.AddScoped<IHistoryTicketRepository, HistoryTicketRepository>();
 
 // Singletons
 builder.Services.AddSingleton(applicationCatalog);

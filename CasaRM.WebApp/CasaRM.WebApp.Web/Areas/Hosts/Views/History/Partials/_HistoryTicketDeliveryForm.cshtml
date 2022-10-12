@@ -1,0 +1,135 @@
+﻿@model HistoryTicketFormViewModel
+
+@{
+}
+
+<form id="historyTicketDeliveryForm" method="post" asp-controller="History" asp-action="CreateOrUpdateHistoryTicket">
+    <input asp-for="Id" hidden />
+    <input asp-for="ActionType" value="Delivery" hidden />
+    <input asp-for="HostId" hidden />
+    <input asp-for="HostingHistoryId" hidden />
+
+    <table class="table table-bordered ">
+        <thead>
+            <tr>
+                <th scope="col">Artículo</th>
+                <th scope="col">Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><label asp-for="SingleBedsQty">Camas Individuales</label></td>
+                <td><input class="form-control border-0" asp-for="SingleBedsQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="HospitalBedsQty">Camas Hospitalarias</label></td>
+                <td><input class="form-control border-0" asp-for="HospitalBedsQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="TrundleBedsQty">Camas Nido</label></td>
+                <td><input class="form-control border-0" asp-for="TrundleBedsQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="ElasticSheetsQty">Juego Sábanas con Elástico</label></td>
+                <td><input class="form-control border-0" asp-for="ElasticSheetsQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="SheetsQty">Sábanas</label></td>
+                <td><input class="form-control border-0" asp-for="SheetsQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="PillowCasesQty">Fundas Almohadas</label></td>
+                <td><input class="form-control border-0" asp-for="PillowCasesQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="PillowCoversQty">Cobertores Almohadas</label></td>
+                <td><input class="form-control border-0" asp-for="PillowCoversQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="PillowsQty">Almohadas</label></td>
+                <td><input class="form-control border-0" asp-for="PillowsQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="QuiltsQty">Edredones</label></td>
+                <td><input class="form-control border-0" asp-for="QuiltsQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="BlanketsQty">Cobijas</label></td>
+                <td><input class="form-control border-0" asp-for="BlanketsQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="NightstandQty">Mesas de Noche</label></td>
+                <td><input class="form-control border-0" asp-for="NightstandQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="BlackoutCurtainsQty">Cortinas Black Out</label></td>
+                <td><input class="form-control border-0" asp-for="BlackoutCurtainsQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="DecorationsQty">Decoraciones</label></td>
+                <td><input class="form-control border-0" asp-for="DecorationsQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="ClosetsQty">Closets</label></td>
+                <td><input class="form-control border-0" asp-for="ClosetsQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="SidewalkQty">Banquetas</label></td>
+                <td><input class="form-control border-0" asp-for="SidewalkQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="BathClothsQty">Paños Baño</label></td>
+                <td><input class="form-control border-0" asp-for="BathClothsQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="HandClothsQty">Paños Manos</label></td>
+                <td><input class="form-control border-0" asp-for="HandClothsQty"></td>
+            </tr>
+            <tr class="text-center">
+                <td colspan="2"><strong>Otros Adicionles</strong></td>
+            </tr>
+            <tr>
+                <td><label asp-for="TubQty">Cantidad Tinas</label></td>
+                <td><input class="form-control border-0" asp-for="TubQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="BabyTrolleyQty">Coches</label></td>
+                <td><input class="form-control border-0" asp-for="BabyTrolleyQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="EnclosuresQty">Encierros</label></td>
+                <td><input class="form-control border-0" asp-for="EnclosuresQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="CradleQty">Cunas</label></td>
+                <td><input class="form-control border-0" asp-for="CradleQty"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="ToiletKitQty">Kit Aseo / Covid-19</label></td>
+                <td><input class="form-control border-0" asp-for="ToiletKitQty"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="mb-3">
+        <input asp-for="JourneyMade" type="checkbox" class="" aria-required="true" />
+        <label asp-for="JourneyMade" class="form-label">¿Se realizó el recorrido en CRM?</label>
+        <span asp-validation-for="JourneyMade" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <input asp-for="keysDelivered" type="checkbox" class="" aria-required="true" />
+        <label asp-for="keysDelivered" class="form-label">¿Llaves entregadas?</label>
+        <span asp-validation-for="keysDelivered" class="text-danger"></span>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input asp-for="Observations" class="form-control" aria-required="true" />
+        <label asp-for="Observations" class="form-label">Observaciones adicionales</label>
+        <span asp-validation-for="Observations" class="text-danger"></span>
+    </div>
+
+    <div class="text-center mb-3">
+        <input type="submit" class="btn btn-primary" aria-required="true" value="Enviar información" />
+    </div>
+</form>

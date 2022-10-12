@@ -1,4 +1,5 @@
-﻿using CasaRM.WebApp.Shared.Models.Host;
+﻿using CasaRM.WebApp.Shared.Models.History;
+using CasaRM.WebApp.Shared.Models.Host;
 
 namespace CasaRM.WebApp.Services.Interfaces
 {
@@ -9,5 +10,11 @@ namespace CasaRM.WebApp.Services.Interfaces
         Task<HostingHistoryDto> CreateAsync(HostingHistoryDto hostingHistoryDto);
 
         Task<HostingHistoryDto> DeleteAsync(int id);
+
+        Task<HistoryTicketDto> CreateOrUpdateHistoryTicket(HistoryTicketDto historyTicketDto, int HostingHistoryId, string actionType);
+
+        Task<GetHistoryTicketsIdsResult> GetHistoryTicketsIdsByHistoryIdAsync(int id);
+
+        Task<HistoryTicketDto> GetHistoryTicketByIdAsync(int id);
     }
 }

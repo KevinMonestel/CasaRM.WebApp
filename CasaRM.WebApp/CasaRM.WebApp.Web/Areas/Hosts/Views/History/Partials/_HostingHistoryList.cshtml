@@ -27,7 +27,7 @@
                     }
                 </td>
                 <td class="text-end">
-                    <a class="btn btn-outline-primary" href="@Url.Action("Manage", "History", new { area = "Hosts", history = history.Id })"><i data-feather="calendar"></i></a>
+                    <a class="btn btn-outline-primary" href="@Url.Action("Manage", "History", new { area = "Hosts", history = history.Id, host = history.HostId })"><i data-feather="calendar"></i></a>
                     <button class="btn btn-danger" name="removeHistory" data-id="@history.Id">X</button>
                 </td>
             </tr>

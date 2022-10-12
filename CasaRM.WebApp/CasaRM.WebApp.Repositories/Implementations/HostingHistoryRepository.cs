@@ -2,6 +2,7 @@
 using CasaRM.WebApp.Persistence.Models;
 using CasaRM.WebApp.Repositories.Interfaces;
 using CasaRM.WebApp.Shared.Extensions;
+using CasaRM.WebApp.Shared.Models.History;
 using CasaRM.WebApp.Shared.Models.Host;
 using System.Collections.Generic;
 
@@ -64,6 +65,80 @@ namespace CasaRM.WebApp.Repositories.Implementations
                 dbModel = await RemoveAsync(dbModel);
 
                 if (dbModel is null) throw new Exception();
+
+                result = dbModel.ToObject<HostingHistoryDto>();
+
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<HostingHistoryDto> AssignHistoryTicketAsync(int id, int historyTicketDeliverId = 0, int historyTicketReceptionId = 0)
+        {
+            try
+            {
+                HostingHistoryDto result = new();
+                HostingHistory dbModel = await GetByIdAsync(id);
+
+                if (dbModel is null) throw new Exception("History not founded");
+
+                dbModel.HistoryTicketDeliveryId = historyTicketDeliverId > 0 ? historyTicketDeliverId : dbModel.HistoryTicketDeliveryId;
+                dbModel.HistoryTicketReceptionId = historyTicketReceptionId > 0 ? historyTicketReceptionId : dbModel.HistoryTicketReceptionId;
+
+                dbModel = await UpdateAsync(dbModel);
+
+                if (dbModel is null) throw new Exception("History cannot be updated");
+
+                result = dbModel.ToObject<HostingHistoryDto>();
+
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<GetHistoryTicketsIdsResult> GetHistoryTicketsIdsByHistoryIdAsync(int id)
+        {
+            try
+            {
+                GetHistoryTicketsIdsResult result = new();
+                HostingHistory dbModel = await GetByIdAsync(id);
+
+                if (dbModel is null) throw new Exception("History not founded");
+
+                result.HistoryTicketDeliveryId = dbModel.HistoryTicketDeliveryId;
+                result.HistoryTicketReceptionId = dbModel.HistoryTicketReceptionId;
+
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<HostingHistoryDto> AssingEndDateByIdAsync(int id, DateTime endDate)
+        {
+            try
+            {
+                HostingHistoryDto result = new();
+                HostingHistory dbModel = await GetByIdAsync(id);
+
+                if (dbModel is null) throw new Exception("History not founded");
+
+                dbModel.EndDate = endDate;
+
+                dbModel = await UpdateAsync(dbModel);
+
+                if (dbModel is null) throw new Exception("History cannot be updated");
 
                 result = dbModel.ToObject<HostingHistoryDto>();
 
