@@ -17,5 +17,7 @@ namespace CasaRM.WebApp.Repositories.Interfaces
         Task<GetHistoryTicketsIdsResult> GetHistoryTicketsIdsByHistoryIdAsync(int id);
 
         Task<HostingHistoryDto> AssingEndDateByIdAsync(int id, DateTime endDate);
+
+        Task<bool> RoomIsValidByRoomNumberAsync(int roomNumber);
     }
 }

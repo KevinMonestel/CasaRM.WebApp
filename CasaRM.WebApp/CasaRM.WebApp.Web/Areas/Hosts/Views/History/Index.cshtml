@@ -52,6 +52,11 @@
                     return;
                 }
 
+                if(!data.isValid){
+                    toastr.error('Esta habitación tiene un registro sin fecha de salida determinada. Esto puede indicar que la habitación está ocupada', '¡Atención!');
+                    return;
+                }
+
                 location.href = data.redirectUrl;
             })
                 .done(function () {

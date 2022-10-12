@@ -19,5 +19,11 @@ namespace CasaRM.WebApp.Shared.Extensions
         {
             return JsonConvert.DeserializeObject<List<T>>(JsonConvert.SerializeObject(fromObject));
         }
+
+        public static DateTime ToCentralTime(this DateTime dateTime)
+        {
+            return TimeZoneInfo.ConvertTime(dateTime,
+                TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time"));
+        }
     }
 }

@@ -150,5 +150,19 @@ namespace CasaRM.WebApp.Repositories.Implementations
                 throw;
             }
         }
+
+        public async Task<bool> RoomIsValidByRoomNumberAsync(int roomNumber)
+        {
+            try
+            {
+                IEnumerable<HostingHistory> dbModel = await FindAsync(x => x.RoomNumber == roomNumber && x.EndDate == null);
+
+                return dbModel.Count() == 0;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

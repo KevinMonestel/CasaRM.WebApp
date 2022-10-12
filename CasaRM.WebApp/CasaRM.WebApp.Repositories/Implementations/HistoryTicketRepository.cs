@@ -42,7 +42,7 @@ namespace CasaRM.WebApp.Repositories.Implementations
 
                 if (dbModel.Id.Equals(0))
                 {
-                    dbModel.CreatedAt = DateTime.Now;
+                    dbModel.CreatedAt = DateTime.Now.ToCentralTime();
 
                     dbModel = await AddAsync(dbModel);
                 }

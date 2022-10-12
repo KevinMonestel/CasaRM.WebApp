@@ -72,6 +72,15 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
             HostingHistoryListViewModel result = new();
             HostingHistoryDto hostingHistoryDto = viewModel.ToObject<HostingHistoryDto>();
 
+            bool RoomIsValid = await _hostingHistoryService.RoomIsValidByRoomNumberAsync(viewModel.RoomNumber);
+
+            if(!RoomIsValid)
+                return new JsonResult(new
+                {
+                    RedirectUrl = null as string,
+                    isValid = RoomIsValid
+                });
+
             hostingHistoryDto.CreatedBy = User.FindFirst(ClaimTypes.NameIdentifier).Value;
 
             hostingHistoryDto = await _hostingHistoryService.CreateAsync(hostingHistoryDto);
@@ -80,7 +89,8 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
 
             return new JsonResult(new
             {
-                RedirectUrl = Url.Action("Manage", "History", new { area = "Hosts", history = result.Id, host = result.HostId })
+                RedirectUrl = Url.Action("Manage", "History", new { area = "Hosts", history = result.Id, host = result.HostId }),
+                isValid = RoomIsValid
             });
         }
 
