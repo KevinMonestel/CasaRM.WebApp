@@ -74,9 +74,9 @@ namespace CasaRM.WebApp.Services.Implementations
             return await _historyTicketRepository.GetHistoryTicketByIdAsync(id);
         }
 
-        public async Task<bool> RoomIsValidByRoomNumberAsync(int roomNumber)
+        public async Task<string> GetHostIdIfRoomIsNotValidByRoomNumberAsync(int roomNumber)
         {
-            return await _hostingHistoryRepository.RoomIsValidByRoomNumberAsync(roomNumber);
+            return await _hostingHistoryRepository.GetHostIdIfRoomIsNotValidByRoomNumberAsync(roomNumber);
         }
     }
 }

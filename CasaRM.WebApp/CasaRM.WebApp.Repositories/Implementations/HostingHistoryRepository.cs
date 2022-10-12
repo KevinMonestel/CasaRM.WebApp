@@ -151,13 +151,16 @@ namespace CasaRM.WebApp.Repositories.Implementations
             }
         }
 
-        public async Task<bool> RoomIsValidByRoomNumberAsync(int roomNumber)
+        public async Task<string> GetHostIdIfRoomIsNotValidByRoomNumberAsync(int roomNumber)
         {
             try
             {
-                IEnumerable<HostingHistory> dbModel = await FindAsync(x => x.RoomNumber == roomNumber && x.EndDate == null);
+                string result = string.Empty;
+                HostingHistory dbModel = (await FindAsync(x => x.RoomNumber == roomNumber && x.EndDate == null)).FirstOrDefault();
 
-                return dbModel.Count() == 0;
+                if (dbModel is not null) result = dbModel.HostId.ToString();
+
+                return result;
             }
             catch (Exception)
             {

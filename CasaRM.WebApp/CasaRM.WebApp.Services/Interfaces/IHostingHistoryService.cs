@@ -17,6 +17,6 @@ namespace CasaRM.WebApp.Services.Interfaces
 
         Task<HistoryTicketDto> GetHistoryTicketByIdAsync(int id);
 
-        Task<bool> RoomIsValidByRoomNumberAsync(int roomNumber);
+        Task<string> GetHostIdIfRoomIsNotValidByRoomNumberAsync(int roomNumber);
     }
 }

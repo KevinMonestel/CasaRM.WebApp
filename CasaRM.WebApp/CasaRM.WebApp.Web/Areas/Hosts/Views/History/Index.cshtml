@@ -17,6 +17,9 @@
 
 <partial name="~/Areas/Hosts/Views/History/Partials/_HostingHistoryForm.cshtml" model="@Model.HostingHistoryFormViewModel" />
 
+<div id="roomIsNotValidMsgDiv" class="text-danger">
+</div>
+
 <div class="card">
     <div class="card-header">
         Historial de Hospedaje
@@ -49,11 +52,16 @@
                 
                 if(!data){
                     toastr.error('Un error ha ocurrido mientras se procesaba la información. Por favor vuelve a intentarlo. Si el problema persiste, contactar al encargado', '¡Atención!');
+                    
                     return;
                 }
 
                 if(!data.isValid){
                     toastr.error('Esta habitación tiene un registro sin fecha de salida determinada. Esto puede indicar que la habitación está ocupada', '¡Atención!');
+
+                    let roomIsNotValidMsgDiv = $("#roomIsNotValidMsgDiv");
+                    roomIsNotValidMsgDiv.html(`<p>Esta habitación tiene un registro sin fecha de salida determinada. Esto puede indicar que la habitación está ocupada. <a href='${data.hostWithRoomUrl}'>Ir al historial del huesped con esta habitación registrada</a></p>`)
+                    
                     return;
                 }
 

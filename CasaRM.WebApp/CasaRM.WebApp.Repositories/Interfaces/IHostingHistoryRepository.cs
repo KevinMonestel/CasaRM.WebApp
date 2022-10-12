@@ -18,6 +18,6 @@ namespace CasaRM.WebApp.Repositories.Interfaces
 
         Task<HostingHistoryDto> AssingEndDateByIdAsync(int id, DateTime endDate);
 
-        Task<bool> RoomIsValidByRoomNumberAsync(int roomNumber);
+        Task<string> GetHostIdIfRoomIsNotValidByRoomNumberAsync(int roomNumber);
     }
 }

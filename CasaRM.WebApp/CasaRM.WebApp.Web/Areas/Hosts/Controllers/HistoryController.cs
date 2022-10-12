@@ -46,6 +46,13 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
             viewModel.HistoryTicketDelivery = getHistoryTicketsIds.HistoryTicketDeliveryId.HasValue ?
                 (await _hostingHistoryService.GetHistoryTicketByIdAsync(getHistoryTicketsIds.HistoryTicketDeliveryId.Value)).ToObject<HistoryTicketFormViewModel>() : new();
 
+            if(viewModel.HistoryTicketDelivery.Id > 0 && viewModel.HistoryTicketReception.Id.Equals(0))
+            {
+                viewModel.HistoryTicketReception = viewModel.HistoryTicketDelivery.ToObject<HistoryTicketFormViewModel>();
+                viewModel.HistoryTicketReception.Id = 0;
+                viewModel.HistoryTicketReception.Observations = string.Empty;
+            }
+
             viewModel.HistoryTicketDelivery.HostId = host;
             viewModel.HistoryTicketReception.HostId = host;
             viewModel.HistoryTicketDelivery.HostingHistoryId = history;
@@ -72,13 +79,14 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
             HostingHistoryListViewModel result = new();
             HostingHistoryDto hostingHistoryDto = viewModel.ToObject<HostingHistoryDto>();
 
-            bool RoomIsValid = await _hostingHistoryService.RoomIsValidByRoomNumberAsync(viewModel.RoomNumber);
+            string hostIdIfRoomIsNotValid = await _hostingHistoryService.GetHostIdIfRoomIsNotValidByRoomNumberAsync(viewModel.RoomNumber);
 
-            if(!RoomIsValid)
+            if(!string.IsNullOrEmpty(hostIdIfRoomIsNotValid))
                 return new JsonResult(new
                 {
                     RedirectUrl = null as string,
-                    isValid = RoomIsValid
+                    IsValid = false,
+                    HostWithRoomUrl = Url.Action("Index", "History", new { area = "Hosts", host = hostIdIfRoomIsNotValid })
                 });
 
             hostingHistoryDto.CreatedBy = User.FindFirst(ClaimTypes.NameIdentifier).Value;
@@ -90,7 +98,8 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Controllers
             return new JsonResult(new
             {
                 RedirectUrl = Url.Action("Manage", "History", new { area = "Hosts", history = result.Id, host = result.HostId }),
-                isValid = RoomIsValid
+                IsValid = true,
+                HostWithRoomUrl = null as string
             });
         }
 

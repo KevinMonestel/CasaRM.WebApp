@@ -13,6 +13,13 @@
     </ul>
     <div class="tab-content">
         <div class="tab-pane active show" id="tab-1" role="tabpanel">
+            <p class="text-center">
+                Formulario para la boleta de entrega
+                @if (Model.HistoryTicketDelivery.Id.Equals(0))
+                {
+                    <span class="text-danger">(Este formulario aún no ha sido guardado)</span>
+                }
+            </p>
             <partial name="~/Areas/Hosts/Views/History/Partials/_HistoryTicketDeliveryForm.cshtml" model="@Model.HistoryTicketDelivery" />
         </div>
         <div class="tab-pane" id="tab-2" role="tabpanel">
@@ -29,6 +36,12 @@
             }
             else
             {
+                <p class="text-center">
+                    Formulario para la boleta de recibimiento
+                    @if (Model.HistoryTicketReception.Id.Equals(0)){
+                        <span class="text-danger">(Este formulario aún no ha sido guardado)</span>
+                    }
+                </p>
                 <partial name="~/Areas/Hosts/Views/History/Partials/_HistoryTicketReceptionForm.cshtml" model="@Model.HistoryTicketReception" />
             }
         </div>
