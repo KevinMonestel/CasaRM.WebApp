@@ -28,6 +28,7 @@
 @print {
     @page {
         size: A4;
+        font-family:'Times New Roman',Times,serif;
     }
 
     @page :footer {
