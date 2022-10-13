@@ -8,6 +8,7 @@
     <input asp-for="ActionType" value="Reception" hidden />
     <input asp-for="HostId" hidden />
     <input asp-for="HostingHistoryId" hidden />
+    <input asp-for="JourneyMade" hidden />
 
     <table class="table table-bordered ">
         <thead>
@@ -110,12 +111,6 @@
             </tr>
         </tbody>
     </table>
-
-    <div class="mb-3">
-        <input asp-for="JourneyMade" type="checkbox" class="" aria-required="true" />
-        <label asp-for="JourneyMade" class="form-label">¿Se realizó el recorrido en CRM?</label>
-        <span asp-validation-for="JourneyMade" class="text-danger"></span>
-    </div>
 
     <div class="mb-3">
         <input asp-for="keysDelivered" type="checkbox" class="" aria-required="true" />
