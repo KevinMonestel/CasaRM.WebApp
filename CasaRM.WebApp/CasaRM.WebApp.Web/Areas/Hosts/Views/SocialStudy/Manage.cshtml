@@ -56,6 +56,15 @@
             </div>
         </div>
 
+        <div class="alert alert-danger alert-outline" role="alert" id="companionChargePersonAlert">
+            <div class="alert-icon">
+                <i data-feather="info"></i>
+            </div>
+            <div class="alert-message">
+                Debe agregar obligatoriamente un acompañante a cargo <small>(Este mensaje desaparecerá cuando se agregue una persona a cargo)</small>
+            </div>
+        </div>
+
         <partial name="~/Areas/Hosts/Views/SocialStudy/Partials/_CompanionDataList.cshtml" model="Model.CompanionDataListViewModel" />
     </div>
 </div>
@@ -295,6 +304,7 @@
         var signaturePad = new SignaturePad(signatureCanvas, {
             minDistance: 0
         });
+        var companionChargePersonAlert = $("#companionChargePersonAlert");
 
         saveSocialStudyBtn.on("click", function () {
             let mainDataForm = $("#mainDataForm");
@@ -319,9 +329,14 @@
                 return;
             }
 
+            if (!companionData.find(x => x.isAPersonInCharge || x.IsAPersonInCharge)) {
+                toastr.error('Debe agregar obligatoriamente un acompañante a cargo', '¡Atención!');
+                return;
+            }
+
             let signatureData = signatureDataForm.find("input[name=SignatureDataUrl]").val();
             if (signatureData == null || signatureData == ""){
-                toastr.error('La firma es obligatoria. Por favor añadir una firma', '¡Atención!');
+                toastr.error('La firma es obligatoria. Por favor añadir una firma de la persona acompañante a cargo', '¡Atención!');
 
                 return;
             }
@@ -363,6 +378,19 @@
                 });
         });
 
+        function checkCompanionsForPersonInCharge(){
+            let companionInCharge = companionData.find(x => x.isAPersonInCharge || x.IsAPersonInCharge);
+
+            if (!companionInCharge){
+                companionChargePersonAlert.show();
+                return;
+            }
+
+            companionChargePersonAlert.hide();
+        }
+
+        checkCompanionsForPersonInCharge();
+
         companionDataForm.submit(function (e) {
             e.preventDefault();
 
@@ -372,6 +400,11 @@
             let companionDataFormModal = $("#companionDataFormModal");
             let formDataObj = $(this).serializeObject();
             formDataObj.IsAPersonInCharge = $(this).find("input[name=IsAPersonInCharge]").is(":checked");
+
+            if ((companionData.find(x => x.isAPersonInCharge || x.IsAPersonInCharge)) && formDataObj.IsAPersonInCharge) {
+                toastr.error('Sólo se puede agregar a una persona a cargo', '¡Atención!');
+                return;
+            }
 
             companionDataListTable.find("tbody").append(`
                                                             <tr>
@@ -387,6 +420,7 @@
 
             companionData.push(formDataObj);
 
+            checkCompanionsForPersonInCharge();
             companionDataFormModal.modal("hide");
             companionDataForm[0].reset();
         });
@@ -453,8 +487,10 @@
             if(type == "familyGroup")
                 familyGroupData.splice(index, 1);
 
-            if (type == "companionData")
+            if (type == "companionData"){
                 companionData.splice(index, 1);
+                checkCompanionsForPersonInCharge();
+            }
 
             $(this).closest('tr').remove();
         })
