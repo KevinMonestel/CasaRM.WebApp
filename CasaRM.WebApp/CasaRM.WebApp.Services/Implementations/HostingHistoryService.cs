@@ -49,7 +49,7 @@ namespace CasaRM.WebApp.Services.Implementations
         public async Task<HistoryTicketDto> CreateOrUpdateHistoryTicket(HistoryTicketDto historyTicketDto, int HostingHistoryId, string actionType)
         {
             HistoryTicketDto historyTicketCreated = await _historyTicketRepository.CreateOrUpdateAsync(historyTicketDto);
-            HostingHistoryDto hostingHistoryUpdated = null;
+            HostingHistoryDto hostingHistoryUpdated = new();
 
             if (historyTicketCreated is null) throw new Exception("HistoryTicket cannot be created");
 

@@ -39,13 +39,10 @@ namespace CasaRM.WebApp.Repositories.Implementations
             {
                 HistoryTicketDto result = new();
                 HistoryTicket dbModel = historyTicketDto.ToObject<HistoryTicket>();
+                dbModel.CreatedAt = DateTime.Now.ToCentralTime();
 
                 if (dbModel.Id.Equals(0))
-                {
-                    dbModel.CreatedAt = DateTime.Now.ToCentralTime();
-
                     dbModel = await AddAsync(dbModel);
-                }
 
                 else
                     dbModel = await UpdateAsync(dbModel);
