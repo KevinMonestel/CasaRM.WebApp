@@ -12,21 +12,26 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Models.SocialStudy
         public int SocialStudyId { get; set; }
 
         [Required]
+        [StringLength(250)]
         public string FullName { get; set; }
 
         [Required]
+        [StringLength(100)]
         public string Relationship { get; set; }
 
         [Required]
         public int Age { get; set; }
 
         [Required]
+        [StringLength(100)]
         public string MaritalStatus { get; set; }
 
         [Required]
+        [StringLength(100)]
         public string Scholarship { get; set; }
 
         [Required]
+        [StringLength(100)]
         public string Ocupation { get; set; }
 
         [Required]

@@ -11,6 +11,7 @@ namespace CasaRM.WebApp.Web.Areas.Hosts.Models.SocialStudy
         public decimal PerCapitaIncome { get; set; }
 
         [Required]
+        [StringLength(100)]
         public string PovertyCategory { get; set; }
     }
 }

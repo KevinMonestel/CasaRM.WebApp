@@ -42,7 +42,7 @@
         </div>
 
         <!--Companion Data Form Modal -->
-        <div class="modal fade" id="companionDataFormModal" tabindex="-1" aria-labelledby="familyGroupForm" aria-hidden="true">
+        <div class="modal fade" id="companionDataFormModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="familyGroupForm" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -92,7 +92,7 @@
         </div>
 
         <!-- Family Group Form Modal -->
-        <div class="modal fade" id="familyGroupFormModal" tabindex="-1" aria-labelledby="familyGroupForm" aria-hidden="true">
+        <div class="modal fade" id="familyGroupFormModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="familyGroupForm" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -131,7 +131,7 @@
         </div>
 
         <!-- Contribution Form Modal -->
-        <div class="modal fade" id="contributionFormModal" tabindex="-1" aria-labelledby="ContributionForm" aria-hidden="true">
+        <div class="modal fade" id="contributionFormModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="ContributionForm" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -195,7 +195,7 @@
 
 <div class="card">
     <div class="card-header">
-        <h5 class="card-title mb-0">7. Firma</h5>
+        <h5 class="card-title mb-0">7. Firma de la Persona a Cargo</h5>
     </div>
 
     <div class="card-body">
@@ -217,7 +217,7 @@
     </div>
 
     <!-- Signature Form Modal -->
-    <div class="modal fade" id="signatureFormModal" tabindex="-1" aria-labelledby="familyGroupForm" aria-hidden="true">
+    <div class="modal fade" id="signatureFormModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="familyGroupForm" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -421,8 +421,17 @@
             companionData.push(formDataObj);
 
             checkCompanionsForPersonInCharge();
+
             companionDataFormModal.modal("hide");
-            companionDataForm[0].reset();
+        });
+
+        $("#companionDataFormModal").on("hidden.bs.modal", function () {
+            companionDataForm.trigger("reset");
+
+            companionDataForm.find("span[data-valmsg-replace=true]")
+                .removeClass("field-validation-error")
+                .addClass("field-validation-valid")
+                .empty();
         });
 
         familyGroupForm.submit(function (e) {
@@ -445,10 +454,19 @@
                                                         <td>${formDataObj.MonthlyGrossIncome}</td>
                                                         <td class="text-end"><button class="btn btn-danger" name="deleteRow" data-type="familyGroup">X</button></td>
                                                     </tr>`);
+
             familyGroupData.push(formDataObj);
 
             familyGroupFormModal.modal("hide");
-            familyGroupForm[0].reset();
+        });
+
+        $("#familyGroupFormModal").on("hidden.bs.modal", function () {
+            familyGroupForm.trigger("reset");
+
+            familyGroupForm.find("span[data-valmsg-replace=true]")
+                .removeClass("field-validation-error")
+                .addClass("field-validation-valid")
+                .empty();
         });
 
         contributionForm.submit(function (e) {
@@ -472,7 +490,15 @@
             contributionData.push(formDataObj);
 
             contributionFormModal.modal("hide");
-            contributionForm[0].reset();
+        });
+
+        $("#contributionFormModal").on("hidden.bs.modal", function () {
+            contributionForm.trigger("reset");
+
+            contributionForm.find("span[data-valmsg-replace=true]")
+                .removeClass("field-validation-error")
+                .addClass("field-validation-valid")
+                .empty();
         });
 
         $("body").on("click", "button[name='deleteRow']", function (e) {
