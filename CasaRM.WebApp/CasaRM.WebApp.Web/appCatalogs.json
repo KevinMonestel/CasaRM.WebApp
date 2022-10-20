@@ -112,15 +112,2419 @@
   "HostDocuments": [
     {
       "Id": 1,
-      "Description": "<p style='text-align: center;'><strong>Aceptaci&oacute;n Normas y Obligaciones por parte de los Residentes Casa Ronald McDonald Costa Rica </strong></p><p style='text-align: justify;'>La Casa Ronald McDonald Costa Rica ofrece hospedaje temporal para familias de la Zona Rural del pa&iacute;s, cuyos hijos (hasta los 18 a&ntilde;os de edad), necesitan recibir tratamiento m&eacute;dico en el Hospital Nacional de Ni&ntilde;os.</p><p style='text-align: justify;'>Para lograr una convivencia satisfactoria y amena entre todas las familias hu&eacute;spedes de la Casa Ronald McDonald, se deben cumplir una serie de normas y obligaciones, que ya le fueron explicadas ampliamente y adem&aacute;s brindadas por escrito por medio de un panfleto informativo.</p><p style='text-align: justify;'>Aunado a lo anterior, el personal de la Casa Ronald McDonald, le brind&oacute; un recorrido por las instalaciones para que conozca el funcionamiento de la misma. Yo, {NombreEncargado}, he le&iacute;do y entiendo el contenido de las Reglamento de Hu&eacute;spedes de la Casa Ronald McDonald, y acepto cumplirlas cabalmente entendiendo y asumiendo las consecuencias de su incumplimiento. Ser&eacute; responsable por el paciente, familia y visitantes.</p><p style='text-align: justify;'>Sabe leer, S&iacute;_______ No________</p><p style='text-align: justify;'>En caso de no saber leer: Yo {NombreEncargado}, declaro que se me ha le&iacute;do el contenido del Reglamento de Residentes de la Casa Ronald McDonald, entendiendo y aceptando cada una de sus disposiciones.</p><p style='text-align: justify;'>Nombre del paciente:&nbsp;{NombrePaciente}</p><p style='text-align: justify;'>Nombre del acompa&ntilde;ante: {NombreEncargado}</p><p style='text-align: justify;'>Firma: {FirmaEncargado} CI: {IdentificacionEncargado}</p><p style='text-align: justify;'>&nbsp;</p><p style='text-align: justify;'><p>Nombre Completo de la Persona de la Casa Ronald McDonald que ha realizado el ingreso:</p> _____________________________________________________________________________</p><p style='text-align: justify;'>&nbsp;</p><p style='text-align: justify;'>&nbsp;</p><p style='text-align: justify;'>Firma: ___________________________________ Fecha: {FechaActual}</p>"
+      "Description": "<p style='text-align: center;'><strong>Aceptaci&oacute;n Normas y Obligaciones por parte de los Residentes Casa Ronald McDonald Costa Rica </strong></p><p style='text-align: justify;'>La Casa Ronald McDonald Costa Rica ofrece hospedaje temporal para familias de la Zona Rural del pa&iacute;s, cuyos hijos (hasta los 18 a&ntilde;os de edad), necesitan recibir tratamiento m&eacute;dico en el Hospital Nacional de Ni&ntilde;os.</p><p style='text-align: justify;'>Para lograr una convivencia satisfactoria y amena entre todas las familias hu&eacute;spedes de la Casa Ronald McDonald, se deben cumplir una serie de normas y obligaciones, que ya le fueron explicadas ampliamente y adem&aacute;s brindadas por escrito por medio de un panfleto informativo.</p><p style='text-align: justify;'>Aunado a lo anterior, el personal de la Casa Ronald McDonald, le brind&oacute; un recorrido por las instalaciones para que conozca el funcionamiento de la misma. Yo, {DescriptionEncargado}, he le&iacute;do y entiendo el contenido de las Reglamento de Hu&eacute;spedes de la Casa Ronald McDonald, y acepto cumplirlas cabalmente entendiendo y asumiendo las consecuencias de su incumplimiento. Ser&eacute; responsable por el paciente, familia y visitantes.</p><p style='text-align: justify;'>Sabe leer, S&iacute;_______ No________</p><p style='text-align: justify;'>En caso de no saber leer: Yo {DescriptionEncargado}, declaro que se me ha le&iacute;do el contenido del Reglamento de Residentes de la Casa Ronald McDonald, entendiendo y aceptando cada una de sus disposiciones.</p><p style='text-align: justify;'>Description del paciente:&nbsp;{DescriptionPaciente}</p><p style='text-align: justify;'>Description del acompa&ntilde;ante: {DescriptionEncargado}</p><p style='text-align: justify;'>Firma: {FirmaEncargado} CI: {IdentificacionEncargado}</p><p style='text-align: justify;'>&nbsp;</p><p style='text-align: justify;'><p>Description Completo de la Persona de la Casa Ronald McDonald que ha realizado el ingreso:</p> _____________________________________________________________________________</p><p style='text-align: justify;'>&nbsp;</p><p style='text-align: justify;'>&nbsp;</p><p style='text-align: justify;'>Firma: ___________________________________ Fecha: {FechaActual}</p>"
     },
     {
       "Id": 2,
-      "Description": "<p style='text-align: center;'><strong>Autorizaci&oacute;n Divulgaci&oacute;n e Intercambio de Informaci&oacute;n </strong></p><p style='text-align: justify;'>La Casa Ronald McDonald Costa Rica ofrece hospedaje temporal para familias de la Zona Rural del pa&iacute;s, cuyos hijos (hasta los 18 a&ntilde;os de edad), necesitan recibir tratamiento m&eacute;dico en el Hospital Nacional de Ni&ntilde;os.</p><p style='text-align: justify;'>Para lograr una convivencia satisfactoria y amena entre todas las familias hu&eacute;spedes de la Casa Ronald McDonald, se deben cumplir una serie de normas y obligaciones, las cuales me fueron dadas a conocer, as&iacute; como tambi&eacute;n las sanciones ante alguna irregularidad que se presente durante mi estad&iacute;a, la misma ser&aacute; informada al personal del Hospital Nacional de Ni&ntilde;os. Adem&aacute;s de alguna otra informaci&oacute;n que el personal de la Casa Ronald McDonald considere esencial dar a conocer entre el personal de la Casa Ronald McDonald, los voluntarios o el Hospital Nacional de Ni&ntilde;os para el bienestar de los residentes de la Casa Ronald McDonald.</p><p style='text-align: justify;'>Yo, {NombreEncargado}, autorizo al personal de la Casa Ronald McDonald a divulgar e intercambiar informaci&oacute;n con el mismo personal de la Casa Ronald McDonald, personas voluntarias y personal del Hospital Nacional de Ni&ntilde;os cuando as&iacute; lo consideren necesario para el bienestar del ambiente de la Casa Ronald McDonald. Esto no implica que las dem&aacute;s familias hospedadas en la Casa Ronald McDonald conocer&aacute;n la informaci&oacute;n. Todos los datos que yo proporcione a la Casa Ronald McDonald ser&aacute;n confidenciales, &uacute;nicamente ser&aacute;n usados por el personal de la Casa Ronald McDonald, voluntarios y el personal del Hospital Nacional de Ni&ntilde;os.</p><p style='text-align: justify;'>Sabe leer, S&iacute;_______ No________</p><p style='text-align: justify;'>En caso de no saber leer: Yo {NombreEncargado}, declaro que se me ha le&iacute;do la presente autorizaci&oacute;n de divulgaci&oacute;n e intercambio de informaci&oacute;n, entendiendo y aceptando cada una de sus disposiciones.</p><p style='text-align: justify;'>Nombre del paciente:&nbsp;{NombrePaciente}</p><p style='text-align: justify;'>Nombre del acompa&ntilde;ante:&nbsp;{NombreEncargado}</p><p style='text-align: justify;'>Firma: {FirmaEncargado}&nbsp;CI:&nbsp;{IdentificacionEncargado}</p><p style='text-align: justify;'><p>Nombre Completo de la Persona de la Casa Ronald McDonald:</p> ____________________________________________________________________________</p><p style='text-align: justify;'>&nbsp;</p><p style='text-align: justify;'>&nbsp;</p><p style='text-align: justify;'>Firma: ____________________________________ Fecha:{FechaActual}</p>"
+      "Description": "<p style='text-align: center;'><strong>Autorizaci&oacute;n Divulgaci&oacute;n e Intercambio de Informaci&oacute;n </strong></p><p style='text-align: justify;'>La Casa Ronald McDonald Costa Rica ofrece hospedaje temporal para familias de la Zona Rural del pa&iacute;s, cuyos hijos (hasta los 18 a&ntilde;os de edad), necesitan recibir tratamiento m&eacute;dico en el Hospital Nacional de Ni&ntilde;os.</p><p style='text-align: justify;'>Para lograr una convivencia satisfactoria y amena entre todas las familias hu&eacute;spedes de la Casa Ronald McDonald, se deben cumplir una serie de normas y obligaciones, las cuales me fueron dadas a conocer, as&iacute; como tambi&eacute;n las sanciones ante alguna irregularidad que se presente durante mi estad&iacute;a, la misma ser&aacute; informada al personal del Hospital Nacional de Ni&ntilde;os. Adem&aacute;s de alguna otra informaci&oacute;n que el personal de la Casa Ronald McDonald considere esencial dar a conocer entre el personal de la Casa Ronald McDonald, los voluntarios o el Hospital Nacional de Ni&ntilde;os para el bienestar de los residentes de la Casa Ronald McDonald.</p><p style='text-align: justify;'>Yo, {DescriptionEncargado}, autorizo al personal de la Casa Ronald McDonald a divulgar e intercambiar informaci&oacute;n con el mismo personal de la Casa Ronald McDonald, personas voluntarias y personal del Hospital Nacional de Ni&ntilde;os cuando as&iacute; lo consideren necesario para el bienestar del ambiente de la Casa Ronald McDonald. Esto no implica que las dem&aacute;s familias hospedadas en la Casa Ronald McDonald conocer&aacute;n la informaci&oacute;n. Todos los datos que yo proporcione a la Casa Ronald McDonald ser&aacute;n confidenciales, &uacute;nicamente ser&aacute;n usados por el personal de la Casa Ronald McDonald, voluntarios y el personal del Hospital Nacional de Ni&ntilde;os.</p><p style='text-align: justify;'>Sabe leer, S&iacute;_______ No________</p><p style='text-align: justify;'>En caso de no saber leer: Yo {DescriptionEncargado}, declaro que se me ha le&iacute;do la presente autorizaci&oacute;n de divulgaci&oacute;n e intercambio de informaci&oacute;n, entendiendo y aceptando cada una de sus disposiciones.</p><p style='text-align: justify;'>Description del paciente:&nbsp;{DescriptionPaciente}</p><p style='text-align: justify;'>Description del acompa&ntilde;ante:&nbsp;{DescriptionEncargado}</p><p style='text-align: justify;'>Firma: {FirmaEncargado}&nbsp;CI:&nbsp;{IdentificacionEncargado}</p><p style='text-align: justify;'><p>Description Completo de la Persona de la Casa Ronald McDonald:</p> ____________________________________________________________________________</p><p style='text-align: justify;'>&nbsp;</p><p style='text-align: justify;'>&nbsp;</p><p style='text-align: justify;'>Firma: ____________________________________ Fecha:{FechaActual}</p>"
     },
     {
       "Id": 3,
-      "Description": "<p style='text-align: center;'><strong>FUNDACI&Oacute;N INFANTIL RONALD MCDONALD DE COSTA RICA CONCESI&Oacute;N, CESI&Oacute;N, LIBERACI&Oacute;N Y RENUNCIA</strong></p><p style='text-align: justify;'>Por medio de la presente concedo a la Fundaci&oacute;n Infantil Ronald McDonald de Costa Rica, Ronald McDonald House Charities Inc., la Casa Ronald McDonald, la Corporaci&oacute;n McDonald&rsquo;s, Arcos Dorados, a sus filiales, franquiciados, agencias de publicidad y mercadeo, y a cada uno de sus agentes (a los que se llamar&aacute; colectivamente &ldquo;McDonald&rsquo;s&rdquo;), el derecho irrevocable e irrestricto a usar, publicar, exhibir y distribuir material donde aparezca mi nombre, voz, imagen, retrato o cualquier otra representaci&oacute;n que me identifique (&ldquo;Imagen&rdquo;). Estos materiales podr&aacute;n aparecer en cualquier forma, estilo, color o medio que sea (incluyendo pero sin limitarse a fotograf&iacute;as, cintas de video, pel&iacute;culas, grabaciones de sonido, software, dibujos, material impreso, difusi&oacute;n por radio o televisi&oacute;n, Internet y medios electr&oacute;nicos).</p><p style='text-align: justify;'>Acepto que todos los materiales que contienen mi Imagen (incluyendo pero sin limitarse a todos los negativos, placas, r&oacute;tulos y maestros de fotograf&iacute;as, archivos, material impreso o cintas) deber&aacute;n ser y se mantendr&aacute;n como propiedad &uacute;nica y exclusiva de McDonald&rsquo;s, y por medio de la presente cedo a McDonald&rsquo;s cualquier derecho de propiedad que pueda haber adquirido sobre o por dicho material. Igualmente libero y exonero de toda responsabilidad a McDonald&rsquo;s por cualquier obligaci&oacute;n y da&ntilde;os y perjuicios relacionados con el uso de mi Imagen.</p><p style='text-align: justify;'>Por medio de la presente renuncio a cualquier derecho que pueda tener a inspeccionar o aprobar los materiales terminados o cualquier parte o componente de los mismos que incluya mi Imagen o cualquier otra representaci&oacute;n que me pueda identificar. Libero y exonero totalmente a la Fundaci&oacute;n Infantil Ronald McDonald, Ronald McDonald House Charities Inc., la Casa Ronald McDonald, la Corporaci&oacute;n McDonald&rsquo;s, Arcos Dorados, a sus filiales, franquiciados, agencias de publicidad y mercadeo, y a cada uno de sus agentes de toda responsabilidad y convengo no demandarlos por ning&uacute;n tipo de reclamos, demandas, da&ntilde;os, derechos de acci&oacute;n o causas de demanda, presentes o futuras, sean &eacute;stas conocidas o desconocidas, anticipadas o no anticipadas, que resulten o surjan de mi preparaci&oacute;n o participaci&oacute;n en las actividades que se lleven a cabo.</p><p style='text-align: justify;'>Acepto que los datos personales que suministre pueden ser almacenados de manera electr&oacute;nica y transferidos a otras fronteras. Entiendo que puedo solicitar una copia de mis datos correspondientes y que dicha informaci&oacute;n puede ser modificada o eliminada a solicitud de mi parte.</p><p style='text-align: justify;'>He aceptado los t&eacute;rminos antes expuestos y certifico haber le&iacute;do y entendido a cabalidad el presente documento y que todas las preguntas en cuanto a sus efectos o el significado de sus t&eacute;rminos han sido respondidas a mi entera satisfacci&oacute;n. Certifico tener o ser mayor de 18 a&ntilde;os de edad, a menos que este documento tambi&eacute;n sea firmado por mi padre o tutor legal.</p><p style='text-align: justify;'>Nombre: {NombrePaciente}</p><p style='text-align: justify;'>Fecha Nacimiento: {FechaNacimientoPaciente}</p><p style='text-align: justify;'>Certifico ser el padre o tutor legal de la persona antes identificada, quien es un menor, y acepto los t&eacute;rminos antes expuestos.</p><p style='text-align: justify;'>Nombre del Padre o Tutor: {NombreEncargado}</p><p style='text-align: justify;'>Firma:&nbsp;{FirmaEncargado} Fecha:&nbsp;{FechaActual}</p>"
+      "Description": "<p style='text-align: center;'><strong>FUNDACI&Oacute;N INFANTIL RONALD MCDONALD DE COSTA RICA CONCESI&Oacute;N, CESI&Oacute;N, LIBERACI&Oacute;N Y RENUNCIA</strong></p><p style='text-align: justify;'>Por medio de la presente concedo a la Fundaci&oacute;n Infantil Ronald McDonald de Costa Rica, Ronald McDonald House Charities Inc., la Casa Ronald McDonald, la Corporaci&oacute;n McDonald&rsquo;s, Arcos Dorados, a sus filiales, franquiciados, agencias de publicidad y mercadeo, y a cada uno de sus agentes (a los que se llamar&aacute; colectivamente &ldquo;McDonald&rsquo;s&rdquo;), el derecho irrevocable e irrestricto a usar, publicar, exhibir y distribuir material donde aparezca mi Description, voz, imagen, retrato o cualquier otra representaci&oacute;n que me identifique (&ldquo;Imagen&rdquo;). Estos materiales podr&aacute;n aparecer en cualquier forma, estilo, color o medio que sea (incluyendo pero sin limitarse a fotograf&iacute;as, cintas de video, pel&iacute;culas, grabaciones de sonido, software, dibujos, material impreso, difusi&oacute;n por radio o televisi&oacute;n, Internet y medios electr&oacute;nicos).</p><p style='text-align: justify;'>Acepto que todos los materiales que contienen mi Imagen (incluyendo pero sin limitarse a todos los negativos, placas, r&oacute;tulos y maestros de fotograf&iacute;as, archivos, material impreso o cintas) deber&aacute;n ser y se mantendr&aacute;n como propiedad &uacute;nica y exclusiva de McDonald&rsquo;s, y por medio de la presente cedo a McDonald&rsquo;s cualquier derecho de propiedad que pueda haber adquirido sobre o por dicho material. Igualmente libero y exonero de toda responsabilidad a McDonald&rsquo;s por cualquier obligaci&oacute;n y da&ntilde;os y perjuicios relacionados con el uso de mi Imagen.</p><p style='text-align: justify;'>Por medio de la presente renuncio a cualquier derecho que pueda tener a inspeccionar o aprobar los materiales terminados o cualquier parte o componente de los mismos que incluya mi Imagen o cualquier otra representaci&oacute;n que me pueda identificar. Libero y exonero totalmente a la Fundaci&oacute;n Infantil Ronald McDonald, Ronald McDonald House Charities Inc., la Casa Ronald McDonald, la Corporaci&oacute;n McDonald&rsquo;s, Arcos Dorados, a sus filiales, franquiciados, agencias de publicidad y mercadeo, y a cada uno de sus agentes de toda responsabilidad y convengo no demandarlos por ning&uacute;n tipo de reclamos, demandas, da&ntilde;os, derechos de acci&oacute;n o causas de demanda, presentes o futuras, sean &eacute;stas conocidas o desconocidas, anticipadas o no anticipadas, que resulten o surjan de mi preparaci&oacute;n o participaci&oacute;n en las actividades que se lleven a cabo.</p><p style='text-align: justify;'>Acepto que los datos personales que suministre pueden ser almacenados de manera electr&oacute;nica y transferidos a otras fronteras. Entiendo que puedo solicitar una copia de mis datos correspondientes y que dicha informaci&oacute;n puede ser modificada o eliminada a solicitud de mi parte.</p><p style='text-align: justify;'>He aceptado los t&eacute;rminos antes expuestos y certifico haber le&iacute;do y entendido a cabalidad el presente documento y que todas las preguntas en cuanto a sus efectos o el significado de sus t&eacute;rminos han sido respondidas a mi entera satisfacci&oacute;n. Certifico tener o ser mayor de 18 a&ntilde;os de edad, a menos que este documento tambi&eacute;n sea firmado por mi padre o tutor legal.</p><p style='text-align: justify;'>Description: {DescriptionPaciente}</p><p style='text-align: justify;'>Fecha Nacimiento: {FechaNacimientoPaciente}</p><p style='text-align: justify;'>Certifico ser el padre o tutor legal de la persona antes identificada, quien es un menor, y acepto los t&eacute;rminos antes expuestos.</p><p style='text-align: justify;'>Description del Padre o Tutor: {DescriptionEncargado}</p><p style='text-align: justify;'>Firma:&nbsp;{FirmaEncargado} Fecha:&nbsp;{FechaActual}</p>"
+    }
+  ],
+
+  "MaritalStatuses": [
+    {
+      "Id": 1,
+      "Description": "Soltero/a"
+    },
+    {
+      "Id": 2,
+      "Description": "Casado/a"
+    },
+    {
+      "Id": 3,
+      "Description": "Divorciado/a"
+    },
+    {
+      "Id": 4,
+      "Description": "Viudo/a"
+    }
+  ],
+
+  "Genders": [
+    {
+      "Id": 1,
+      "Description": "Masculino"
+    },
+    {
+      "Id": 2,
+      "Description": "Femenino"
+    },
+    {
+      "Id": 3,
+      "Description": "Otro"
+    }
+  ],
+
+  "Nationalities": [
+    {
+      "Id": 1,
+      "Description": "DOMINICANA"
+    },
+    {
+      "Id": 2,
+      "Description": "NORTEAMERICANA"
+    },
+    {
+      "Id": 3,
+      "Description": "CANADIENSE"
+    },
+    {
+      "Id": 4,
+      "Description": "MEXICANA"
+    },
+    {
+      "Id": 5,
+      "Description": "HAITIANA"
+    },
+    {
+      "Id": 6,
+      "Description": "CUBANA"
+    },
+    {
+      "Id": 7,
+      "Description": "JAMAIQUINA"
+    },
+    {
+      "Id": 8,
+      "Description": "ARGENTINA"
+    },
+    {
+      "Id": 9,
+      "Description": "BOLIVIANA"
+    },
+    {
+      "Id": 10,
+      "Description": "BRASILEÐA"
+    },
+    {
+      "Id": 11,
+      "Description": "CHILENA"
+    },
+    {
+      "Id": 12,
+      "Description": "COLOMBIANA"
+    },
+    {
+      "Id": 13,
+      "Description": "ECUATORIANA"
+    },
+    {
+      "Id": 14,
+      "Description": "PARAGUAYA"
+    },
+    {
+      "Id": 15,
+      "Description": "PERUANA"
+    },
+    {
+      "Id": 16,
+      "Description": "SALVADOREÐA"
+    },
+    {
+      "Id": 17,
+      "Description": "URUGUAYA"
+    },
+    {
+      "Id": 18,
+      "Description": "VENEZOLANA"
+    },
+    {
+      "Id": 19,
+      "Description": "COSTARRICENSE"
+    },
+    {
+      "Id": 20,
+      "Description": "HONDUREÐA"
+    },
+    {
+      "Id": 21,
+      "Description": "NICARAGÜENSE"
+    },
+    {
+      "Id": 22,
+      "Description": "PANAMEÐA"
+    },
+    {
+      "Id": 23,
+      "Description": "GUATEMALTECA"
+    },
+    {
+      "Id": 24,
+      "Description": "ALEMANA"
+    },
+    {
+      "Id": 25,
+      "Description": "AUSTRIACA"
+    },
+    {
+      "Id": 26,
+      "Description": "BELGA"
+    },
+    {
+      "Id": 27,
+      "Description": "BULGARA"
+    },
+    {
+      "Id": 28,
+      "Description": "DANESA"
+    },
+    {
+      "Id": 29,
+      "Description": "ESPAÑOLA"
+    },
+    {
+      "Id": 30,
+      "Description": "FINLANDESA"
+    },
+    {
+      "Id": 31,
+      "Description": "FRANCESA"
+    },
+    {
+      "Id": 32,
+      "Description": "GRIEGA"
+    },
+    {
+      "Id": 33,
+      "Description": "HOLANDESA"
+    },
+    {
+      "Id": 34,
+      "Description": "HUNGARA"
+    },
+    {
+      "Id": 35,
+      "Description": "INGLESA"
+    },
+    {
+      "Id": 36,
+      "Description": "IRLANDESA"
+    },
+    {
+      "Id": 37,
+      "Description": "ISLANDESA"
+    },
+    {
+      "Id": 38,
+      "Description": "ITALIANA"
+    },
+    {
+      "Id": 39,
+      "Description": "NORUEGA"
+    },
+    {
+      "Id": 40,
+      "Description": "PORTUGUESA"
+    },
+    {
+      "Id": 41,
+      "Description": "RUMANA"
+    },
+    {
+      "Id": 42,
+      "Description": "RUSA"
+    },
+    {
+      "Id": 43,
+      "Description": "SUECA"
+    },
+    {
+      "Id": 44,
+      "Description": "SUIZA"
+    },
+    {
+      "Id": 45,
+      "Description": "TURCA"
+    },
+    {
+      "Id": 46,
+      "Description": "YUGOSLAVA"
+    },
+    {
+      "Id": 47,
+      "Description": "SAUDI"
+    },
+    {
+      "Id": 48,
+      "Description": "IRANI"
+    },
+    {
+      "Id": 49,
+      "Description": "IRAQUI"
+    },
+    {
+      "Id": 50,
+      "Description": "ISRAELITA"
+    },
+    {
+      "Id": 51,
+      "Description": "JORDANA"
+    },
+    {
+      "Id": 52,
+      "Description": "KUWAYTI"
+    },
+    {
+      "Id": 53,
+      "Description": "LIBANESA"
+    },
+    {
+      "Id": 54,
+      "Description": "MONGOLESA"
+    },
+    {
+      "Id": 55,
+      "Description": "SIRIA"
+    },
+    {
+      "Id": 56,
+      "Description": "AFGANA"
+    },
+    {
+      "Id": 57,
+      "Description": "INDU"
+    },
+    {
+      "Id": 58,
+      "Description": "PAKISTANI"
+    },
+    {
+      "Id": 59,
+      "Description": "AUSTRALIANA"
+    },
+    {
+      "Id": 60,
+      "Description": "CHINA"
+    },
+    {
+      "Id": 61,
+      "Description": "FILIPINA"
+    },
+    {
+      "Id": 62,
+      "Description": "INDONESA"
+    },
+    {
+      "Id": 63,
+      "Description": "JAPONESA"
+    },
+    {
+      "Id": 64,
+      "Description": "COREANA"
+    },
+    {
+      "Id": 65,
+      "Description": "MALAYA"
+    },
+    {
+      "Id": 66,
+      "Description": "POLACA"
+    },
+    {
+      "Id": 67,
+      "Description": "TAILANDESA"
+    },
+    {
+      "Id": 68,
+      "Description": "TAIWANESA"
+    },
+    {
+      "Id": 69,
+      "Description": "VIETNAMITA"
+    },
+    {
+      "Id": 70,
+      "Description": "SUDAFRICANA"
+    },
+    {
+      "Id": 71,
+      "Description": "ANGOLEÐA"
+    },
+    {
+      "Id": 72,
+      "Description": "ARGELINA"
+    },
+    {
+      "Id": 73,
+      "Description": "EGIPCIA"
+    },
+    {
+      "Id": 74,
+      "Description": "ETIOPE"
+    },
+    {
+      "Id": 75,
+      "Description": "LIBERIANA"
+    },
+    {
+      "Id": 76,
+      "Description": "LIBIA"
+    },
+    {
+      "Id": 77,
+      "Description": "NIGERIANA"
+    },
+    {
+      "Id": 78,
+      "Description": "SOMALI"
+    },
+    {
+      "Id": 79,
+      "Description": "BRITANICA"
+    },
+    {
+      "Id": 80,
+      "Description": "VINCENCIANA"
+    },
+    {
+      "Id": 81,
+      "Description": "MARROQUI"
+    },
+    {
+      "Id": 82,
+      "Description": "BELICENA"
+    },
+    {
+      "Id": 83,
+      "Description": "MAURICIANA"
+    },
+    {
+      "Id": 84,
+      "Description": "ESLOVENA"
+    },
+    {
+      "Id": 85,
+      "Description": "ZAIREÐA"
+    },
+    {
+      "Id": 86,
+      "Description": "LETONA"
+    },
+    {
+      "Id": 87,
+      "Description": "CROATA"
+    },
+    {
+      "Id": 88,
+      "Description": "LUXEMBURGUESA"
+    },
+    {
+      "Id": 89,
+      "Description": "GUYANESA"
+    },
+    {
+      "Id": 90,
+      "Description": "SURINAMESA"
+    },
+    {
+      "Id": 91,
+      "Description": "SIERRA LEONE"
+    },
+    {
+      "Id": 92,
+      "Description": "TRINITARIA"
+    },
+    {
+      "Id": 93,
+      "Description": "SINGAPUR"
+    },
+    {
+      "Id": 94,
+      "Description": "MALTES"
+    },
+    {
+      "Id": 95,
+      "Description": "BELARUSA"
+    },
+    {
+      "Id": 96,
+      "Description": "LIECHTENSTEIN"
+    },
+    {
+      "Id": 97,
+      "Description": "LATVIA"
+    },
+    {
+      "Id": 98,
+      "Description": "NEPALESA"
+    },
+    {
+      "Id": 99,
+      "Description": "CHIPRIOTA"
+    },
+    {
+      "Id": 100,
+      "Description": "RUANDESA"
+    },
+    {
+      "Id": 101,
+      "Description": "CHECA"
+    },
+    {
+      "Id": 102,
+      "Description": "CURAZALEÐA"
+    },
+    {
+      "Id": 103,
+      "Description": "NEOZELANDESA"
+    },
+    {
+      "Id": 104,
+      "Description": "ST. KITTS AND NEVIS"
+    },
+    {
+      "Id": 105,
+      "Description": "CABOVERDIANA"
+    },
+    {
+      "Id": 106,
+      "Description": "GRENADINA"
+    },
+    {
+      "Id": 107,
+      "Description": "TUNECINA"
+    },
+    {
+      "Id": 108,
+      "Description": "MARFILEÐA"
+    },
+    {
+      "Id": 109,
+      "Description": "BAHAMEÐA"
+    },
+    {
+      "Id": 110,
+      "Description": "CAMBOYANA"
+    },
+    {
+      "Id": 111,
+      "Description": "CAMERUNESA"
+    },
+    {
+      "Id": 112,
+      "Description": "UCRANIA"
+    },
+    {
+      "Id": 113,
+      "Description": "TOGOLESA"
+    },
+    {
+      "Id": 114,
+      "Description": "DOMINICA"
+    },
+    {
+      "Id": 115,
+      "Description": "TRINIDEÐA"
+    },
+    {
+      "Id": 116,
+      "Description": "SUDANES"
+    }
+  ],
+
+  "ProvincesInfoCatalog": [
+    {
+      "Title": "San José",
+      "Cantons": [
+        {
+          "Title": "San José",
+          "Districts": [
+            {
+              "Title": "Carmen"
+            },
+            {
+              "Title": "Merced"
+            },
+            {
+              "Title": "Hospital"
+            },
+            {
+              "Title": "Catedral"
+            },
+            {
+              "Title": "Zapote"
+            },
+            {
+              "Title": "San Fco. de Dos Ríos"
+            },
+            {
+              "Title": "Uruca"
+            },
+            {
+              "Title": "Mata Redonda"
+            },
+            {
+              "Title": "Pavas"
+            },
+            {
+              "Title": "Hatillo"
+            },
+            {
+              "Title": "San Sebastián"
+            }
+          ]
+        },
+        {
+          "Title": "Escazú",
+          "Districts": [
+            {
+              "Title": "Escazú"
+            },
+            {
+              "Title": "San Antonio"
+            },
+            {
+              "Title": "San Rafael"
+            }
+          ]
+        },
+        {
+          "Title": "Desamparados",
+          "Districts": [
+            {
+              "Title": "Desamparados"
+            },
+            {
+              "Title": "San Miguel"
+            },
+            {
+              "Title": "San Juan de Dios"
+            },
+            {
+              "Title": "San Rafael Arriba"
+            },
+            {
+              "Title": "San Antonio"
+            },
+            {
+              "Title": "Frailes"
+            },
+            {
+              "Title": "Patarrá"
+            },
+            {
+              "Title": "San Cristóbal"
+            },
+            {
+              "Title": "Rosario"
+            },
+            {
+              "Title": "Damas"
+            },
+            {
+              "Title": "San Rafael Abajo"
+            },
+            {
+              "Title": "Gravilias"
+            },
+            {
+              "Title": "Los Guido"
+            }
+          ]
+        },
+        {
+          "Title": "Puriscal",
+          "Districts": [
+            {
+              "Title": "Santiago"
+            },
+            {
+              "Title": "Mercedes Sur"
+            },
+            {
+              "Title": "Barbacoas"
+            },
+            {
+              "Title": "Grifo Alto"
+            },
+            {
+              "Title": "San Rafael"
+            },
+            {
+              "Title": "Candelaria"
+            },
+            {
+              "Title": "Desamparaditos"
+            },
+            {
+              "Title": "San Antonio"
+            },
+            {
+              "Title": "Chires"
+            }
+          ]
+        },
+        {
+          "Title": "Tarrazú",
+          "Districts": [
+            {
+              "Title": "San Marcos"
+            },
+            {
+              "Title": "San Lorenzo"
+            },
+            {
+              "Title": "San Carlos"
+            }
+          ]
+        },
+        {
+          "Title": "Aserrí",
+          "Districts": [
+            {
+              "Title": "Aserrí"
+            },
+            {
+              "Title": "Tarbaca"
+            },
+            {
+              "Title": "Vuelta de Jorco"
+            },
+            {
+              "Title": "San Gabriel"
+            },
+            {
+              "Title": "La Legua"
+            },
+            {
+              "Title": "Monterrey"
+            },
+            {
+              "Title": "Salitrillos"
+            }
+          ]
+        },
+        {
+          "Title": "Mora",
+          "Districts": [
+            {
+              "Title": "Colón"
+            },
+            {
+              "Title": "Guayabo"
+            },
+            {
+              "Title": "Tabarcia"
+            },
+            {
+              "Title": "Piedras Negras"
+            },
+            {
+              "Title": "Picagres"
+            },
+            {
+              "Title": "Caris"
+            },
+            {
+              "Title": "Quitirrisí"
+            }
+          ]
+        },
+        {
+          "Title": "Goicoechea",
+          "Districts": [
+            {
+              "Title": "Guadalupe"
+            },
+            {
+              "Title": "San Francisco"
+            },
+            {
+              "Title": "Calle Blancos"
+            },
+            {
+              "Title": "Mata de Plátano"
+            },
+            {
+              "Title": "Ipís"
+            },
+            {
+              "Title": "Rancho Redondo"
+            },
+            {
+              "Title": "Purral"
+            }
+          ]
+        },
+        {
+          "Title": "Santa Ana",
+          "Districts": [
+            {
+              "Title": "Santa Ana"
+            },
+            {
+              "Title": "Salitral"
+            },
+            {
+              "Title": "Pozos"
+            },
+            {
+              "Title": "Uruca"
+            },
+            {
+              "Title": "Piedades"
+            },
+            {
+              "Title": "Brasil"
+            }
+          ]
+        },
+        {
+          "Title": "Alajuelita",
+          "Districts": [
+            {
+              "Title": "Alajuelita"
+            },
+            {
+              "Title": "San Josecito"
+            },
+            {
+              "Title": "San Antonio"
+            },
+            {
+              "Title": "Concepción"
+            },
+            {
+              "Title": "San Felipe"
+            }
+          ]
+        },
+        {
+          "Title": "Coronado",
+          "Districts": [
+            {
+              "Title": "San Isidro"
+            },
+            {
+              "Title": "San Rafael"
+            },
+            {
+              "Title": "Dulce Description de Jesús"
+            },
+            {
+              "Title": "Patalillo"
+            },
+            {
+              "Title": "Cascajal"
+            }
+          ]
+        },
+        {
+          "Title": "Acosta",
+          "Districts": [
+            {
+              "Title": "San Ignacio"
+            },
+            {
+              "Title": "Guaitil"
+            },
+            {
+              "Title": "Palmichal"
+            },
+            {
+              "Title": "Cangrejal"
+            },
+            {
+              "Title": "Sabanillas"
+            }
+          ]
+        },
+        {
+          "Title": "Tibás",
+          "Districts": [
+            {
+              "Title": "San Juan"
+            },
+            {
+              "Title": "Cinco Esquinas"
+            },
+            {
+              "Title": "Anselmo Llorente"
+            },
+            {
+              "Title": "León XIII"
+            },
+            {
+              "Title": "Colima"
+            }
+          ]
+        },
+        {
+          "Title": "Moravia",
+          "Districts": [
+            {
+              "Title": "San Vicente"
+            },
+            {
+              "Title": "San Jerónimo"
+            },
+            {
+              "Title": "Trinidad"
+            }
+          ]
+        },
+        {
+          "Title": "Montes de Oca",
+          "Districts": [
+            {
+              "Title": "San Pedro"
+            },
+            {
+              "Title": "Sabanilla"
+            },
+            {
+              "Title": "Mercedes"
+            },
+            {
+              "Title": "San Rafael"
+            }
+          ]
+        },
+        {
+          "Title": "Turrubares",
+          "Districts": [
+            {
+              "Title": "San Pablo"
+            },
+            {
+              "Title": "San Pedro"
+            },
+            {
+              "Title": "San Juan de Mata"
+            },
+            {
+              "Title": "San Luis"
+            },
+            {
+              "Title": "Cárara"
+            }
+          ]
+        },
+        {
+          "Title": "Dota",
+          "Districts": [
+            {
+              "Title": "Santa María"
+            },
+            {
+              "Title": "Jardín"
+            },
+            {
+              "Title": "Copey"
+            }
+          ]
+        },
+        {
+          "Title": "Curridabat",
+          "Districts": [
+            {
+              "Title": "Curridabat"
+            },
+            {
+              "Title": "Granadilla"
+            },
+            {
+              "Title": "Sánchez"
+            },
+            {
+              "Title": "Tirrases"
+            }
+          ]
+        },
+        {
+          "Title": "Perez Zeledón",
+          "Districts": [
+            {
+              "Title": "San Isidro de el General"
+            },
+            {
+              "Title": "General"
+            },
+            {
+              "Title": "Daniel Flores"
+            },
+            {
+              "Title": "Rivas"
+            },
+            {
+              "Title": "San Pedro"
+            },
+            {
+              "Title": "Platanares"
+            },
+            {
+              "Title": "Pejibaye"
+            },
+            {
+              "Title": "Cajón"
+            },
+            {
+              "Title": "Barú"
+            },
+            {
+              "Title": "Río Nuevo"
+            },
+            {
+              "Title": "Páramo"
+            },
+            {
+              "Title": "La Amistad"
+            }
+          ]
+        },
+        {
+          "Title": "León Cortés",
+          "Districts": [
+            {
+              "Title": "San Pablo"
+            },
+            {
+              "Title": "San Andrés"
+            },
+            {
+              "Title": "Llano Bonito"
+            },
+            {
+              "Title": "San Isidro"
+            },
+            {
+              "Title": "Santa Cruz"
+            },
+            {
+              "Title": "San Antonio"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Title": "Alajuela",
+      "Cantons": [
+        {
+          "Title": "Alajuela",
+          "Districts": [
+            {
+              "Title": "Alajuela"
+            },
+            {
+              "Title": "San José"
+            },
+            {
+              "Title": "Carrizal"
+            },
+            {
+              "Title": "San Antonio"
+            },
+            {
+              "Title": "Guácima"
+            },
+            {
+              "Title": "San Isidro"
+            },
+            {
+              "Title": "Sabanilla"
+            },
+            {
+              "Title": "San Rafael"
+            },
+            {
+              "Title": "Río Segundo"
+            },
+            {
+              "Title": "Desamparados"
+            },
+            {
+              "Title": "Turrucares"
+            },
+            {
+              "Title": "Tambor"
+            },
+            {
+              "Title": "La Garita"
+            },
+            {
+              "Title": "Sarapiquí"
+            }
+          ]
+        },
+        {
+          "Title": "San Ramón",
+          "Districts": [
+            {
+              "Title": "San Ramón"
+            },
+            {
+              "Title": "Santiago"
+            },
+            {
+              "Title": "San Juan"
+            },
+            {
+              "Title": "Piedades Norte"
+            },
+            {
+              "Title": "Piedades Sur"
+            },
+            {
+              "Title": "San Rafael"
+            },
+            {
+              "Title": "San Isidro"
+            },
+            {
+              "Title": "Angeles"
+            },
+            {
+              "Title": "Alfaro"
+            },
+            {
+              "Title": "Volio"
+            },
+            {
+              "Title": "Concepción"
+            },
+            {
+              "Title": "Zapotal"
+            },
+            {
+              "Title": "San Isidro de Peñas Blancas"
+            },
+            {
+              "Title": "San Lorenzo"
+            }
+          ]
+        },
+        {
+          "Title": "Grecia",
+          "Districts": [
+            {
+              "Title": "Grecia"
+            },
+            {
+              "Title": "San Isidro"
+            },
+            {
+              "Title": "San José"
+            },
+            {
+              "Title": "San Roque"
+            },
+            {
+              "Title": "Tacares"
+            },
+            {
+              "Title": "Puente Piedra"
+            },
+            {
+              "Title": "Bolívar"
+            }
+          ]
+        },
+        {
+          "Title": "San Mateo",
+          "Districts": [
+            {
+              "Title": "San Mateo"
+            },
+            {
+              "Title": "Desmonte"
+            },
+            {
+              "Title": "Jesús María"
+            },
+            {
+              "Title": "Labrador"
+            }
+          ]
+        },
+        {
+          "Title": "Atenas",
+          "Districts": [
+            {
+              "Title": "Atenas"
+            },
+            {
+              "Title": "Jesús"
+            },
+            {
+              "Title": "Mercedes"
+            },
+            {
+              "Title": "San Isidro"
+            },
+            {
+              "Title": "Concepción"
+            },
+            {
+              "Title": "San José"
+            },
+            {
+              "Title": "Santa Eulalia"
+            },
+            {
+              "Title": "Escobal"
+            }
+          ]
+        },
+        {
+          "Title": "Naranjo",
+          "Districts": [
+            {
+              "Title": "Naranjo"
+            },
+            {
+              "Title": "San Miguel"
+            },
+            {
+              "Title": "San José"
+            },
+            {
+              "Title": "Cirrí Sur"
+            },
+            {
+              "Title": "San Jerónimo"
+            },
+            {
+              "Title": "San Juan"
+            },
+            {
+              "Title": "Rosario"
+            },
+            {
+              "Title": "Palmitos"
+            }
+          ]
+        },
+        {
+          "Title": "Palmares",
+          "Districts": [
+            {
+              "Title": "Palmares"
+            },
+            {
+              "Title": "Zaragoza"
+            },
+            {
+              "Title": "Buenos Aires"
+            },
+            {
+              "Title": "Santiago"
+            },
+            {
+              "Title": "Candelaria"
+            },
+            {
+              "Title": "Esquipulas"
+            },
+            {
+              "Title": "La Granja"
+            }
+          ]
+        },
+        {
+          "Title": "Poas",
+          "Districts": [
+            {
+              "Title": "San Pedro"
+            },
+            {
+              "Title": "San Juan"
+            },
+            {
+              "Title": "San Rafael"
+            },
+            {
+              "Title": "Carrillos"
+            },
+            {
+              "Title": "Sabana Redonda"
+            }
+          ]
+        },
+        {
+          "Title": "Orotina",
+          "Districts": [
+            {
+              "Title": "Orotina"
+            },
+            {
+              "Title": "Mastate"
+            },
+            {
+              "Title": "Hacienda Vieja"
+            },
+            {
+              "Title": "Coyolar"
+            },
+            {
+              "Title": "Ceiba"
+            }
+          ]
+        },
+        {
+          "Title": "San Carlos",
+          "Districts": [
+            {
+              "Title": "Quesada"
+            },
+            {
+              "Title": "Florencia"
+            },
+            {
+              "Title": "Buenavista"
+            },
+            {
+              "Title": "Aguas Zarcas"
+            },
+            {
+              "Title": "Venecia"
+            },
+            {
+              "Title": "Pital"
+            },
+            {
+              "Title": "Fortuna"
+            },
+            {
+              "Title": "Tigra"
+            },
+            {
+              "Title": "Palmera"
+            },
+            {
+              "Title": "Venado"
+            },
+            {
+              "Title": "Cutris"
+            },
+            {
+              "Title": "Monterrey"
+            },
+            {
+              "Title": "Pocosol"
+            }
+          ]
+        },
+        {
+          "Title": "Zarcero",
+          "Districts": [
+            {
+              "Title": "Zarcero"
+            },
+            {
+              "Title": "Laguna"
+            },
+            {
+              "Title": "Tapezco"
+            },
+            {
+              "Title": "Guadalupe"
+            },
+            {
+              "Title": "Palmira"
+            },
+            {
+              "Title": "Zapote"
+            },
+            {
+              "Title": "Las Brisas"
+            }
+          ]
+        },
+        {
+          "Title": "Valverde Vega",
+          "Districts": [
+            {
+              "Title": "Sarchí Norte"
+            },
+            {
+              "Title": "Sarchí Sur"
+            },
+            {
+              "Title": "Toro Amarillo"
+            },
+            {
+              "Title": "San Pedro"
+            },
+            {
+              "Title": "Rodríguez"
+            }
+          ]
+        },
+        {
+          "Title": "Upala",
+          "Districts": [
+            {
+              "Title": "Upala"
+            },
+            {
+              "Title": "Aguas Claras"
+            },
+            {
+              "Title": "San José"
+            },
+            {
+              "Title": "Bijagua"
+            },
+            {
+              "Title": "Delicias"
+            },
+            {
+              "Title": "Dos Ríos"
+            },
+            {
+              "Title": "Yolillal"
+            },
+            {
+              "Title": "Canalete"
+            }
+          ]
+        },
+        {
+          "Title": "Los Chiles",
+          "Districts": [
+            {
+              "Title": "Los Chiles"
+            },
+            {
+              "Title": "Caño Negro"
+            },
+            {
+              "Title": "Amparo"
+            },
+            {
+              "Title": "San Jorge"
+            }
+          ]
+        },
+        {
+          "Title": "Guatuso",
+          "Districts": [
+            {
+              "Title": "San Rafael"
+            },
+            {
+              "Title": "Buenavista"
+            },
+            {
+              "Title": "Cote"
+            },
+            {
+              "Title": "Katira"
+            }
+          ]
+        },
+        {
+          "Title": "Río Cuarto",
+          "Districts": [
+            {
+              "Title": "Río Cuarto"
+            },
+            {
+              "Title": "Santa Isabel"
+            },
+            {
+              "Title": "Santa Rita"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Title": "Cartago",
+      "Cantons": [
+        {
+          "Title": "Cartago",
+          "Districts": [
+            {
+              "Title": "Oriental"
+            },
+            {
+              "Title": "Occidental"
+            },
+            {
+              "Title": "Carmen"
+            },
+            {
+              "Title": "San Nicolás"
+            },
+            {
+              "Title": "Aguacaliente"
+            },
+            {
+              "Title": "Guadalupe"
+            },
+            {
+              "Title": "Corralillo"
+            },
+            {
+              "Title": "Tierra Blanca"
+            },
+            {
+              "Title": "Dulce Description"
+            },
+            {
+              "Title": "Llano Grande"
+            },
+            {
+              "Title": "Quebradilla"
+            }
+          ]
+        },
+        {
+          "Title": "Paraíso",
+          "Districts": [
+            {
+              "Title": "Paraíso"
+            },
+            {
+              "Title": "Santiago"
+            },
+            {
+              "Title": "Orosi"
+            },
+            {
+              "Title": "Cachí"
+            },
+            {
+              "Title": "Los Llanos de Santa Lucía"
+            }
+          ]
+        },
+        {
+          "Title": "La Unión",
+          "Districts": [
+            {
+              "Title": "Tres Ríos"
+            },
+            {
+              "Title": "San Diego"
+            },
+            {
+              "Title": "San Juan"
+            },
+            {
+              "Title": "San Rafael"
+            },
+            {
+              "Title": "Concepción"
+            },
+            {
+              "Title": "Dulce Description"
+            },
+            {
+              "Title": "San Ramón"
+            },
+            {
+              "Title": "Río Azul"
+            }
+          ]
+        },
+        {
+          "Title": "Jiménez",
+          "Districts": [
+            {
+              "Title": "Juan Viñas"
+            },
+            {
+              "Title": "Tucurrique"
+            },
+            {
+              "Title": "Pejibaye"
+            }
+          ]
+        },
+        {
+          "Title": "Turrialba",
+          "Districts": [
+            {
+              "Title": "Turrialba"
+            },
+            {
+              "Title": "La Suiza"
+            },
+            {
+              "Title": "Peralta"
+            },
+            {
+              "Title": "Santa Cruz"
+            },
+            {
+              "Title": "Santa Teresita"
+            },
+            {
+              "Title": "Pavones"
+            },
+            {
+              "Title": "Tuis"
+            },
+            {
+              "Title": "Tayutic"
+            },
+            {
+              "Title": "Santa Rosa"
+            },
+            {
+              "Title": "Tres Equis"
+            },
+            {
+              "Title": "La Isabel"
+            },
+            {
+              "Title": "Chirripó"
+            }
+          ]
+        },
+        {
+          "Title": "Alvarado",
+          "Districts": [
+            {
+              "Title": "Pacayas"
+            },
+            {
+              "Title": "Cervantes"
+            },
+            {
+              "Title": "Capellades"
+            }
+          ]
+        },
+        {
+          "Title": "Oreamuno",
+          "Districts": [
+            {
+              "Title": "San Rafael"
+            },
+            {
+              "Title": "Cot"
+            },
+            {
+              "Title": "Potrero Cerrado"
+            },
+            {
+              "Title": "Cipreses"
+            },
+            {
+              "Title": "Santa Rosa"
+            }
+          ]
+        },
+        {
+          "Title": "El Guarco",
+          "Districts": [
+            {
+              "Title": "El Tejar"
+            },
+            {
+              "Title": "San Isidro"
+            },
+            {
+              "Title": "Tobosi"
+            },
+            {
+              "Title": "Patio de Agua"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Title": "Heredia",
+      "Cantons": [
+        {
+          "Title": "Heredia",
+          "Districts": [
+            {
+              "Title": "Heredia"
+            },
+            {
+              "Title": "Mercedes"
+            },
+            {
+              "Title": "San Francisco"
+            },
+            {
+              "Title": "Ulloa"
+            },
+            {
+              "Title": "Varablanca"
+            }
+          ]
+        },
+        {
+          "Title": "Barva",
+          "Districts": [
+            {
+              "Title": "Barva"
+            },
+            {
+              "Title": "San Pedro"
+            },
+            {
+              "Title": "San Pablo"
+            },
+            {
+              "Title": "San Roque"
+            },
+            {
+              "Title": "Santa Lucía"
+            },
+            {
+              "Title": "San José de la Montaña"
+            }
+          ]
+        },
+        {
+          "Title": "Santo Domingo",
+          "Districts": [
+            {
+              "Title": "Santo Domingo"
+            },
+            {
+              "Title": "San Vicente"
+            },
+            {
+              "Title": "San Miguel"
+            },
+            {
+              "Title": "Paracito"
+            },
+            {
+              "Title": "Santo Tomás"
+            },
+            {
+              "Title": "Santa Rosa"
+            },
+            {
+              "Title": "Tures"
+            },
+            {
+              "Title": "Pará"
+            }
+          ]
+        },
+        {
+          "Title": "Santa Bárbara",
+          "Districts": [
+            {
+              "Title": "Santa Bárbara"
+            },
+            {
+              "Title": "San Pedro"
+            },
+            {
+              "Title": "San Juan"
+            },
+            {
+              "Title": "Jesús"
+            },
+            {
+              "Title": "Santo Domingo del Roble"
+            },
+            {
+              "Title": "Puraba"
+            }
+          ]
+        },
+        {
+          "Title": "San Rafael",
+          "Districts": [
+            {
+              "Title": "San Rafael"
+            },
+            {
+              "Title": "San Josecito"
+            },
+            {
+              "Title": "Santiago"
+            },
+            {
+              "Title": "Angeles"
+            },
+            {
+              "Title": "Concepción"
+            }
+          ]
+        },
+        {
+          "Title": "San Isidro",
+          "Districts": [
+            {
+              "Title": "San Isidro"
+            },
+            {
+              "Title": "San José"
+            },
+            {
+              "Title": "Concepción"
+            },
+            {
+              "Title": "San Francisco"
+            }
+          ]
+        },
+        {
+          "Title": "Belén",
+          "Districts": [
+            {
+              "Title": "San Antonio"
+            },
+            {
+              "Title": "La Ribera"
+            },
+            {
+              "Title": "Asunción"
+            }
+          ]
+        },
+        {
+          "Title": "Flores",
+          "Districts": [
+            {
+              "Title": "San Joaquín"
+            },
+            {
+              "Title": "Barrantes"
+            },
+            {
+              "Title": "Llorente"
+            }
+          ]
+        },
+        {
+          "Title": "San Pablo",
+          "Districts": [
+            {
+              "Title": "San Pablo"
+            },
+            {
+              "Title": "Rincón de Sabanilla"
+            }
+          ]
+        },
+        {
+          "Title": "Sarapiquí",
+          "Districts": [
+            {
+              "Title": "Puerto Viejo"
+            },
+            {
+              "Title": "La Virgen"
+            },
+            {
+              "Title": "Horquetas"
+            },
+            {
+              "Title": "Llanuras de Gaspar"
+            },
+            {
+              "Title": "Cureña"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Title": "Guanacaste",
+      "Cantons": [
+        {
+          "Title": "Liberia",
+          "Districts": [
+            {
+              "Title": "Liberia"
+            },
+            {
+              "Title": "Cañas Dulces"
+            },
+            {
+              "Title": "Mayorga"
+            },
+            {
+              "Title": "Nacascolo"
+            },
+            {
+              "Title": "Curubande"
+            }
+          ]
+        },
+        {
+          "Title": "Nicoya",
+          "Districts": [
+            {
+              "Title": "Nicoya"
+            },
+            {
+              "Title": "Mansión"
+            },
+            {
+              "Title": "San Antonio"
+            },
+            {
+              "Title": "Quebrada Honda"
+            },
+            {
+              "Title": "Sámara"
+            },
+            {
+              "Title": "Nósara"
+            },
+            {
+              "Title": "Belén de Nosarita"
+            }
+          ]
+        },
+        {
+          "Title": "Santa Cruz",
+          "Districts": [
+            {
+              "Title": "Santa Cruz"
+            },
+            {
+              "Title": "Bolsón"
+            },
+            {
+              "Title": "Veintisiete de Abril"
+            },
+            {
+              "Title": "Tempate"
+            },
+            {
+              "Title": "Cartagena"
+            },
+            {
+              "Title": "Cuajiniquil"
+            },
+            {
+              "Title": "Diriá"
+            },
+            {
+              "Title": "Cabo Velas"
+            },
+            {
+              "Title": "Tamarindo"
+            }
+          ]
+        },
+        {
+          "Title": "Bagaces",
+          "Districts": [
+            {
+              "Title": "Bagaces"
+            },
+            {
+              "Title": "Fortuna"
+            },
+            {
+              "Title": "Mogote"
+            },
+            {
+              "Title": "Río Naranjo"
+            }
+          ]
+        },
+        {
+          "Title": "Carrillo",
+          "Districts": [
+            {
+              "Title": "Filadelfia"
+            },
+            {
+              "Title": "Palmira"
+            },
+            {
+              "Title": "Sardinal"
+            },
+            {
+              "Title": "Belén"
+            }
+          ]
+        },
+        {
+          "Title": "Cañas",
+          "Districts": [
+            {
+              "Title": "Cañas"
+            },
+            {
+              "Title": "Palmira"
+            },
+            {
+              "Title": "San Miguel"
+            },
+            {
+              "Title": "Bebedero"
+            },
+            {
+              "Title": "Porozal"
+            }
+          ]
+        },
+        {
+          "Title": "Abangares",
+          "Districts": [
+            {
+              "Title": "Juntas"
+            },
+            {
+              "Title": "Sierra"
+            },
+            {
+              "Title": "San Juan"
+            },
+            {
+              "Title": "Colorado"
+            }
+          ]
+        },
+        {
+          "Title": "Tilarán",
+          "Districts": [
+            {
+              "Title": "Tilarán"
+            },
+            {
+              "Title": "Quebrada Grande"
+            },
+            {
+              "Title": "Tronadora"
+            },
+            {
+              "Title": "Santa Rosa"
+            },
+            {
+              "Title": "Líbano"
+            },
+            {
+              "Title": "Tierras Morenas"
+            },
+            {
+              "Title": "Arenal"
+            }
+          ]
+        },
+        {
+          "Title": "Nandayure",
+          "Districts": [
+            {
+              "Title": "Carmona"
+            },
+            {
+              "Title": "Santa Rita"
+            },
+            {
+              "Title": "Zapotal"
+            },
+            {
+              "Title": "San Pablo"
+            },
+            {
+              "Title": "Porvenir"
+            },
+            {
+              "Title": "Bejuco"
+            }
+          ]
+        },
+        {
+          "Title": "La Cruz",
+          "Districts": [
+            {
+              "Title": "La Cruz"
+            },
+            {
+              "Title": "Santa Cecilia"
+            },
+            {
+              "Title": "Garita"
+            },
+            {
+              "Title": "Santa Elena"
+            }
+          ]
+        },
+        {
+          "Title": "Hojancha",
+          "Districts": [
+            {
+              "Title": "Hojancha"
+            },
+            {
+              "Title": "Monte Romo"
+            },
+            {
+              "Title": "Puerto Carrillo"
+            },
+            {
+              "Title": "Huacas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Title": "Puntarenas",
+      "Cantons": [
+        {
+          "Title": "Puntarenas",
+          "Districts": [
+            {
+              "Title": "Puntarenas"
+            },
+            {
+              "Title": "Pitahaya"
+            },
+            {
+              "Title": "Chomes"
+            },
+            {
+              "Title": "Lepanto"
+            },
+            {
+              "Title": "Paquera"
+            },
+            {
+              "Title": "Manzanillo"
+            },
+            {
+              "Title": "Guacimal"
+            },
+            {
+              "Title": "Barranca"
+            },
+            {
+              "Title": "Monte Verde"
+            },
+            {
+              "Title": "Isla del Coco"
+            },
+            {
+              "Title": "Cóbano"
+            },
+            {
+              "Title": "Chacarita"
+            },
+            {
+              "Title": "Chira"
+            },
+            {
+              "Title": "Acapulco"
+            },
+            {
+              "Title": "Roble"
+            },
+            {
+              "Title": "Arancibia"
+            }
+          ]
+        },
+        {
+          "Title": "Esparza",
+          "Districts": [
+            {
+              "Title": "Espíritu Santo"
+            },
+            {
+              "Title": "San Juan Grande"
+            },
+            {
+              "Title": "Macacona"
+            },
+            {
+              "Title": "San Rafael"
+            },
+            {
+              "Title": "San Jerónimo"
+            },
+            {
+              "Title": "Caldera"
+            }
+          ]
+        },
+        {
+          "Title": "Buenos Aires",
+          "Districts": [
+            {
+              "Title": "Buenos Aires"
+            },
+            {
+              "Title": "Volcán"
+            },
+            {
+              "Title": "Potrero Grande"
+            },
+            {
+              "Title": "Boruca"
+            },
+            {
+              "Title": "Pilas"
+            },
+            {
+              "Title": "Colinas"
+            },
+            {
+              "Title": "Chánguena"
+            },
+            {
+              "Title": "Bioley"
+            },
+            {
+              "Title": "Brunka"
+            }
+          ]
+        },
+        {
+          "Title": "Montes de Oro",
+          "Districts": [
+            {
+              "Title": "Miramar"
+            },
+            {
+              "Title": "Unión"
+            },
+            {
+              "Title": "San Isidro"
+            }
+          ]
+        },
+        {
+          "Title": "Osa",
+          "Districts": [
+            {
+              "Title": "Puerto Cortés"
+            },
+            {
+              "Title": "Palmar"
+            },
+            {
+              "Title": "Sierpe"
+            },
+            {
+              "Title": "Bahía Ballena"
+            },
+            {
+              "Title": "Piedras Blancas"
+            },
+            {
+              "Title": "Bahía Drake"
+            }
+          ]
+        },
+        {
+          "Title": "Quepos",
+          "Districts": [
+            {
+              "Title": "Quepos"
+            },
+            {
+              "Title": "Savegre"
+            },
+            {
+              "Title": "Naranjito"
+            }
+          ]
+        },
+        {
+          "Title": "Golfito",
+          "Districts": [
+            {
+              "Title": "Golfito"
+            },
+            {
+              "Title": "Puerto Jiménez"
+            },
+            {
+              "Title": "Guaycará"
+            },
+            {
+              "Title": "Pavón"
+            }
+          ]
+        },
+        {
+          "Title": "Coto Brus",
+          "Districts": [
+            {
+              "Title": "San Vito"
+            },
+            {
+              "Title": "Sabalito"
+            },
+            {
+              "Title": "Agua Buena"
+            },
+            {
+              "Title": "Limoncito"
+            },
+            {
+              "Title": "Pittier"
+            },
+            {
+              "Title": "Gutiérrez Brown"
+            }
+          ]
+        },
+        {
+          "Title": "Parrita",
+          "Districts": [
+            {
+              "Title": "Parrita"
+            }
+          ]
+        },
+        {
+          "Title": "Corredores",
+          "Districts": [
+            {
+              "Title": "Corredores"
+            },
+            {
+              "Title": "La Cuesta"
+            },
+            {
+              "Title": "Paso Canoas"
+            },
+            {
+              "Title": "Laurel"
+            }
+          ]
+        },
+        {
+          "Title": "Garabito",
+          "Districts": [
+            {
+              "Title": "Jacó"
+            },
+            {
+              "Title": "Tárcoles"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Title": "Limón",
+      "Cantons": [
+        {
+          "Title": "Limón",
+          "Districts": [
+            {
+              "Title": "Limón"
+            },
+            {
+              "Title": "Valle La Estrella"
+            },
+            {
+              "Title": "Río Blanco"
+            },
+            {
+              "Title": "Matama"
+            }
+          ]
+        },
+        {
+          "Title": "Pococí",
+          "Districts": [
+            {
+              "Title": "Guápiles"
+            },
+            {
+              "Title": "Jiménez"
+            },
+            {
+              "Title": "Rita"
+            },
+            {
+              "Title": "Roxana"
+            },
+            {
+              "Title": "Cariari"
+            },
+            {
+              "Title": "Colorado"
+            },
+            {
+              "Title": "La Colonia"
+            }
+          ]
+        },
+        {
+          "Title": "Siquirres",
+          "Districts": [
+            {
+              "Title": "Siquirres"
+            },
+            {
+              "Title": "Pacuarito"
+            },
+            {
+              "Title": "Florida"
+            },
+            {
+              "Title": "Germania"
+            },
+            {
+              "Title": "Cairo"
+            },
+            {
+              "Title": "Alegría"
+            }
+          ]
+        },
+        {
+          "Title": "Talamanca",
+          "Districts": [
+            {
+              "Title": "Bratsi"
+            },
+            {
+              "Title": "Sixaola"
+            },
+            {
+              "Title": "Cahuita"
+            },
+            {
+              "Title": "Telire"
+            }
+          ]
+        },
+        {
+          "Title": "Matina",
+          "Districts": [
+            {
+              "Title": "Matina"
+            },
+            {
+              "Title": "Batán"
+            },
+            {
+              "Title": "Carrandí"
+            }
+          ]
+        },
+        {
+          "Title": "Guácimo",
+          "Districts": [
+            {
+              "Title": "Guácimo"
+            },
+            {
+              "Title": "Mercedes"
+            },
+            {
+              "Title": "Pocora"
+            },
+            {
+              "Title": "Río Jiménez"
+            },
+            {
+              "Title": "Duacarí"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

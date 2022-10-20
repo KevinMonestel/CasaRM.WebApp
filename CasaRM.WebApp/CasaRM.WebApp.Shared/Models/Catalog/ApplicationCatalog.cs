@@ -15,5 +15,11 @@
         public IEnumerable<CatalogDto> BasicServices { get; set; }
 
         public IEnumerable<CatalogDto> HostDocuments { get; set; }
+
+        public IEnumerable<CatalogDto> MaritalStatuses { get; set; }
+
+        public IEnumerable<CatalogDto> Genders { get; set; }
+
+        public IEnumerable<CatalogDto> Nationalities { get; set; }
     }
 }

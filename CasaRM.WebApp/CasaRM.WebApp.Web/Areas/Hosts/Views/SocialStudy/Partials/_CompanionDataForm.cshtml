@@ -1,4 +1,6 @@
-﻿@model CompanionDataFormViewModel
+﻿@using CasaRM.WebApp.Shared.Models.Catalog
+@model CompanionDataFormViewModel
+@inject ApplicationCatalog _appCatalogs
 
 @{
 }
@@ -48,25 +50,42 @@
         </div>
 
         <div class="col-md-3">
-            <div class="form-floating mb-3">
-                <input asp-for="Gender" class="form-control" aria-required="true" />
-                <label asp-for="Gender" class="form-label">Sexo</label>
+            <div class="mb-3">
+                <label asp-for="Gender" class="form-label text-muted text-sm">Sexo</label>
+                <select class="form-select" asp-for="Gender">
+                    @foreach (CatalogDto catalog in _appCatalogs.Genders)
+                    {
+                            <option value="@catalog.Description">@catalog.Description</option>
+                    }
+                </select>
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
         </div>
 
         <div class="col-md-3">
-            <div class="form-floating mb-3">
-                <input asp-for="MaritalStatus" class="form-control" aria-required="true" />
-                <label asp-for="MaritalStatus" class="form-label">Estado Civil</label>
+            <div class="mb-3">
+                <label asp-for="MaritalStatus" class="form-label text-muted text-sm">Estado Civil</label>
+                <select class="form-select" asp-for="MaritalStatus">
+                    @foreach (CatalogDto catalog in _appCatalogs.MaritalStatuses)
+                    {
+                        <option value="@catalog.Description">@catalog.Description</option>
+                    }
+                </select>
                 <span asp-validation-for="MaritalStatus" class="text-danger"></span>
             </div>
         </div>
 
         <div class="col-md-6">
-            <div class="form-floating mb-3">
-                <input asp-for="Nacionality" class="form-control" aria-required="true" />
-                <label asp-for="Nacionality" class="form-label">Nacionalidad</label>
+            <div class="mb-3">
+                <label asp-for="Nacionality" class="form-label text-muted text-sm">Nacionalidad</label>
+                <select class="form-select" asp-for="Nacionality">
+                    @foreach (CatalogDto catalog in _appCatalogs.Nationalities.OrderBy(x => x.Description))
+                    {
+                        <option value="@System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(catalog.Description.ToLower())">
+                            @System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(catalog.Description.ToLower())
+                        </option>
+                    }
+                </select>
                 <span asp-validation-for="Nacionality" class="text-danger"></span>
             </div>
         </div>

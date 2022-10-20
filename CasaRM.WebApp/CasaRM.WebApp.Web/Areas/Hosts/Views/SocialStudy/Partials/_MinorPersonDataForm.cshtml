@@ -1,4 +1,7 @@
-﻿@model MinorPersonDataFormViewModel
+﻿@using CasaRM.WebApp.Shared.Models.Catalog
+@model MinorPersonDataFormViewModel
+@inject ApplicationCatalog _appCatalogs
+@inject IEnumerable<ProvincesInfoCatalog> _provincesInfoCatalog
 
 @{
 }
@@ -41,9 +44,14 @@
         </div>
 
         <div class="col-md-4">
-            <div class="form-floating mb-3">
-                <input asp-for="Gender" class="form-control" aria-required="true" />
-                <label asp-for="Gender" class="form-label">Sexo</label>
+            <div class="mb-3">
+                <label asp-for="Gender" class="form-label text-muted text-sm">Sexo</label>
+                <select class="form-select" asp-for="Gender">
+                    @foreach (CatalogDto catalog in _appCatalogs.Genders)
+                    {
+                        <option value="@catalog.Description">@catalog.Description</option>
+                    }
+                </select>
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
         </div>
@@ -57,9 +65,16 @@
         </div>
 
         <div class="col-md-6">
-            <div class="form-floating mb-3">
-                <input asp-for="Nacionality" class="form-control" aria-required="true" />
-                <label asp-for="Nacionality" class="form-label">Nacionalidad</label>
+            <div class="mb-3">
+                <label asp-for="Nacionality" class="form-label text-muted text-sm">Nacionalidad</label>
+                <select class="form-select" asp-for="Nacionality">
+                    @foreach (CatalogDto catalog in _appCatalogs.Nationalities.OrderBy(x => x.Description))
+                    {
+                        <option value="@System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(catalog.Description.ToLower())">
+                            @System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(catalog.Description.ToLower())
+                        </option>
+                    }
+                </select>
                 <span asp-validation-for="Nacionality" class="text-danger"></span>
             </div>
         </div>
@@ -97,25 +112,30 @@
         </div>
 
         <div class="col-md-2">
-            <div class="form-floating mb-3">
-                <input asp-for="Province" class="form-control" aria-required="true" />
-                <label asp-for="Province" class="form-label">Provincia</label>
+            <div class="mb-3">
+                <label asp-for="Province" class="form-label text-muted text-sm">Provincia</label>
+                <select class="form-select" asp-for="Province" title="Provincia">
+                    @foreach (ProvincesInfoCatalog catalog in _provincesInfoCatalog)
+                    {
+                        <option value="@catalog.Title">@catalog.Title</option>
+                    }
+                </select>
                 <span asp-validation-for="Province" class="text-danger"></span>
             </div>
         </div>
 
         <div class="col-md-2">
-            <div class="form-floating mb-3">
-                <input asp-for="Canton" class="form-control" aria-required="true" />
-                <label asp-for="Canton" class="form-label">Canton</label>
+            <div class="mb-3">
+                <label asp-for="Canton" class="form-label text-muted text-sm">Cantón</label>
+                <select class="form-select" asp-for="Canton"></select>
                 <span asp-validation-for="Canton" class="text-danger"></span>
             </div>
         </div>
 
         <div class="col-md-2">
-            <div class="form-floating mb-3">
-                <input asp-for="District" class="form-control" aria-required="true" />
-                <label asp-for="District" class="form-label">Distrito</label>
+            <div class="mb-3">
+                <label asp-for="District" class="form-label text-muted text-sm">Distrito</label>
+                <select class="form-select" asp-for="District"></select>
                 <span asp-validation-for="District" class="text-danger"></span>
             </div>
         </div>

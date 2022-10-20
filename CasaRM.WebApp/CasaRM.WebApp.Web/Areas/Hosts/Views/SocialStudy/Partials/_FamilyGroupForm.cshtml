@@ -1,4 +1,6 @@
-﻿@model FamilyGroupFormViewModel
+﻿@using CasaRM.WebApp.Shared.Models.Catalog
+@model FamilyGroupFormViewModel
+@inject ApplicationCatalog _appCatalogs
 
 @{
 }
@@ -31,9 +33,14 @@
         </div>
 
         <div class="col-md-6">
-            <div class="form-floating mb-3">
-                <input asp-for="MaritalStatus" class="form-control" aria-required="true" />
-                <label asp-for="MaritalStatus" class="form-label">Estado Civil</label>
+            <div class="mb-3">
+                <label asp-for="MaritalStatus" class="form-label text-muted text-sm">Estado Civil</label>
+                <select class="form-select" asp-for="MaritalStatus">
+                    @foreach (CatalogDto catalog in _appCatalogs.MaritalStatuses)
+                    {
+                        <option value="@catalog.Description">@catalog.Description</option>
+                    }
+                </select>
                 <span asp-validation-for="MaritalStatus" class="text-danger"></span>
             </div>
         </div>

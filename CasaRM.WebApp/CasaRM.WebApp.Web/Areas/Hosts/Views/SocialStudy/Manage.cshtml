@@ -1,4 +1,6 @@
-﻿@model CreateOrUpdateSocialStudyViewModel
+﻿@using CasaRM.WebApp.Shared.Models.Catalog
+@model CreateOrUpdateSocialStudyViewModel
+@inject IEnumerable<ProvincesInfoCatalog> _provincesInfoCatalog
 
 @{
     ViewData["Title"] = "Administrar estudio social";
@@ -305,6 +307,43 @@
             minDistance: 0
         });
         var companionChargePersonAlert = $("#companionChargePersonAlert");
+        var provincesInfoCatalog = @Html.Raw(Json.Serialize(_provincesInfoCatalog));
+
+        $("select[name=Province]").on("change", function(){
+            let provinceSelected = $(this).val();
+            let cantonsSelect = $("select[name=Canton]");
+            let districtsSelect = $("select[name=District]");
+
+            let cantonsObj = provincesInfoCatalog.find(x => x.title == provinceSelected);
+
+            cantonsSelect.html("");
+            districtsSelect.html("");
+
+            $.each(cantonsObj.cantons, function (i, p) {
+                cantonsSelect.append($('<option></option>').val(p.title).html(p.title).attr("selected", p.title == "@Html.Raw(Model.MinorPersonDataFormViewModel.Canton)"));
+            });
+
+            cantonsSelect.trigger('change');
+        });
+
+        $("select[name=Canton]").on("change", function () {
+            let provincesSelect = $("select[name=Province]");
+            let cantonsSelect = $("select[name=Canton]");
+            let districtsSelect = $("select[name=District]");
+
+            let provinceSelected = provincesSelect.val();
+            let cantonSelected = cantonsSelect.val();
+
+            let cantonsObj = provincesInfoCatalog.find(x => x.title == provinceSelected);
+
+            let districtObj = cantonsObj.cantons.find(x => x.title == cantonSelected);
+
+            districtsSelect.html("");
+
+            $.each(districtObj.districts, function (i, p) {
+                districtsSelect.append($('<option></option>').val(p.title).html(p.title).attr("selected", p.title == "@Html.Raw(Model.MinorPersonDataFormViewModel.District)"));
+            });
+        });
 
         saveSocialStudyBtn.on("click", function () {
             let mainDataForm = $("#mainDataForm");
@@ -567,5 +606,7 @@
 
             signaturePad.clear();
         });
+
+        $("select[name=Province]").trigger('change');
     </script>
 }

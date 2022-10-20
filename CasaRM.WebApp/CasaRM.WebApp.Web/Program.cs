@@ -14,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddJsonFile("appCatalogs.json", optional: false, reloadOnChange: false);
 
 ApplicationCatalog applicationCatalog = new();
+IEnumerable<ProvincesInfoCatalog> provincesInfoCatalog = Enumerable.Empty<ProvincesInfoCatalog>();
 
 applicationCatalog.HousingTenureConditions = builder.Configuration.GetSection("HousingTenureConditions").Get<IEnumerable<CatalogDto>>();
 applicationCatalog.HousingConstructionMaterialsWalls = builder.Configuration.GetSection("HousingConstructionMaterialsWalls").Get<IEnumerable<CatalogDto>>();
@@ -22,6 +23,10 @@ applicationCatalog.RoomTypes = builder.Configuration.GetSection("RoomTypes").Get
 applicationCatalog.HousingConservationStatuses = builder.Configuration.GetSection("HousingConservationStatuses").Get<IEnumerable<CatalogDto>>();
 applicationCatalog.BasicServices = builder.Configuration.GetSection("BasicServices").Get<IEnumerable<CatalogDto>>();
 applicationCatalog.HostDocuments = builder.Configuration.GetSection("HostDocuments").Get<IEnumerable<CatalogDto>>();
+applicationCatalog.MaritalStatuses = builder.Configuration.GetSection("MaritalStatuses").Get<IEnumerable<CatalogDto>>();
+applicationCatalog.Genders = builder.Configuration.GetSection("Genders").Get<IEnumerable<CatalogDto>>();
+applicationCatalog.Nationalities = builder.Configuration.GetSection("Nationalities").Get<IEnumerable<CatalogDto>>();
+provincesInfoCatalog = builder.Configuration.GetSection("ProvincesInfoCatalog").Get<IEnumerable<ProvincesInfoCatalog>>();
 
 // Add services to the container.
 // Services
@@ -45,6 +50,7 @@ builder.Services.AddScoped<IHistoryTicketRepository, HistoryTicketRepository>();
 
 // Singletons
 builder.Services.AddSingleton(applicationCatalog);
+builder.Services.AddSingleton(provincesInfoCatalog);
 
 // Database configuration
 var dbConnectionString = builder.Configuration.GetConnectionString("DbConnection");
