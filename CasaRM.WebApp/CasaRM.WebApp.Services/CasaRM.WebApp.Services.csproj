@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.96.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CasaRM.WebApp.Repositories\CasaRM.WebApp.Repositories.csproj" />
     <ProjectReference Include="..\CasaRM.WebApp.Shared\CasaRM.WebApp.Shared.csproj" />
   </ItemGroup>

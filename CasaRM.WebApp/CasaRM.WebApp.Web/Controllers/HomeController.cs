@@ -20,7 +20,6 @@ namespace CasaRM.WebApp.Web.Controllers
             return View();
         }
 
-
         [Authorize]
         public IActionResult Help()
         {
