@@ -5,8 +5,8 @@ namespace CasaRM.WebApp.Services.Interfaces
 {
     public interface IFileGeneratorService
     {
-        XLWorkbook GenerateExcelAsync(DataTable dataTable);
+        XLWorkbook GenerateExcelFromDataTable(DataTable dataTable);
 
-        byte[] WorkbookToBytes(XLWorkbook workbook);
+        byte[] XLWorkbookToBytes(XLWorkbook workbook);
     }
 }
