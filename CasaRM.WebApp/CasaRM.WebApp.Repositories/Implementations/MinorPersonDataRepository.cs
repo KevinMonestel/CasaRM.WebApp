@@ -55,5 +55,22 @@ namespace CasaRM.WebApp.Repositories.Implementations
                 throw;
             }
         }
+
+        public async Task<IEnumerable<MinorPersonDataDto>> GetAllEntriesAsync()
+        {
+            try
+            {
+                IEnumerable<MinorPersonDataDto> result = Enumerable.Empty<MinorPersonDataDto>();
+                IEnumerable<MinorPersonData> dbModels = await GetAllAsync();
+
+                result = dbModels.ToObjectList<MinorPersonDataDto>();
+
+                return result;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

@@ -30,6 +30,7 @@ builder.Services.AddScoped<ISocialStudyService, SocialStudyService>();
 builder.Services.AddScoped<IHostingHistoryService, HostingHistoryService>();
 builder.Services.AddScoped<IHostDocumentsService, HostDocumentsService>();
 builder.Services.AddScoped<IFileGeneratorService, FileGeneratorService>();
+builder.Services.AddScoped<IReportsService, ReportsService>();
 
 //Repositories
 builder.Services.AddScoped<IHostRepository, HostRepository>();

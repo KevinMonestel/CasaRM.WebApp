@@ -1,6 +1,6 @@
 ﻿using CasaRM.WebApp.Services.Interfaces;
 using ClosedXML.Excel;
-using DocumentFormat.OpenXml.Drawing.Charts;
+using System.Data;
 
 namespace CasaRM.WebApp.Services.Implementations
 {
@@ -9,9 +9,7 @@ namespace CasaRM.WebApp.Services.Implementations
         public XLWorkbook GenerateExcelFromDataTable(DataTable dataTable)
         {
             var workbook = new XLWorkbook();
-            var worksheet = workbook.Worksheets.Add("Sample Sheet");
-            worksheet.Cell("A1").Value = "Hello World!";
-            worksheet.Cell("A2").FormulaA1 = "=MID(A1, 7, 5)";
+            workbook.Worksheets.Add(dataTable, "Report");
 
             return workbook;
         }

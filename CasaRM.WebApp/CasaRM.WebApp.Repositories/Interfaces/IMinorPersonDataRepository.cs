@@ -7,5 +7,7 @@ namespace CasaRM.WebApp.Repositories.Interfaces
         Task<MinorPersonDataDto> GetMinorPersonDataByIdAsync(int id);
 
         Task<MinorPersonDataDto> CreateOrUpdateAsync(MinorPersonDataDto minorPersonDataDto);
+
+        Task<IEnumerable<MinorPersonDataDto>> GetAllEntriesAsync();
     }
 }
