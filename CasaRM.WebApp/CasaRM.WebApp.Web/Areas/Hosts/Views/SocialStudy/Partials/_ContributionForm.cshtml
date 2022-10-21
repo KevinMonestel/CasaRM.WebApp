@@ -1,4 +1,6 @@
-﻿@model ContributionFormViewModel
+﻿@using CasaRM.WebApp.Shared.Models.Catalog
+@model ContributionFormViewModel
+@inject ApplicationCatalog _appCatalogs
 
 @{
 }
@@ -17,8 +19,13 @@
 
         <div class="col-md-6">
             <div class="form-floating mb-3">
-                <input asp-for="Relationship" class="form-control" aria-required="true" />
-                <label asp-for="Relationship" class="form-label">Parentesco</label>
+                <label asp-for="Relationship" class="form-label text-muted text-sm">Parentesco</label>
+                <select class="form-select" asp-for="Relationship">
+                    @foreach (CatalogDto catalog in _appCatalogs.Relationships)
+                    {
+                        <option value="@catalog.Description">@catalog.Description</option>
+                    }
+                </select>
                 <span asp-validation-for="Relationship" class="text-danger"></span>
             </div>
         </div>

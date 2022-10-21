@@ -21,5 +21,9 @@
         public IEnumerable<CatalogDto> Genders { get; set; }
 
         public IEnumerable<CatalogDto> Nationalities { get; set; }
+
+        public IEnumerable<CatalogDto> Scholarships { get; set; }
+
+        public IEnumerable<CatalogDto> Relationships { get; set; }
     }
 }

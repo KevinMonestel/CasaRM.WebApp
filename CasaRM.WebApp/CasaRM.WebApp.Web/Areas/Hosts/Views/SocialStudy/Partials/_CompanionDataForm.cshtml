@@ -19,17 +19,22 @@
 
         <div class="col-md-4">
             <div class="form-floating mb-3">
-                <input asp-for="Relationship" class="form-control" aria-required="true" />
-                <label asp-for="Relationship" class="form-label">Parentesco</label>
-                <span asp-validation-for="Relationship" class="text-danger"></span>
+                <input asp-for="Identification" class="form-control" aria-required="true" />
+                <label asp-for="Identification" class="form-label">Identificación</label>
+                <span asp-validation-for="Identification" class="text-danger"></span>
             </div>
         </div>
 
         <div class="col-md-4">
-            <div class="form-floating mb-3">
-                <input asp-for="Identification" class="form-control" aria-required="true" />
-                <label asp-for="Identification" class="form-label">Identificación</label>
-                <span asp-validation-for="Identification" class="text-danger"></span>
+            <div class="mb-3">
+                <label asp-for="Relationship" class="form-label text-muted text-sm">Parentesco</label>
+                <select class="form-select" asp-for="Relationship">
+                    @foreach (CatalogDto catalog in _appCatalogs.Relationships)
+                    {
+                        <option value="@catalog.Description">@catalog.Description</option>
+                    }
+                </select>
+                <span asp-validation-for="Relationship" class="text-danger"></span>
             </div>
         </div>
 
@@ -91,9 +96,14 @@
         </div>
 
         <div class="col-md-6">
-            <div class="form-floating mb-3">
-                <input asp-for="Scholarship" class="form-control" aria-required="true" />
-                <label asp-for="Scholarship" class="form-label">Escolaridad</label>
+            <div class="mb-3">
+                <label asp-for="Scholarship" class="form-label text-muted text-sm">Escolaridad</label>
+                <select class="form-select" asp-for="Scholarship">
+                    @foreach (CatalogDto catalog in _appCatalogs.Scholarships)
+                    {
+                        <option value="@catalog.Description">@catalog.Description</option>
+                    }
+                </select>
                 <span asp-validation-for="Scholarship" class="text-danger"></span>
             </div>
         </div>

@@ -158,6 +158,96 @@
     }
   ],
 
+  "Scholarships": [
+    {
+      "Id": 1,
+      "Description": "Ninguna"
+    },
+    {
+      "Id": 2,
+      "Description": "Primaria"
+    },
+    {
+      "Id": 3,
+      "Description": "Secundaria incompleta"
+    },
+    {
+      "Id": 4,
+      "Description": "Secundaria Completa"
+    },
+    {
+      "Id": 5,
+      "Description": "Universidad incompleta"
+    },
+    {
+      "Id": 6,
+      "Description": "Universidad completa"
+    },
+    {
+      "Id": 7,
+      "Description": "Maestría"
+    }
+  ],
+
+  "Relationships": [
+    {
+      "Id": 1,
+      "Description": "Madre"
+    },
+    {
+      "Id": 2,
+      "Description": "Padre"
+    },
+    {
+      "Id": 3,
+      "Description": "Suegro/a"
+    },
+    {
+      "Id": 4,
+      "Description": "Hijo/a"
+    },
+    {
+      "Id": 5,
+      "Description": "Yerno"
+    },
+    {
+      "Id": 6,
+      "Description": "Nuera"
+    },
+    {
+      "Id": 7,
+      "Description": "Abuelo/a"
+    },
+    {
+      "Id": 8,
+      "Description": "Nieto/a"
+    },
+    {
+      "Id": 9,
+      "Description": "Hermano/a"
+    },
+    {
+      "Id": 10,
+      "Description": "Cuñado/a"
+    },
+    {
+      "Id": 11,
+      "Description": "Bisabuelo/a"
+    },
+    {
+      "Id": 12,
+      "Description": "Biznieto/a"
+    },
+    {
+      "Id": 13,
+      "Description": "Tío/a"
+    },
+    {
+      "Id": 14,
+      "Description": "Sobrino/a"
+    }
+  ],
+
   "Nationalities": [
     {
       "Id": 1,
