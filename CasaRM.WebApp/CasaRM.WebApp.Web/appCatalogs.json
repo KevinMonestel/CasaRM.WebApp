@@ -715,6 +715,169 @@
     }
   ],
 
+  "AttentionServices": [
+    {
+      "Id": 1,
+      "Description": "Neonatología"
+    },
+    {
+      "Id": 1,
+      "Description": "Medicina 5 (Medicina General Lactantes de 4 meses a 2 años"
+    },
+    {
+      "Id": 1,
+      "Description": "Unidad de Cuidados Intensivos"
+    },
+    {
+      "Id": 1,
+      "Description": "Cirugía 2 (Neurocirugía y Trauma)"
+    },
+    {
+      "Id": 1,
+      "Description": "Programa Cardiovascular"
+    },
+    {
+      "Id": 1,
+      "Description": "Endocrinología"
+    },
+    {
+      "Id": 1,
+      "Description": "Cirugía Mayor Ambulatoria"
+    },
+    {
+      "Id": 1,
+      "Description": "Urología"
+    },
+    {
+      "Id": 1,
+      "Description": "Nefrología"
+    },
+    {
+      "Id": 1,
+      "Description": "Neumología"
+    },
+    {
+      "Id": 1,
+      "Description": "Medicina 3 (Hemato-Oncología)"
+    },
+    {
+      "Id": 1,
+      "Description": "Cirugía 3 (Cirugía General)"
+    },
+    {
+      "Id": 1,
+      "Description": "Medicina 6 (Emergencias Médicas)"
+    },
+    {
+      "Id": 1,
+      "Description": "Genetica"
+    },
+    {
+      "Id": 1,
+      "Description": "Neurología"
+    },
+    {
+      "Id": 1,
+      "Description": "Gastrología/ Gastroenterología"
+    },
+    {
+      "Id": 1,
+      "Description": "Dermatología"
+    },
+    {
+      "Id": 1,
+      "Description": "Psicología/Psiquiatría"
+    },
+    {
+      "Id": 1,
+      "Description": "Infectología"
+    },
+    {
+      "Id": 1,
+      "Description": "Odontología"
+    },
+    {
+      "Id": 1,
+      "Description": "Ortopedia"
+    },
+    {
+      "Id": 1,
+      "Description": "Clínica Espina Bífida"
+    },
+    {
+      "Id": 1,
+      "Description": "Medicina 1 (Medicina General Mayores de 2 años)"
+    },
+    {
+      "Id": 1,
+      "Description": "Unidad de Desarrollo"
+    },
+    {
+      "Id": 1,
+      "Description": "Medicina 4 (Medicina General Lactantes de 0 a 4 meses)"
+    },
+    {
+      "Id": 1,
+      "Description": "Clínica Fibrosis Quístic"
+    },
+    {
+      "Id": 1,
+      "Description": "Alergología"
+    },
+    {
+      "Id": 1,
+      "Description": "Cirugía Reconstructiv"
+    },
+    {
+      "Id": 1,
+      "Description": "Fisiatria"
+    },
+    {
+      "Id": 1,
+      "Description": "Inmunología"
+    },
+    {
+      "Id": 1,
+      "Description": "Laboratorio Clínico"
+    },
+    {
+      "Id": 1,
+      "Description": "Maxilofacial"
+    },
+    {
+      "Id": 1,
+      "Description": "Medicina 2 (Unidad de Quemados)"
+    },
+    {
+      "Id": 1,
+      "Description": "Nutrición"
+    },
+    {
+      "Id": 1,
+      "Description": "Oftalmología"
+    },
+    {
+      "Id": 1,
+      "Description": "Otorrinolaringología"
+    },
+    {
+      "Id": 1,
+      "Description": "Unidad de Transplante"
+    },
+    {
+      "Id": 1,
+      "Description": "Cuidados Paliativos"
+    },
+    {
+      "Id": 1,
+      "Description": "Cirugia vespertina"
+    },
+    {
+      "Id": 1,
+      "Description": "Audiología"
+    }
+  ],
+
   "ProvincesInfoCatalog": [
     {
       "Title": "San José",

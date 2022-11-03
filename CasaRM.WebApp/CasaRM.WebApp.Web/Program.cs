@@ -28,6 +28,8 @@ applicationCatalog.Genders = builder.Configuration.GetSection("Genders").Get<IEn
 applicationCatalog.Nationalities = builder.Configuration.GetSection("Nationalities").Get<IEnumerable<CatalogDto>>();
 applicationCatalog.Scholarships = builder.Configuration.GetSection("Scholarships").Get<IEnumerable<CatalogDto>>();
 applicationCatalog.Relationships = builder.Configuration.GetSection("Relationships").Get<IEnumerable<CatalogDto>>();
+applicationCatalog.AttentionServices = builder.Configuration.GetSection("AttentionServices").Get<IEnumerable<CatalogDto>>();
+
 provincesInfoCatalog = builder.Configuration.GetSection("ProvincesInfoCatalog").Get<IEnumerable<ProvincesInfoCatalog>>();
 
 // Add services to the container.

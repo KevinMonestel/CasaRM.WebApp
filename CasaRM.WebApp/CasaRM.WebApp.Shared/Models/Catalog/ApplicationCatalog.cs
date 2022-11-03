@@ -25,5 +25,7 @@
         public IEnumerable<CatalogDto> Scholarships { get; set; }
 
         public IEnumerable<CatalogDto> Relationships { get; set; }
+
+        public IEnumerable<CatalogDto> AttentionServices { get; set; }
     }
 }

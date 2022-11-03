@@ -109,9 +109,14 @@
         </div>
 
         <div class="col-md-6">
-            <div class="form-floating mb-3">
-                <input asp-for="AttentionService" class="form-control" aria-required="true" />
-                <label asp-for="AttentionService" class="form-label">Servicio Atención del Paciente</label>
+            <div class="mb-3">
+                <label asp-for="AttentionService" class="form-label text-muted text-sm">Servicio Atención del Paciente</label>
+                <select class="form-select" asp-for="AttentionService">
+                    @foreach (CatalogDto catalog in _appCatalogs.AttentionServices.OrderBy(x => x.Description))
+                    {
+                        <option value="@catalog.Description">@catalog.Description</option>
+                    }
+                </select>
                 <span asp-validation-for="AttentionService" class="text-danger"></span>
             </div>
         </div>
